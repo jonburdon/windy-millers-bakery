@@ -3,7 +3,7 @@
   "python.terminal.activateEnvironment": true,
   "terminal.integrated.env.osx": {
     "HOSTNAME": "0.0.0.0",
-    "MONGO_URI": "mongodb+srv://root:<Branch1998jajB>@myfirstcluster-ghyoe.mongodb.net/test?retryWrites=true&w=majority"
+    
 
 }
 }
