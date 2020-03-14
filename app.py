@@ -13,7 +13,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
 app.config["MONGO_DBNAME"] = 'windy-millers_bakery'
-app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
 mongo = PyMongo(app)
 
@@ -23,9 +23,7 @@ from flask import Flask, render_template, redirect, request, url_for
 @app.route('/index')
 def home():
     test = list(mongo.db.categories.find())
-    for t in test:
-        print(t)
-    return render_template("index.html" )
+    return render_template("index.html", test=test )
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',
