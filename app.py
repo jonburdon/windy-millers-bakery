@@ -24,6 +24,7 @@ from flask import Flask, render_template, redirect, request, url_for
 def home():
     test = list(mongo.db.categories.find())
     return render_template("index.html", test=test )
+    
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',

@@ -106,6 +106,7 @@
 8. Add facility to log in order use a provided pin before editing / deletion is permitted. 
 9. Header is 'sticky' and shrinks on scroll
 10. Background or hero header image parallax effect
+11. CTA tab bar floating / sticky on right of screen to encourage user to navigate to utensils page.
 
 
 
