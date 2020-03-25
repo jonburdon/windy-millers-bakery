@@ -13,10 +13,8 @@
     </head>
     <body>
 
-        {% for t in test %}
-            <p>{{t.category_name}}</p>
-        {% endfor %}
-       
+
+        {% block content %} {% endblock %}
   
 
         <!--[if lt IE 7]>

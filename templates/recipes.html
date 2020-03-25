@@ -1,0 +1,8 @@
+
+{% extends 'base.html' %} {% block content %}
+
+        {% for t in test %}
+            <p class="{{t.recipe_category}}" >{{t.recipe_name}}, {{t.recipe_serves}}. Delicious and ready in {{t.preparation_time}}.</p>
+        {% endfor %}
+       
+{% endblock %}

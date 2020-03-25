@@ -20,10 +20,10 @@ mongo = PyMongo(app)
 from flask import Flask, render_template, redirect, request, url_for
 
 @app.route('/')
-@app.route('/index')
+@app.route('/recipes')
 def home():
-    test = list(mongo.db.categories.find())
-    return render_template("index.html", test=test )
+    test = list(mongo.db.recipes.find())
+    return render_template("recipes.html", test=test )
     
 
 
