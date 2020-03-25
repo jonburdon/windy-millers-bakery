@@ -1,9 +1,7 @@
 # Windy Miller's Bakery - Data Centric Design
 
-<<<<<<< HEAD
+
 ## View site:
-=======
->>>>>>> 16b626d306422f58629ed6e497f5a5b7cfd7a974
 
 [View Site on Heroku](https://windy-miller.herokuapp.com/)
 
