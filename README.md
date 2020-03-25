@@ -1,6 +1,9 @@
 # Windy Miller's Bakery - Data Centric Design
 
+<<<<<<< HEAD
 ## View site:
+=======
+>>>>>>> 16b626d306422f58629ed6e497f5a5b7cfd7a974
 
 [View Site on Heroku](https://windy-miller.herokuapp.com/)
 
@@ -96,6 +99,7 @@
 3. Sort by recipe name, or cooking time
 
 ### Potential advanced features (nice to have):
+<<<<<<< HEAD
 1. [] Build upon the required tools field to promote your brand of kitchen tools (e.g. oven, pressure cooker, etc…). Display detail on the utensil itself on a single page view for this utensil
 2. [] Create a dashboard to provide some statistics about all the recipes. Number of recipes, number in each category, utensils, number of recipes using this utensil
 3. [] Pagination for more than 20 recipes.
@@ -112,6 +116,27 @@
 14. [] Featured Recipe option
 15. [] Facility to convert units from metric to imperial
 16. [] Add isotope.js to animate the sorting, filtering and displaying of data
+=======
+1. Build upon the required tools field to promote your brand of kitchen tools (e.g. oven, pressure cooker, etc…). Display detail on the utensil itself on a single page view for this utensil
+2. Create a dashboard to provide some statistics about all the recipes.
+3. Pagination for more than 20 recipes.
+4. Sort by name or cooking time in ascending / descending order.
+5. Add 'similar recipes' display on single recipe view
+6. Display 'Featured utensils' on home page
+7. Carousel display on home page with interactive swipe navigation
+8. Add facility to log in order use a provided pin before editing / deletion is permitted. 
+9. Header is 'sticky' and shrinks on scroll
+10. Background or hero header image parallax effect
+
+
+
+## Developer ideas for enhancing project / next steps and advanced features:
+1. [] Update form to verify all form fields and only accept forms accordingly.
+2. [] Confirmation messages when data has been added / updated / deleted. Delete confirm message.
+3. [] Featured Recipe option
+4. [] Facility to convert units from metric to imperial
+5. [] Add isotope.js to animate the sorting, filtering and displaying of data
+>>>>>>> 16b626d306422f58629ed6e497f5a5b7cfd7a974
 
 
 

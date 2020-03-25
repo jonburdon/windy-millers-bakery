@@ -24,9 +24,15 @@ from flask import Flask, render_template, redirect, request, url_for
 def home():
     test = list(mongo.db.categories.find())
     return render_template("index.html", test=test )
+<<<<<<< HEAD
     
 
 if __name__ == '__main__':
      app.run(host='0.0.0.0',
+=======
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0',
+>>>>>>> 16b626d306422f58629ed6e497f5a5b7cfd7a974
             port=(os.environ.get('PORT')),
             debug=True)
