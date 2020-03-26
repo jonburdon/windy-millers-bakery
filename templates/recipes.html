@@ -2,7 +2,30 @@
 {% extends 'base.html' %} {% block content %}
 
         {% for t in test %}
-            <p class="{{t.recipe_category}}" >{{t.recipe_name}}, {{t.recipe_serves}}. Delicious and ready in {{t.preparation_time}}.</p>
+        <h3>{{t.recipe_name}}</h3>
+        <p>This recipe is / is not featured</p>    
+        <p class="{{t.recipe_category}}" >Serves {{t.recipe_serves}}. Delicious and ready in {{t.preparation_time}} mins.</p>
+        <h4>Description:</h4>
+        <p>{{t.recipe_description}}</p>
+        <ul>
+            <li>Oven Temperature: {{t.oven_temperature}}</li>
+            <li>Preparation Time: {{t.preparation_time}}</li>
+            <li>Cooking Time: {{t.cooking_time}}</li>
+        </ul>
+        <h4>Equipment:</h4>
+
+        <h4>Ingredients:</h4>
+
+
+        <h4>Method:</h4>
+        <p>{{t.method}}</p>
+        <h4>Tips: {{t.tips}}</h4>
+        <h4>Photos:</h4>
+
+
+
+
+        <hr>
         {% endfor %}
        
 {% endblock %}

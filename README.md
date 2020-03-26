@@ -92,8 +92,8 @@
 
 
 #### Site Minimum Functions
-1. Implements accordion or tab style display. Visual design to be agreed with client / designer / developer before development work starts.
-2. Displays three recipe categories by title with recipes and 'ALL' recipe display.
+1. Implements grid view of recipes. Visual design to be agreed with client / designer / developer before development work starts.
+2. Displays three recipe categories by title with recipes and 'ALL' recipe display. Each category to be viewed separately, or view all option (default).
 3. Sort by recipe name, or cooking time
 
 ### Potential advanced features (nice to have):
@@ -114,6 +114,7 @@
 14. [] Featured Recipe option
 15. [] Facility to convert units from metric to imperial
 16. [] Add isotope.js to animate the sorting, filtering and displaying of data 
+17. [] Delete function will only mark recipe as 'archived.' To permanently delete, user must enter archive manager and then permanently delete the item.
 
 
 ## Wireframes
