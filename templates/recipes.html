@@ -3,7 +3,13 @@
 
         {% for t in test %}
         <h3>{{t.recipe_name}}</h3>
-        <p>This recipe is / is not featured</p>    
+        
+            {% if t.recipe_featured %}
+            <span>
+            **This is a featured recipe**
+            </span>
+            {% endif %} 
+
         <p class="{{t.recipe_category}}" >Serves {{t.recipe_serves}}. Delicious and ready in {{t.preparation_time}} mins.</p>
         <h4>Description:</h4>
         <p>{{t.recipe_description}}</p>
@@ -13,12 +19,16 @@
             <li>Cooking Time: {{t.cooking_time}}</li>
         </ul>
         <h4>Equipment:</h4>
+        <ul>
+            {% for i in range(0, t.Equipment | length, 1) %}
+                
+                        <li >{{t.Equipment[i]}}</li>      
+                
+            {% endfor %}
+        </ul>
 
         <h4>Ingredients:</h4>
 
-         
-        
-        
         <ul>
             {% for i in range(0, t.Ingredients | length, 1) %}
                 
@@ -32,7 +42,11 @@
         <p>{{t.method}}</p>
         <h4>Tips: {{t.tips}}</h4>
         <h4>Photos:</h4>
+        {% for i in range(0, t.photo_urls | length, 1) %}
+                
+        <p><img src="{{t.photo_urls[i]}}" width=300> </p>    
 
+{% endfor %}
 
 
 
