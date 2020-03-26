@@ -28,7 +28,8 @@
 * HTML, CSS and Javascript programming languages
 * Python
 * Mongodb
-* Flask
+* Flask 
+* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
 * Materialize
 * [Bootstrap](https://getbootstrap.com/)
 * [Font Awesome](https://fontawesome.com/)
