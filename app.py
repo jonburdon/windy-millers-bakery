@@ -21,7 +21,7 @@ from flask import Flask, render_template, redirect, request, url_for
 
 @app.route('/')
 @app.route('/recipes')
-def home():
+def recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes )
     
