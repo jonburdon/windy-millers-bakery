@@ -25,7 +25,9 @@ def home():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes )
     
-
+@app.route('/categories/')
+def categories():
+    return render_template('categories.html', categories=mongo.db.categories.find())
 
 
 if __name__ == '__main__':
