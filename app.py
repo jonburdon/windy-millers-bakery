@@ -25,9 +25,9 @@ def recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes )
     
-@app.route('/categories/')
-def categories():
-    return render_template('categories.html', categories=mongo.db.categories.find())
+@app.route('/view_categories/')
+def view_categories():
+    return render_template('view_categories.html', view_categories=mongo.db.categories.find())
 
 @app.route('/insert_category', methods=["POST"])
 def insert_category():
@@ -35,11 +35,42 @@ def insert_category():
     mongo.db.categories.insert_one(category_doc)
     category_doc = {'category_image': request.form.get('category_image')}
     mongo.db.categories.insert_one(category_doc)
-    return redirect(url_for('categories'))
+    return redirect(url_for('view_categories'))
 
 @app.route('/add_category/')
 def add_category():
     return render_template('add_category.html')
+
+@app.route('/edit_category/<category_id>')
+def edit_category(category_id):
+    return render_template('edit_category.html',
+    category=mongo.db.categories.find_one({'_id': ObjectId(category_id)}))
+
+@app.route('/update_category/<category_id>', methods=['POST'])
+def update_category(category_id):
+    mongo.db.categories.update(
+        {'_id': ObjectId(category_id)},
+        {'category_name': request.form.get('category_name')})
+
+        
+    return redirect(url_for('view_categories'))
+
+
+
+
+
+@app.route('/delete_category/<category_id>')
+def delete_category(category_id):
+    mongo.db.categories.remove({'_id': ObjectId(category_id)})
+    return redirect(url_for('manage_categories'))
+
+@app.route('/manage_categories/')
+def manage_categories():
+    return render_template('manage_categories.html', manage_categories=mongo.db.categories.find())
+
+
+
+
 
 
 if __name__ == '__main__':
