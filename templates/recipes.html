@@ -16,6 +16,17 @@
 
         <h4>Ingredients:</h4>
 
+         
+        
+        
+        <ul>
+            {% for i in range(0, t.Ingredients | length, 1) %}
+                
+                        <li >{{t.Ingredients[i]}}</li>      
+                
+            {% endfor %}
+        </ul>
+
 
         <h4>Method:</h4>
         <p>{{t.method}}</p>
