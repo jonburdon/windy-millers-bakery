@@ -2,55 +2,58 @@
 {% extends 'base.html' %} {% block content %}
 
         {% for r in recipes %}
-        <h3>{{r.recipe_name}}</h3>
-        
-            {% if r.recipe_featured %}
-            <span>
-            **This is a featured recipe**
-            </span>
-            {% endif %} 
-
-        <p class="{{r.recipe_category}}" >Serves {{r.recipe_serves}}. Delicious and ready in {{r.preparation_time}} mins.</p>
-        <h4>Description:</h4>
-        <p>{{r.recipe_description}}</p>
-        <ul>
-            <li>Oven Temperature: {{r.oven_temperature}}</li>
-            <li>Preparation Time: {{r.preparation_time}}</li>
-            <li>Cooking Time: {{r.cooking_time}}</li>
-        </ul>
-        <h4>Equipment:</h4>
-        <ul>
-            {% for i in range(0, r.Equipment | length, 1) %}
+            {% if r.published %}
+                <h3>{{r.recipe_name}}</h3>
                 
-                        <li >{{r.Equipment[i]}}</li>      
-                
-            {% endfor %}
-        </ul>
+                    {% if r.recipe_featured %}
+                    <span>
+                    **This is a featured recipe**
+                    </span>
+                    {% endif %} 
+                   
 
-        <h4>Ingredients:</h4>
+                <p class="{{r.recipe_category}}" >Serves {{r.recipe_serves}}. Delicious and ready in {{r.preparation_time}} mins.</p>
+                <h4>Description:</h4>
+                <p>{{r.recipe_description}}</p>
+                <ul>
+                    <li>Oven Temperature: {{r.oven_temperature}}</li>
+                    <li>Preparation Time: {{r.preparation_time}}</li>
+                    <li>Cooking Time: {{r.cooking_time}}</li>
+                </ul>
+                <h4>Equipment:</h4>
+                <ul>
+                    {% for i in range(0, r.Equipment | length, 1) %}
+                        
+                                <li >{{r.Equipment[i]}}</li>      
+                        
+                    {% endfor %}
+                </ul>
 
-        <ul>
-            {% for i in range(0, r.Ingredients | length, 1) %}
-                
-                        <li >{{r.Ingredients[i]}}</li>      
-                
-            {% endfor %}
-        </ul>
+                <h4>Ingredients:</h4>
+
+                <ul>
+                    {% for i in range(0, r.Ingredients | length, 1) %}
+                        
+                                <li >{{r.Ingredients[i]}}</li>      
+                        
+                    {% endfor %}
+                </ul>
 
 
-        <h4>Method:</h4>
-        <p>{{r.method}}</p>
-        <h4>Tips: {{r.tips}}</h4>
-        <h4>Photos:</h4>
-        {% for i in range(0, r.photo_urls | length, 1) %}
-                
-        <p><img src="{{r.photo_urls[i]}}" width=300> </p>    
+                <h4>Method:</h4>
+                <p>{{r.method}}</p>
+                <h4>Tips: {{r.tips}}</h4>
+                <h4>Photos:</h4>
+                    {% for i in range(0, r.photo_urls | length, 1) %}
+                            
+                    <p><img src="{{r.photo_urls[i]}}" width=300> </p>    
 
-{% endfor %}
+                    {% endfor %}
 
 
 
-        <hr>
+                <hr>
+            {% endif %}
         {% endfor %}
        
 {% endblock %}
