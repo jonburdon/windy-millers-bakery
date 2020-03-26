@@ -24,7 +24,18 @@ from flask import Flask, render_template, redirect, request, url_for
 def recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes )
-    
+
+@app.route('/add_recipe')
+def add_recipe():
+    return render_template('add_recipe.html',
+                           categories=mongo.db.categories.find())
+
+@app.route('/insert_recipe', methods=["POST"])
+def insert_recipe():
+    recipes = mongo.db.recipes
+    recipes.insert_one(request.form.to_dict())
+    return redirect(url_for('recipes'))
+
 @app.route('/view_categories/')
 def view_categories():
     return render_template('view_categories.html', view_categories=mongo.db.categories.find())
@@ -55,9 +66,6 @@ def update_category(category_id):
         'category_image': request.form.get('category_image')
     })
     return redirect(url_for('view_categories'))
-
-
-
 
 
 @app.route('/delete_category/<category_id>')
