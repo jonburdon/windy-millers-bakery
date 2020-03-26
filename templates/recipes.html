@@ -2,7 +2,7 @@
 {% extends 'base.html' %} {% block content %}
 
         {% for r in recipes %}
-            {% if r.published %}
+            {% if r.published == 'on' %}
                 <h3>{{r.recipe_name}}</h3>
                 
                     {% if r.recipe_featured %}
@@ -20,36 +20,28 @@
                     <li>Preparation Time: {{r.preparation_time}}</li>
                     <li>Cooking Time: {{r.cooking_time}}</li>
                 </ul>
+                
                 <h4>Equipment:</h4>
-                <ul>
+                <p>{{r.utensil_list}}</p>
+                <p>Why not try using our {{r.featured_utensil}}?</p>
+                <!--<ul>
                     {% for i in range(0, r.Equipment | length, 1) %}
                         
                                 <li >{{r.Equipment[i]}}</li>      
                         
                     {% endfor %}
                 </ul>
-
+                -->
                 <h4>Ingredients:</h4>
 
-                <ul>
-                    {% for i in range(0, r.Ingredients | length, 1) %}
-                        
-                                <li >{{r.Ingredients[i]}}</li>      
-                        
-                    {% endfor %}
-                </ul>
+                {{r.ingredient_list}}
 
 
                 <h4>Method:</h4>
                 <p>{{r.method}}</p>
                 <h4>Tips: {{r.tips}}</h4>
                 <h4>Photos:</h4>
-                    {% for i in range(0, r.photo_urls | length, 1) %}
-                            
-                    <p><img src="{{r.photo_urls[i]}}" width=300> </p>    
-
-                    {% endfor %}
-
+                    <img src="{{r.photo_url}}" width=300> </p>
 
 
                 <hr>

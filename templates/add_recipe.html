@@ -5,8 +5,26 @@
 <div class="row">
     <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
         <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">assignment</i>
+                <input id="recipe_name" name="recipe_name" type="text">
+                <label for="icon_prefix">Recipe Name</label>
+            </div>
+
+            <div class="input-field col s12">
+                <i class="material-icons prefix">assignment</i>
+                <input id="recipe_description" name="recipe_description" type="text">
+                <label for="icon_prefix">Description</label>
+            </div>
+
+            <div class="input-field col s6">
+                <i class="material-icons prefix">assignment</i>
+                <input id="recipe_serves" name="recipe_serves" type="number">
+                <label for="icon_prefix">Recipe Serves</label>
+            </div>
+
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s6">
                     <i class="material-icons prefix">poll</i>
                     <select id="category" name="category_name">
 
@@ -22,30 +40,33 @@
 
             </div>
 
+            <div class="input-field col s6">
+                <i class="material-icons prefix">assignment</i>
+                <input id="utensil_list" name="utensil_list" type="text">
+                <label for="icon_prefix">Utensils</label>
+            </div>
 
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s6">
                     <i class="material-icons prefix">poll</i>
-                    <select multiple id="utensil" name="utensil_name">
-
-                  
-                      <option value="" disabled selected>Choose Utensil</option>
+                    <select id="featured_utensil" name="featured_utensil">
+                      <option value="" disabled selected>Featured Utensil</option>
                   {% for ut in utensils %}
                       <option value="{{ut.utensil_name}}">{{ut.utensil_name}}</option>
                   {% endfor %}
                   
                 </select>
-                    <label>Recipe Utensils</label>
+                    <label>Featured Utensil</label>
                 </div>
 
             </div>
 
-
             <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
-                <input id="recipe_name" name="recipe_name" type="text">
-                <label for="icon_prefix">Recipe Name</label>
+                <input id="ingredient_list" name="ingredient_list" type="text">
+                <label for="icon_prefix">Ingredients</label>
             </div>
+           
 
             <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
@@ -53,16 +74,28 @@
                 <label for="icon_prefix">Method</label>
             </div>
 
-            <div class="input-field col s12">
+            <div class="input-field col s6">
                 <i class="material-icons prefix">assignment</i>
                 <input id="preparation_time" name="preparation_time" type="number">
                 <label for="icon_prefix">Preparation Time</label>
             </div>
 
-            <div class="input-field col s12">
+            <div class="input-field col s6">
                 <i class="material-icons prefix">assignment</i>
                 <input id="cooking_time" name="cooking_time" type="number">
                 <label for="icon_prefix">Cooking Time</label>
+            </div>
+
+            <div class="input-field col s12">
+                <i class="material-icons prefix">assignment</i>
+                <input id="tips" name="tips" type="text">
+                <label for="icon_prefix">Tips</label>
+            </div>
+
+            <div class="input-field col s12">
+                <i class="material-icons prefix">assignment</i>
+                <input id="photo_url" name="photo_url" type="text">
+                <label for="icon_prefix">Photo url</label>
             </div>
 
             <div class="row">
