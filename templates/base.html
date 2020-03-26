@@ -9,6 +9,9 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
         <link rel="stylesheet" href="">
     </head>
     <body>
@@ -16,6 +19,7 @@
         <ul>
             <li><A href="{{url_for('categories')}}">Categories</A></li>
             <li><A href="{{url_for('recipes')}}">Recipes</A></li>
+            <li><A href="{{url_for('add_category')}}">Add Category</A></li>
         </ul>
 
         {% block content %} {% endblock %}
@@ -26,5 +30,7 @@
         <![endif]-->
         
         <script src="" async defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     </body>
 </html>

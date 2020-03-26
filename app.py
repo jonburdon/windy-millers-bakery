@@ -29,6 +29,16 @@ def recipes():
 def categories():
     return render_template('categories.html', categories=mongo.db.categories.find())
 
+@app.route('/insert_category', methods=["POST"])
+def insert_category():
+    category_doc = {'category_name': request.form.get('category_name')}
+    mongo.db.categories.insert_one(category_doc)
+    return redirect(url_for('categories'))
+
+@app.route('/add_category/')
+def add_category():
+    return render_template('add_category.html')
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',
