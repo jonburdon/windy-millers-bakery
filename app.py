@@ -28,7 +28,7 @@ def recipes():
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('add_recipe.html',
-                           categories=mongo.db.categories.find())
+                           categories=mongo.db.categories.find(), utensils=mongo.db.utensils.find())
 
 @app.route('/insert_recipe', methods=["POST"])
 def insert_recipe():

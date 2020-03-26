@@ -9,14 +9,37 @@
                 <div class="input-field col s12">
                     <i class="material-icons prefix">poll</i>
                     <select id="category" name="category_name">
-                  <option value="" disabled selected>Choose Category</option>
+
+                  
+                      <option value="" disabled selected>Choose Category</option>
                   {% for cat in categories %}
                       <option value="{{cat.category_name}}">{{cat.category_name}}</option>
                   {% endfor %}
+                  
                 </select>
                     <label>Recipe Category</label>
                 </div>
+
             </div>
+
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">poll</i>
+                    <select multiple id="utensil" name="utensil_name">
+
+                  
+                      <option value="" disabled selected>Choose Utensil</option>
+                  {% for ut in utensils %}
+                      <option value="{{ut.utensil_name}}">{{ut.utensil_name}}</option>
+                  {% endfor %}
+                  
+                </select>
+                    <label>Recipe Utensils</label>
+                </div>
+
+            </div>
+
 
             <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
@@ -34,6 +57,32 @@
                 <i class="material-icons prefix">assignment</i>
                 <input id="preparation_time" name="preparation_time" type="number">
                 <label for="icon_prefix">Preparation Time</label>
+            </div>
+
+            <div class="input-field col s12">
+                <i class="material-icons prefix">assignment</i>
+                <input id="cooking_time" name="cooking_time" type="number">
+                <label for="icon_prefix">Cooking Time</label>
+            </div>
+
+            <div class="row">
+                <div class="switch">
+                    <label>
+                      <input id="recipe_featured" name="recipe_featured" type="checkbox">
+                      <span class="lever"></span>
+                      Is Featured
+                    </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="switch">
+                    <label>
+                      <input id="published" name="published" type="checkbox" checked>
+                      <span class="lever"></span>
+                      Published
+                    </label>
+                </div>
             </div>
 
         </div>
