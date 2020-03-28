@@ -45,17 +45,41 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('manage_recipes'))
 
+@app.route('/archive_recipe/<recipe_id>', methods=['POST'])
+def archive_recipe(recipe_id):
+    recipe = mongo.db.recipes
+    recipe.updateOne( {'_id': ObjectId(recipe_id)},
+    {
+        'published': 'off'
+        
+    })
+    return redirect(url_for('manage_recipes'))
+
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     return render_template('edit_recipe.html',
-    recipe=mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)}))
+    recipe=mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)}),
+                           categories=mongo.db.categories.find(), utensils=mongo.db.utensils.find())
 
 @app.route('/update_recipe/<recipe_id>', methods=['POST'])
 def update_recipe(recipe_id):
     recipe = mongo.db.recipes
     recipe.update( {'_id': ObjectId(recipe_id)},
     {
-        'recipe_name': request.form.get('recipe_name')
+        'recipe_name': request.form.get('recipe_name'),
+        'recipe_description': request.form.get('recipe_description'),
+        'recipe_serves': request.form.get('recipe_serves'),
+        'utensil_list': request.form.get('utensil_list'),
+        'ingredients_list': request.form.get('ingredients_list'),
+        'method': request.form.get('method'),
+        'preparation_time': request.form.get('preparation_time'),
+        'cooking_time': request.form.get('cooking_time'),
+        'tips': request.form.get('tips'),
+        'photo_url': request.form.get('photo_url'),
+        'recipe_category': request.form.get('recipe_category'),
+        'featured_utensil': request.form.get('featured_utensil'),
+        'published': request.form.get('published'),
+        'recipe_featured': request.form.get('recipe_featured')
     })
     return redirect(url_for('manage_recipes'))
 
