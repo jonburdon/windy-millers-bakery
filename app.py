@@ -36,6 +36,15 @@ def insert_recipe():
     recipes.insert_one(request.form.to_dict())
     return redirect(url_for('recipes'))
 
+@app.route('/manage_recipes/')
+def manage_recipes():
+    return render_template('manage_recipes.html', manage_recipes=mongo.db.recipes.find())
+
+@app.route('/delete_recipe/<recipe_id>')
+def delete_recipe(recipe_id):
+    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('manage_recipes'))
+
 @app.route('/view_categories/')
 def view_categories():
     return render_template('view_categories.html', view_categories=mongo.db.categories.find())

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+
+    <h3>Manage Recipes</h3>
+
+    <ul class="collapsible" data-collapsible="accordion">
+        {% for r in manage_recipes %}
+        <li>
+            <div class="collapsible-header">
+                <a href="{{url_for('delete_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn btn_small blue">Del</a>
+                <div class=" task_header col s8">
+                    <strong>{{r.recipe_name}}</strong> 
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+</div>
+
+{% endblock %}
