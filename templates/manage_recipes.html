@@ -8,6 +8,7 @@
         {% for r in manage_recipes %}
         <li>
             <div class="collapsible-header">
+                <a href="{{url_for('edit_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn btn_small">Edit</a>
                 <a href="{{url_for('delete_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn btn_small blue">Del</a>
                 <div class=" task_header col s8">
                     <strong>{{r.recipe_name}}</strong> 
