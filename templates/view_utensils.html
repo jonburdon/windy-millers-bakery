@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %} {% block content %}
+
+{% for u in view_utensils %}
+
+<h3>{{u.utensil_name}}</h3>
+<p>{{u.utensil_description}}</p>
+<a href="{{u.shop_url}}">Click to buy</a><br>
+<img src="{{u.image_url}}" width=300>
+
+{% if u.delux_range == 'on' %}
+                    <h4>
+                    **Part of our delux range. Ooooo!**
+                    </h4>
+ {% endif %} 
+
+{% endfor %}
+
+{% endblock %}

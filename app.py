@@ -48,7 +48,7 @@ def delete_recipe(recipe_id):
 @app.route('/archive_recipe/<recipe_id>', methods=['POST'])
 def archive_recipe(recipe_id):
     recipe = mongo.db.recipes
-    recipe.updateOne( {'_id': ObjectId(recipe_id)},
+    recipe.update_one( {'_id': ObjectId(recipe_id)},
     {
         'published': 'off'
         
@@ -125,9 +125,27 @@ def manage_categories():
     return render_template('manage_categories.html', manage_categories=mongo.db.categories.find())
 
 
+@app.route('/view_utensils/')
+def view_utensils():
+    return render_template('view_utensils.html', view_utensils=mongo.db.utensils.find())
 
+@app.route('/manage_utensils/')
+def manage_utensils():
+    return render_template('manage_utensils.html', manage_utensils=mongo.db.utensils.find())
 
+@app.route('/edit_utensils/<utensil_id>')
+def edit_utensil(utensil_id):
+    return render_template('edit_utensils.html',
+    category=mongo.db.utensils.find_one({'_id': ObjectId(utensil_id)}))
 
+@app.route('/delete_utensil/<utensil_id>')
+def delete_utensil(utensil_id):
+    mongo.db.utensils.remove({'_id': ObjectId(utensil_id)})
+    return redirect(url_for('manage_utensils'))
+
+@app.route('/add_utensil/')
+def add_utensil():
+    return render_template('add_category.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',
