@@ -45,21 +45,21 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('manage_recipes'))
 
-@app.route('/archive_recipe/<recipe_id>', methods=['POST'])
-def archive_recipe(recipe_id):
-    recipe = mongo.db.recipes
-    recipe.update_one( {'_id': ObjectId(recipe_id)},
-    {
-        'published': 'off'
-        
-    })
-    return redirect(url_for('manage_recipes'))
-
 @app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     return render_template('edit_recipe.html',
     recipe=mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)}),
                            categories=mongo.db.categories.find(), utensils=mongo.db.utensils.find())
+
+@app.route('/archive_recipe/<recipe_id>')
+def archive_recipe(recipe_id):
+    recipe = mongo.db.recipes
+    recipe.update_one(
+   { "_id": ObjectId(recipe_id) },
+   { "$set": { "published": "off" } }
+)
+
+    return redirect(url_for('manage_recipes'))
 
 @app.route('/update_recipe/<recipe_id>', methods=['POST'])
 def update_recipe(recipe_id):
@@ -124,7 +124,6 @@ def delete_category(category_id):
 def manage_categories():
     return render_template('manage_categories.html', manage_categories=mongo.db.categories.find())
 
-
 @app.route('/view_utensils/')
 def view_utensils():
     return render_template('view_utensils.html', view_utensils=mongo.db.utensils.find())
@@ -133,9 +132,9 @@ def view_utensils():
 def manage_utensils():
     return render_template('manage_utensils.html', manage_utensils=mongo.db.utensils.find())
 
-@app.route('/edit_utensils/<utensil_id>')
+@app.route('/edit_utensil/<utensil_id>')
 def edit_utensil(utensil_id):
-    return render_template('edit_utensils.html',
+    return render_template('edit_utensil.html',
     category=mongo.db.utensils.find_one({'_id': ObjectId(utensil_id)}))
 
 @app.route('/delete_utensil/<utensil_id>')
