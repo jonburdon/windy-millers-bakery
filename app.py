@@ -119,6 +119,24 @@ def delete_category(category_id):
     mongo.db.categories.remove({'_id': ObjectId(category_id)})
     return redirect(url_for('manage_categories'))
 
+@app.route('/archive_category/<category_id>')
+def archive_category(category_id):
+    category = mongo.db.categories
+    category.update_one(
+   { "_id": ObjectId(category_id) },
+   { "$set": { "published": "off" } }
+)
+    return redirect(url_for('manage_categories'))
+
+@app.route('/restore_category/<category_id>')
+def restore_category(category_id):
+    category = mongo.db.categories
+    category.update_one(
+   { "_id": ObjectId(category_id) },
+   { "$set": { "published": "on" } }
+)
+    return redirect(url_for('manage_archive'))
+
 @app.route('/manage_categories/')
 def manage_categories():
     return render_template('manage_categories.html', manage_categories=mongo.db.categories.find())
@@ -153,6 +171,12 @@ def archive_utensil(utensil_id):
 @app.route('/add_utensil/')
 def add_utensil():
     return render_template('add_category.html')
+
+@app.route('/manage_archive/')
+def manage_archive():
+    return render_template('manage_archive.html', manage_categories=mongo.db.categories.find()
+    , manage_utensils=mongo.db.utensils.find()
+    , manage_recipes=mongo.db.recipes.find())
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+
+    <h3>Archived Categories</h3>
+    <ul class="collapsible" data-collapsible="accordion">
+        {% for category in manage_categories %}
+            {% if category.published == 'off' %}
+                <li>
+                    <div class="collapsible-header">
+                                <a href="{{url_for('delete_category', category_id =category._id)}}" class="waves-effect waves-light btn btn_small blue">Del</a>
+                                <a href="{{url_for('restore_category', category_id =category._id)}}" class="waves-effect waves-light btn btn_small blue">Restore</a>
+                        <div class=" task_header col s8">
+                            <strong>{{category.category_name}}</strong> 
+                        </div>
+                    </div>
+                </li>
+           {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
