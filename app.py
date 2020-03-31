@@ -58,7 +58,6 @@ def archive_recipe(recipe_id):
    { "_id": ObjectId(recipe_id) },
    { "$set": { "published": "off" } }
 )
-
     return redirect(url_for('manage_recipes'))
 
 @app.route('/update_recipe/<recipe_id>', methods=['POST'])
@@ -140,6 +139,15 @@ def edit_utensil(utensil_id):
 @app.route('/delete_utensil/<utensil_id>')
 def delete_utensil(utensil_id):
     mongo.db.utensils.remove({'_id': ObjectId(utensil_id)})
+    return redirect(url_for('manage_utensils'))
+
+@app.route('/archive_utensil/<utensil_id>')
+def archive_utensil(utensil_id):
+    utensil = mongo.db.utensils
+    utensil.update_one(
+   { "_id": ObjectId(utensil_id) },
+   { "$set": { "published": "off" } }
+)
     return redirect(url_for('manage_utensils'))
 
 @app.route('/add_utensil/')
