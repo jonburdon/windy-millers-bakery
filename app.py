@@ -188,7 +188,13 @@ def restore_utensil(utensil_id):
 
 @app.route('/add_utensil/')
 def add_utensil():
-    return render_template('add_category.html')
+    return render_template('add_utensil.html')
+
+@app.route('/insert_utensil', methods=["POST"])
+def insert_utensil():
+    utensils = mongo.db.utensils
+    utensils.insert_one(request.form.to_dict())
+    return redirect(url_for('view_utensils'))
 
 @app.route('/manage_archive/')
 def manage_archive():
