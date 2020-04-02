@@ -127,7 +127,7 @@
         <div class="row">
             <div class="switch">
                 <label>
-                  <input id="recipe_featured" name="recipe_featured" type="checkbox">
+                  <input id="recipe_featured" name="recipe_featured" type="checkbox" {% if recipe.recipe_featured == 'on' %}checked{% endif %}>
                   <span class="lever"></span>
                   Is Featured
                 </label>
@@ -137,7 +137,7 @@
         <div class="row">
             <div class="switch">
                 <label>
-                  <input id="published" name="published" type="checkbox" checked>
+                  <input id="published" name="published" type="checkbox" {% if recipe.published == 'on' %}checked{% endif %}>
                   <span class="lever"></span>
                   Published
                 </label>
