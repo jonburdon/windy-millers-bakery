@@ -10,13 +10,35 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
         <link rel="stylesheet" href="{{url_for('static', filename='/css/styles.css')}}" type="text/css" />
         
     </head>
     <body>
         <div class="container">
-        <h1>[Nav Bar to be inserted here]</h1><br>
+            <nav>
+                <div class="nav-wrapper">
+                  <a href="#!" class="brand-logo">Logo</a>
+                  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                  <ul class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Sass</a></li>
+                    <li><a href="badges.html">Components</a></li>
+                    <li><a href="collapsible.html">Javascript</a></li>
+                    <li><a href="mobile.html">Mobile</a></li>
+                  </ul>
+                </div>
+              </nav>
+            
+              <ul class="sidenav" id="mobile-demo">
+                <li><a href="sass.html">Sass</a></li>
+                <li><a href="badges.html">Components</a></li>
+                <li><a href="collapsible.html">Javascript</a></li>
+                <li><a href="mobile.html">Mobile</a></li>
+              </ul>
+
+
+        
         <ul>
             <li><A href="{{url_for('view_categories')}}">Categories</A></li>
             <li><A href="{{url_for('recipes')}}">Recipes</A></li>
@@ -44,28 +66,27 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        <script src="" async defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="" async defer>
+
+
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="static/js/isotope.pkgd.min.js"></script>
-    <script src="static/js/main.js"></script>
+        <script src="static/js/isotope.pkgd.min.js"></script>
+    
 
     <script type="text/javascript">
         $(document).ready(function() {
             $('.collapsible').collapsible();
             $('select').material_select();
             $(".button-collapse").sideNav();
+            $(".dropdown-trigger").dropdown();
+            $('.sidenav').sidenav();
+            
         });
 
-        $('.datepicker').pickadate({
-            selectMonths: true, // Creates a dropdown to control month
-            selectYears: 15, // Creates a dropdown of 15 years to control year,
-            today: 'Today',
-            clear: 'Clear',
-            close: 'Ok',
-            closeOnSelect: false // Close upon selecting a date,
-        });
+
     </script>
-
+<script src="static/js/main.js"></script>
     </body>
 </html>
