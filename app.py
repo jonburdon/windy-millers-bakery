@@ -161,7 +161,7 @@ def manage_utensils():
 @app.route('/edit_utensil/<utensil_id>')
 def edit_utensil(utensil_id):
     return render_template('edit_utensil.html',
-    category=mongo.db.utensils.find_one({'_id': ObjectId(utensil_id)}))
+    utensil=mongo.db.utensils.find_one({'_id': ObjectId(utensil_id)}))
 
 @app.route('/delete_utensil/<utensil_id>')
 def delete_utensil(utensil_id):
@@ -195,6 +195,20 @@ def insert_utensil():
     utensils = mongo.db.utensils
     utensils.insert_one(request.form.to_dict())
     return redirect(url_for('view_utensils'))
+
+@app.route('/update_utensil/<utensil_id>', methods=['POST'])
+def update_utensil(utensil_id):
+    utensil = mongo.db.utensils
+    utensil.update( {'_id': ObjectId(utensil_id)},
+    {
+        'utensil_name': request.form.get('utensil_name'),
+        'published': request.form.get('published'),
+        'utensil_description': request.form.get('utensil_description'),
+        'image_url': request.form.get('image_url'),
+        'delux_range': request.form.get('delux_range'),
+        'shop_url': request.form.get('shop_url')
+    })
+    return redirect(url_for('manage_utensils'))
 
 @app.route('/manage_archive/')
 def manage_archive():
