@@ -25,6 +25,11 @@ def recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes )
 
+@app.route('/view_recipe/<recipe_id>')
+def view_recipe(recipe_id):
+    return render_template('view_recipe.html',
+    recipe=mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)}))
+
 @app.route('/add_recipe')
 def add_recipe():
     return render_template('add_recipe.html',
@@ -34,6 +39,7 @@ def add_recipe():
 def insert_recipe():
     recipes = mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
+    
     return redirect(url_for('recipes'))
 
 @app.route('/manage_recipes/')

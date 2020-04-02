@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+
+ 
+    <h3>{{recipe.recipe_name}}</h3>
+                
+    {% if recipe.recipe_featured %}
+    <span>
+    **This is a featured recipe**
+    </span>
+    {% endif %} 
+
+<p class="{{recipe.recipe_category}}" >Serves {{recipe.recipe_serves}}. Delicious and ready in {{recipe.preparation_time}} mins.</p>
+<h4>Description:</h4>
+<p>{{recipe.recipe_description}}</p>
+<h4>Timings</h4>
+<ul>
+    <li>Oven Temperature: {{recipe.oven_temperature}}</li>
+    <li>Preparation Time: {{recipe.preparation_time}}</li>
+    <li>Cooking Time: {{recipe.cooking_time}}</li>
+</ul>
+
+<h4>Equipment:</h4>
+<p>{{recipe.utensil_list}}</p>
+<p>Why not try using our {{recipe.featured_utensil}}?</p>
+<!--<ul>
+    {% for i in range(0, recipe.Equipment | length, 1) %}
+        
+                <li >{{recipe.Equipment[i]}}</li>      
+        
+    {% endfor %}
+</ul>
+-->
+<h4>Ingredients:</h4>
+
+{{recipe.ingredient_list}}
+
+
+<h4>Method:</h4>
+<p>{{recipe.method}}</p>
+<h4>Tips: {{recipe.tips}}</h4>
+<h4>Photos:</h4>
+    <img src="{{recipe.photo_url}}" width=300> </p>
+
+    <a href="{{url_for('view_recipe', recipe_id =recipe._id)}}" class="waves-effect waves-light btn btn_small blue">View</a>
+<hr>
+        
+           
+
+
+
+
+</div>
+
+{% endblock %}

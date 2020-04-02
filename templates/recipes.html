@@ -1,52 +1,47 @@
 
 {% extends 'base.html' %} {% block content %}
 
-        {% for r in recipes %}
-            {% if r.published == 'on' %}
-                <h3>{{r.recipe_name}}</h3>
-                
-                    {% if r.recipe_featured %}
-                    <span>
-                    **This is a featured recipe**
-                    </span>
-                    {% endif %} 
-
-                <p class="{{r.recipe_category}}" >Serves {{r.recipe_serves}}. Delicious and ready in {{r.preparation_time}} mins.</p>
-                <h4>Description:</h4>
-                <p>{{r.recipe_description}}</p>
-                <h4>Timings</h4>
-                <ul>
-                    <li>Oven Temperature: {{r.oven_temperature}}</li>
-                    <li>Preparation Time: {{r.preparation_time}}</li>
-                    <li>Cooking Time: {{r.cooking_time}}</li>
-                </ul>
-                
-                <h4>Equipment:</h4>
-                <p>{{r.utensil_list}}</p>
-                <p>Why not try using our {{r.featured_utensil}}?</p>
-                <!--<ul>
-                    {% for i in range(0, r.Equipment | length, 1) %}
-                        
-                                <li >{{r.Equipment[i]}}</li>      
-                        
-                    {% endfor %}
-                </ul>
-                -->
-                <h4>Ingredients:</h4>
-
-                {{r.ingredient_list}}
+<div class="row">
 
 
-                <h4>Method:</h4>
-                <p>{{r.method}}</p>
-                <h4>Tips: {{r.tips}}</h4>
-                <h4>Photos:</h4>
-                    <img src="{{r.photo_url}}" width=300> </p>
+    {% for r in recipes %}
+    {% if r.published == 'on' %}
 
 
-                <hr>
-            {% endif %}
-        {% endfor %}
+    <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="{{r.photo_url}}">
+            <span class="card-title">{{r.recipe_name}}</span>
+          </div>
+          <div class="card-content">
+            {% if r.recipe_featured %}
+            <span>
+            **This is a featured recipe**
+            </span>
+            {% endif %} 
+
+        <p class="{{r.recipe_category}}" >Serves {{r.recipe_serves}}. Delicious and ready in {{r.preparation_time}} mins.</p>
+        
+        <p>Cooking Time: {{r.cooking_time}}</p>
+          </div>
+          <div class="card-action">
+            <a href="{{url_for('view_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn btn_small blue">View</a>
+          </div>
+        </div>
+      </div>
+        
+    {% endif %}
+{% endfor %}
+
+
+
+
+</div>
+
+
+
+
        
 
 
