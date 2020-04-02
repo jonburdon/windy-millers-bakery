@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
         <link rel="stylesheet" href="{{url_for('static', filename='/css/styles.css')}}" type="text/css" />
+        <link rel="stylesheet" href="{{url_for('static', filename='/css/hamburgers.css')}}" type="text/css" />
         
     </head>
     <body>
@@ -27,7 +28,14 @@
                     <li><a href="collapsible.html">JavaScript</a></li>
                   </ul>
                   
-                  <a class="waves-effect waves-light btn modal-trigger mobile-nav" href="#modal1">I'm a Modal</a>    
+                  
+
+                  <button class="waves-effect waves-light btn modal-trigger hamburger--spring mobile-nav" href="#modal1" type="button">
+                    <span class="hamburger-box">
+                      <span class="hamburger-inner"></span>
+                    </span>
+                  </button>
+
                 </div>
                 
               </nav>
@@ -90,10 +98,17 @@
             $('.modal').modal();
             $(".dropdown-trigger").dropdown();
             
+            var $hamburger = $(".hamburger--spring, .modal-close");
+            $hamburger.on("click", function(e) {
+                $hamburger.toggleClass("is-active");
+                // Do something else, like open/close menu
+            });
+
+
             document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
-  });
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, options);
+            });
             
         });
 
