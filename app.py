@@ -23,7 +23,8 @@ from flask import Flask, render_template, redirect, request, url_for
 @app.route('/recipes')
 def recipes():
     recipes = list(mongo.db.recipes.find())
-    return render_template("recipes.html", recipes=recipes )
+    categories=mongo.db.categories.find()
+    return render_template("recipes.html", recipes=recipes, categories=categories )
 
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):
@@ -90,7 +91,7 @@ def update_recipe(recipe_id):
         'cooking_time': request.form.get('cooking_time'),
         'tips': request.form.get('tips'),
         'photo_url': request.form.get('photo_url'),
-        'recipe_category': request.form.get('recipe_category'),
+        'category_name': request.form.get('category_name'),
         'featured_utensil': request.form.get('featured_utensil'),
         'published': request.form.get('published'),
         'recipe_featured': request.form.get('recipe_featured')

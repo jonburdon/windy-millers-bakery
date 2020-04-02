@@ -60,8 +60,8 @@
         <div class="row">
             <div class="input-field col s6">
                 <i class="material-icons prefix">poll</i>
-                <select id="featured_utensil" name="featured_utensil">
-                  <option value="" disabled selected>Featured Utensil</option>
+                <select id="featured_utensil" name="featured_utensil" selected="{{utensils.utensil_name}}" required>
+                  <option value="" disabled selected>Choose Featured Utensil</option>
               {% for ut in utensils %}
                   <option value="{{ut.utensil_name}}">{{ut.utensil_name}}</option>
               {% endfor %}
