@@ -1,15 +1,35 @@
 {% extends 'base.html' %} {% block content %}
 
+
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs filter">
+      <li class="tab col disabled"><a>Filter By :</a></li>
+      <li class="tab col "><a class="active filteroption" data-name="*">All</a></li>
+      {% for c in categories %}
+      <li class="tab col "><a class="filteroption" data-name=".{{c.category_name}}">{{c.category_name}}</a></li>
+    {% endfor %}
+
+    </ul>
+  </div>
+</div>
+
+<!--
 <div class="filter">
   <h3>Filtering</h3>
-  <button data-name="*" class="btn">All</button>
+
+
+
+  <button data-name="*" class="btn">ALL</button>
 
   {% for c in categories %}
   <button data-name=".{{c.category_name}}" class="btn">
     {{c.category_name}}
   </button>
   {% endfor %}
+
 </div>
+-->
 
 <div class="sort">
   <h3>Sorting</h3>
@@ -32,6 +52,8 @@
   </button>
   {% endfor %}
 </div>
+
+
 
 <div class="row grid-main">
   {% for r in recipes %} {% if r.published == 'on' %}

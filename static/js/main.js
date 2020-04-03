@@ -8,12 +8,12 @@ var $grid = $('.grid-main').isotope({
         cookingtime: '.cookingtime parseInt',
     }
 });
-$('.filter button').on("click", function() {
+$('.filter li .filteroption').on("click", function() {
     var value = $(this).attr('data-name');
     $grid.isotope({
         filter: value
     });
-    $('.filter button').removeClass('active');
+    $('.filter li .filteroption').removeClass('active');
     $(this).addClass('active');
 });
 $('.sort button').on("click", function() {

@@ -23,7 +23,8 @@
                 <div class="nav-wrapper">
                   <a href="#" class="brand-logo">Logo</a>
                   <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="{{url_for('recipes')}}">Recipes</a></li>
+                    
+                    <li><a href="{{url_for('recipes')}}">Home</a></li>
                     <li><a href="{{url_for('view_categories')}}">Categories</a></li>
                     <li><a href="{{url_for('view_utensils')}}">Utensils</a></li>
                     <li><a href="collapsible.html">About</a></li>
@@ -114,6 +115,7 @@
             var instances = M.Sidenav.init(elems, options);
             var elems = document.querySelectorAll('.fixed-action-btn');
             var instances = M.FloatingActionButton.init(elems, options);
+            var instance = M.Tabs.getInstance(elem);
 
             });
             
