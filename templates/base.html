@@ -22,48 +22,27 @@
             <nav>
                 <div class="nav-wrapper">
                   <a href="#!" class="brand-logo">Logo</a>
-                  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                  <a href="#" data-activates="mobile-demo" class="right button-collapse"><i class="material-icons">menu</i></a>
                   <ul class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">Javascript</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
-                  </ul>
-                  <ul class="side-nav" id="mobile-demo">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">Javascript</a></li>
-                    <li><a href="mobile.html">Mobile</a></li>
-                  </ul>
-                </div>
-              </nav>
-
-
-            
-            <nav>
-                <div class="nav-wrapper">
-                  <a href="#" class="brand-logo">Logo</a>
-                  <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    
                     <li><a href="{{url_for('recipes')}}">Home</a></li>
                     <li><a href="{{url_for('view_categories')}}">Categories</a></li>
                     <li><a href="{{url_for('view_utensils')}}">Utensils</a></li>
                     <li><a href="collapsible.html">About</a></li>
                     <li><a href="{{url_for('manage')}}">Manage</a></li>
                   </ul>
-
-
-                <span class="right modal-trigger hamburger--spring mobile-nav" href="#modal1" type="button">
-                    <span class="hamburger-box">
-                      <span class="hamburger-inner"></span>
-                    </span>
-                </span>
-
-
-
+                  <ul class="right side-nav" id="mobile-demo">
+                    <li><a href="{{url_for('recipes')}}">Home</a></li>
+                    <li><a href="{{url_for('view_categories')}}">Categories</a></li>
+                    <li><a href="{{url_for('view_utensils')}}">Utensils</a></li>
+                    <li><a href="collapsible.html">About</a></li>
+                    <li><a href="{{url_for('manage')}}">Manage</a></li>
+                  </ul>
                 </div>
-                
               </nav>
+
+
+            
+
 <!--          
         <ul>
             <li><A href="{{url_for('view_categories')}}">Categories</A></li>
@@ -80,16 +59,7 @@
 
         </ul>
 -->  
-        <!--  ** Mobile menu modal box ** -->
-        <div id="modal1" class="modal">
-          <div class="modal-content">
-            <h4>Mobile Menu</h4>
-            <p>A bunch of text</p>
-          </div>
-          <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-          </div>
-        </div>
+
         
 
 
