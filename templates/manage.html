@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col s12">
+      <ul class="tabs tabs-fixed-width">
+        <li class="tab col  disabled"><a >Manage : </a></li>
+        <li class="tab col "><a class="active" href="#test1">Recipes</a></li>
+        <li class="tab col "><a href="#test2">Categories</a></li>
+        <li class="tab col "><a href="#test3">Utensils</a></li>
+        
+      </ul>
+    </div>
+
+<!--  **  Recipe Tab content  **  -->
+    <div id="test1" class="col s12">
+
+        <ul class="collapsible" data-collapsible="accordion">
+            {% for r in manage_recipes %}   
+                {% if r.published == 'on' %}
+                    <li>
+                        <div class="collapsible-header">
+                            <a href="{{url_for('edit_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn btn_small">Edit</a>
+                            <a href="{{url_for('archive_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn btn_small blue">Archive</a>
+                            <div class=" task_header col s8">
+                                <strong>{{r.recipe_name}}</strong> 
+                            </div>
+    
+                        </div>
+                    </li>
+                 {% endif %}
+            {% endfor %}
+        </ul>
+
+        <a href="{{url_for('add_recipe')}}" class="waves-effect waves-light btn"><i class="material-icons right">playlist_add</i>Add Recipe</a>
+
+    </div>
+   
+   
+<!--  **  Categories Tab content  **  -->   
+    <div id="test2" class="col s12">
+
+        <ul class="collapsible" data-collapsible="accordion">
+            {% for category in manage_categories %}
+                {% if category.published == 'on' %}
+                    <li>
+                        <div class="collapsible-header">
+                                    <a href="{{url_for('edit_category', category_id =category._id)}}" class="waves-effect waves-light btn btn_small">Edit</a>
+                                    <a href="{{url_for('archive_category', category_id =category._id)}}" class="waves-effect waves-light btn btn_small blue">Archive</a>
+                            <div class=" task_header col s8">
+                                <strong>{{category.category_name}}</strong> 
+                            </div>
+                        </div>
+                    </li>
+               {% endif %}
+            {% endfor %}
+        </ul>
+
+        <a href="{{url_for('add_category')}}" class="waves-effect waves-light btn"><i class="material-icons right">playlist_add</i>Add Category</a>
+
+
+    </div>
+   
+   
+<!--  **  Utensils Tab content  **  -->
+    <div id="test3" class="col s12">
+        <ul class="collapsible" data-collapsible="accordion">
+            {% for utensil in manage_utensils %}
+                {% if utensil.published == 'on' %}
+                    <li>
+                        <div class="collapsible-header">
+                                    <a href="{{url_for('edit_utensil', utensil_id =utensil._id)}}" class="waves-effect waves-light btn btn_small">Edit</a>
+                                    <a href="{{url_for('archive_utensil', utensil_id =utensil._id)}}" class="waves-effect waves-light btn btn_small blue">Archive</a>
+                            <div class=" task_header col s8">
+                                <strong>{{utensil.utensil_name}}</strong> 
+                            </div>
+                        </div>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+        <a href="{{url_for('add_utensil')}}" class="waves-effect waves-light btn"><i class="material-icons right">playlist_add</i>Add Utensil</a>
+
+    </div>
+   
+   
+
+
+</div>
+
+
+
+{% endblock %}

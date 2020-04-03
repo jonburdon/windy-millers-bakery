@@ -223,6 +223,12 @@ def manage_archive():
     , manage_utensils=mongo.db.utensils.find()
     , manage_recipes=mongo.db.recipes.find())
 
+@app.route('/manage/')
+def manage():
+    return render_template('manage.html', manage_categories=mongo.db.categories.find()
+    , manage_utensils=mongo.db.utensils.find()
+    , manage_recipes=mongo.db.recipes.find())
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0',
 
