@@ -24,3 +24,11 @@ $('.sort button').on("click", function() {
     $('.sort button').removeClass('active');
     $(this).addClass('active');
 })
+
+
+// Toggle Hamburger when close / open modal
+var $hamburger = $(".hamburger--spring, .modal-close");
+$hamburger.on("click", function(e) {
+    $hamburger.toggleClass("is-active");
+    
+});

@@ -23,46 +23,42 @@
                 <div class="nav-wrapper">
                   <a href="#" class="brand-logo">Logo</a>
                   <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">JavaScript</a></li>
+                    <li><a href="{{url_for('recipes')}}">Recipes</a></li>
+                    <li><a href="{{url_for('view_categories')}}">Categories</a></li>
+                    <li><a href="{{url_for('view_utensils')}}">Utensils</a></li>
+                    <li><a href="collapsible.html">About</a></li>
+                    <li><a href="collapsible.html">Manage</a></li>
                   </ul>
-                  
-                  
 
-                  <button class="waves-effect waves-light btn modal-trigger hamburger--spring mobile-nav" href="#modal1" type="button">
+
+                <span class="right modal-trigger hamburger--spring mobile-nav" href="#modal1" type="button">
                     <span class="hamburger-box">
                       <span class="hamburger-inner"></span>
                     </span>
-                  </button>
+                </span>
 
                 </div>
                 
               </nav>
             
-              
-
-        
         <ul>
             <li><A href="{{url_for('view_categories')}}">Categories</A></li>
             <li><A href="{{url_for('recipes')}}">Recipes</A></li>
+            <li><A href="{{url_for('view_utensils')}}">Utensils</A></li>
             <li><A href="{{url_for('add_category')}}">Add Category</A></li>
             <li><A href="{{url_for('manage_categories')}}">Manage Categories</A></li>
             <li><A href="{{url_for('add_recipe')}}">Add Recipe</A></li>
             <li><A href="{{url_for('manage_recipes')}}">Manage Recipes</A></li>
-            <li><A href="{{url_for('view_utensils')}}">View Utensils</A></li>
             <li><A href="{{url_for('add_utensil')}}">Add Utensil</A></li>
             <li><A href="{{url_for('manage_utensils')}}">Manage Utensils</A></li>
             <li><A href="{{url_for('manage_archive')}}">Manage Archive</A></li>
-            
 
-            
         </ul>
         
         
         <div id="modal1" class="modal">
           <div class="modal-content">
-            <h4>Modal Header</h4>
+            <h4>Mobile Menu</h4>
             <p>A bunch of text</p>
           </div>
           <div class="modal-footer">
@@ -76,6 +72,18 @@
 
         
     </div>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red">
+          <i class="large material-icons">add</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating yellow darken-1"><i class="material-icons">settings</i></a></li>
+          <li><a class="btn-floating yellow darken-1"><i class="material-icons">local_dining</i></a></li>
+          <li><a class="btn-floating green"><i class="material-icons">create_new_folder</i></a></li>
+          <li><a class="btn-floating blue"><i class="material-icons">cake</i></a></li>
+        </ul>
+      </div>
 
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
@@ -98,16 +106,15 @@
             $('.modal').modal();
             $(".dropdown-trigger").dropdown();
             
-            var $hamburger = $(".hamburger--spring, .modal-close");
-            $hamburger.on("click", function(e) {
-                $hamburger.toggleClass("is-active");
-                // Do something else, like open/close menu
-            });
+
 
 
             document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems, options);
+            var elems = document.querySelectorAll('.fixed-action-btn');
+            var instances = M.FloatingActionButton.init(elems, options);
+
             });
             
         });

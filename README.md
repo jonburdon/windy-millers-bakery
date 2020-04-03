@@ -26,6 +26,9 @@
 
 ## Technologies used
 * HTML, CSS and Javascript programming languages
+    CSS libraries:
+    https://jonsuh.com/hamburgers/
+    Isotope https://isotope.metafizzy.co/
 * Python
 * Mongodb
 * Flask 

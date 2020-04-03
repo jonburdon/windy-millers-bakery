@@ -1,80 +1,72 @@
-
 {% extends 'base.html' %} {% block content %}
 
 <div class="filter">
-    <h3>Filtering</h3>
-    <button data-name="*" class="btn">All</button>
-    
-    {% for c in categories %}
-    <button data-name=".{{c.category_name}}" class="btn">{{c.category_name}}</button>
-    {% endfor %}
+  <h3>Filtering</h3>
+  <button data-name="*" class="btn">All</button>
 
+  {% for c in categories %}
+  <button data-name=".{{c.category_name}}" class="btn">
+    {{c.category_name}}
+  </button>
+  {% endfor %}
 </div>
 
 <div class="sort">
-    <h3>Sorting</h3>
-            <button data-name='name' class="btn btn-primary">
-                name 
-            </button>
-            <button data-name="original-order" class="btn btn-primary">
-                original
-            </button>
-            <button data-name="random" class="btn btn-primary">
-                random
-            </button>
-            <button data-name="cookingtime" class="btn btn-primary">
-                cooking time
-            </button>
-    
-    {% for c in categories %}
-    <button data-name=".{{c.category_name}}" class="btn">{{c.category_name}}</button>
-    {% endfor %}
+  <h3>Sorting</h3>
+  <button data-name="name" class="btn btn-primary">
+    name
+  </button>
+  <button data-name="original-order" class="btn btn-primary">
+    original
+  </button>
+  <button data-name="random" class="btn btn-primary">
+    random
+  </button>
+  <button data-name="cookingtime" class="btn btn-primary">
+    cooking time
+  </button>
 
+  {% for c in categories %}
+  <button data-name=".{{c.category_name}}" class="btn">
+    {{c.category_name}}
+  </button>
+  {% endfor %}
 </div>
-
 
 <div class="row grid-main">
+  {% for r in recipes %} {% if r.published == 'on' %}
 
-
-    {% for r in recipes %}
-    {% if r.published == 'on' %}
-
-
-    <div class="col s12 m6 l4 grid-item {{r.category_name}} ">
-        <div class="card ">
-          <div class="card-image">
-            <img src="{{r.photo_url}}">
-            <span class="card-title">{{r.recipe_name}}</span>
-          </div>
-          <div class="card-content">
-            {% if r.recipe_featured %}
-            <span>
-            **This is a featured recipe**
-            </span>
-            {% endif %} 
-            
-            <p>Serves {{r.recipe_serves}}. Delicious and ready in {{r.preparation_time}} mins.</p>
-            <p class="cookingtime">{{r.cooking_time}}</p>
-            <p class="name">{{r.recipe_description}}</p>
-          </div>
-          <div class="card-action">
-            <a href="{{url_for('view_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn btn_small blue">View</a>
-          </div>
-        </div>
+  <div class="col s12 m6 l4 grid-item {{r.category_name}} ">
+    <div class="card ">
+      <div class="card-image">
+        <img src="{{r.photo_url}}" />
+        <span class="card-title">{{r.recipe_name}}</span>
       </div>
-        
-    {% endif %}
-{% endfor %}
+      <div class="card-content">
+        {% if r.recipe_featured %}
+        <span>
+          **This is a featured recipe**
+        </span>
+        {% endif %}
 
+        <p>
+          Serves {{r.recipe_serves}}. Delicious and ready in
+          {{r.preparation_time}} mins.
+        </p>
+        <p class="cookingtime">{{r.cooking_time}}</p>
+        <p class="name">{{r.recipe_description}}</p>
+      </div>
+      <div class="card-action">
+        <a
+          href="{{url_for('view_recipe', recipe_id =r._id)}}"
+          class="waves-effect waves-light btn btn_small blue"
+          >View</a
+        >
+      </div>
+    </div>
+  </div>
 
-
-
+  {% endif %} {% endfor %}
 </div>
-
-
-
-
-       
-
 
 {% endblock %}
