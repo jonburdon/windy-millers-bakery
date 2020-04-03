@@ -2,7 +2,7 @@
 
 
 <div class="row">
-  <div class="col s12">
+  <div class="col s12 m10">
     <ul class="tabs filter">
       <li class="tab col disabled"><a>Filter By :</a></li>
       <li class="tab col "><a class="active filteroption" data-name="*">All</a></li>
@@ -12,46 +12,20 @@
 
     </ul>
   </div>
-</div>
-
-<!--
-<div class="filter">
-  <h3>Filtering</h3>
-
-
-
-  <button data-name="*" class="btn">ALL</button>
-
-  {% for c in categories %}
-  <button data-name=".{{c.category_name}}" class="btn">
-    {{c.category_name}}
-  </button>
-  {% endfor %}
+  <a class='col s12 m2 dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown1'>Sort By</a>
+  <!-- Dropdown Open -->
 
 </div>
--->
 
-<div class="sort">
-  <h3>Sorting</h3>
-  <button data-name="name" class="btn btn-primary">
-    name
-  </button>
-  <button data-name="original-order" class="btn btn-primary">
-    original
-  </button>
-  <button data-name="random" class="btn btn-primary">
-    random
-  </button>
-  <button data-name="cookingtime" class="btn btn-primary">
-    cooking time
-  </button>
 
-  {% for c in categories %}
-  <button data-name=".{{c.category_name}}" class="btn">
-    {{c.category_name}}
-  </button>
-  {% endfor %}
-</div>
+  
+<!-- Dropdown Structure -->
+<ul id='dropdown1' class='dropdown-content sort'>
+  <li><a href="#!" data-name="name">Name</a></li>
+  <li><a href="#!" data-name="original-order">Original</a></li>
+  <li><a href="#!" data-name="random">Random</a></li>
+  <li><a href="#!" data-name="cookingtime"><i class="material-icons">timer</i>Time</a></li>
+</ul>
 
 
 

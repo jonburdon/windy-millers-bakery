@@ -16,12 +16,14 @@ $('.filter li .filteroption').on("click", function() {
     $('.filter li .filteroption').removeClass('active');
     $(this).addClass('active');
 });
-$('.sort button').on("click", function() {
+
+
+$('.sort li a').on("click", function() {
     var value = $(this).attr('data-name');
     $grid.isotope({
         sortBy: value
     });
-    $('.sort button').removeClass('active');
+    $('.sort li a').removeClass('active');
     $(this).addClass('active');
 })
 
