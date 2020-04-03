@@ -2,67 +2,79 @@
 {% block content %}
 
 <div class="row">
+    <div class="col s12">
+      <ul class="tabs tabs-fixed-width">
+        <li class="tab col s3 disabled"><a >Manage Archived : </a></li>
+        <li class="tab col s3"><a class="active" href="#test1">Recipes</a></li>
+        <li class="tab col s3"><a href="#test2">Categories</a></li>
+        <li class="tab col s3"><a href="#test3">Utensils</a></li>
+      </ul>
+    </div>
+<!-- ** Recipe Archive Content ** -->
+    <div id="test1" class="col s12">
 
-    <h3>Archived Recipes</h3>
-
-    <ul class="collapsible" data-collapsible="accordion">
-        {% for r in manage_recipes %}   
-            {% if r.published == 'off' %}
-                <li>
-                    <div class="collapsible-header">
-                        <a href="{{url_for('delete_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn btn_small blue">Del</a>
-                        <a href="{{url_for('restore_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn btn_small blue">Restore</a>
-                        <div class=" task_header col s8">
-                            <strong>{{r.recipe_name}}</strong> 
+        <ul class="collapsible" data-collapsible="accordion">
+            {% for r in manage_recipes %}   
+                {% if r.published == 'off' %}
+                    <li>
+                        <div class="collapsible-header">
+                            <a href="{{url_for('delete_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn btn_small blue">Del</a>
+                            <a href="{{url_for('restore_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn btn_small blue">Restore</a>
+                            <div class=" task_header col s8">
+                                <strong>{{r.recipe_name}}</strong> 
+                            </div>
+    
                         </div>
+                    </li>
+                 {% endif %}
+            {% endfor %}
+        </ul>
 
-                    </div>
-                </li>
-             {% endif %}
-        {% endfor %}
-    </ul>
+    </div>
 
+<!-- ** Categories Archive Content ** -->
+    <div id="test2" class="col s12">
 
-</div>
-
-<div class="row">
-
-    <h3>Archived Categories</h3>
-    <ul class="collapsible" data-collapsible="accordion">
-        {% for category in manage_categories %}
-            {% if category.published == 'off' %}
-                <li>
-                    <div class="collapsible-header">
-                                <a href="{{url_for('delete_category', category_id =category._id)}}" class="waves-effect waves-light btn btn_small blue">Del</a>
-                                <a href="{{url_for('restore_category', category_id =category._id)}}" class="waves-effect waves-light btn btn_small blue">Restore</a>
-                        <div class=" task_header col s8">
-                            <strong>{{category.category_name}}</strong> 
+        <ul class="collapsible" data-collapsible="accordion">
+            {% for category in manage_categories %}
+                {% if category.published == 'off' %}
+                    <li>
+                        <div class="collapsible-header">
+                                    <a href="{{url_for('delete_category', category_id =category._id)}}" class="waves-effect waves-light btn btn_small blue">Del</a>
+                                    <a href="{{url_for('restore_category', category_id =category._id)}}" class="waves-effect waves-light btn btn_small blue">Restore</a>
+                            <div class=" task_header col s8">
+                                <strong>{{category.category_name}}</strong> 
+                            </div>
                         </div>
-                    </div>
-                </li>
-           {% endif %}
-        {% endfor %}
-    </ul>
-</div>
+                    </li>
+               {% endif %}
+            {% endfor %}
+        </ul>
 
-<div class="row">
+    </div>
 
-    <h3>Archived Utensils</h3>
-    <ul class="collapsible" data-collapsible="accordion">
-        {% for utensil in manage_utensils %}
-            {% if utensil.published == 'off' %}
-                <li>
-                    <div class="collapsible-header">
-                                <a href="{{url_for('delete_utensil', utensil_id =utensil._id)}}" class="waves-effect waves-light btn btn_small blue">Del *careful*</a>
-                                <a href="{{url_for('restore_utensil', utensil_id =utensil._id)}}" class="waves-effect waves-light btn btn_small blue">Restore</a>
-                        <div class=" task_header col s8">
-                            <strong>{{utensil.utensil_name}}</strong> 
+<!-- ** Utensils Archive Content ** -->
+    <div id="test3" class="col s12">
+        <ul class="collapsible" data-collapsible="accordion">
+            {% for utensil in manage_utensils %}
+                {% if utensil.published == 'off' %}
+                    <li>
+                        <div class="collapsible-header">
+                                    <a href="{{url_for('delete_utensil', utensil_id =utensil._id)}}" class="waves-effect waves-light btn btn_small blue">Del *careful*</a>
+                                    <a href="{{url_for('restore_utensil', utensil_id =utensil._id)}}" class="waves-effect waves-light btn btn_small blue">Restore</a>
+                            <div class=" task_header col s8">
+                                <strong>{{utensil.utensil_name}}</strong> 
+                            </div>
                         </div>
-                    </div>
-                </li>
-            {% endif %}
-        {% endfor %}
-    </ul>
-</div>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+    </div>
+    
+  </div>
+
+
 
 {% endblock %}
