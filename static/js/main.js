@@ -54,3 +54,27 @@ $hamburger.on("click", function(e) {
   mypos = mywindow.scrollTop();
   }); }); });
   
+
+
+
+  jQuery(document).ready(function() {
+    jQuery('.featured-two').hover(function(){     
+          jQuery('.featured-image-display').addClass('featured-item-two');
+          jQuery('.featured-image-display').removeClass('featured-item-one');
+          jQuery('.featured-image-display').removeClass('featured-item-three');     
+      },function(){    
+         jQuery('.featured-image-display').removeClass('featured-item-two');
+         jQuery('.featured-image-display').addClass('featured-item-one');     
+      });
+
+      jQuery('.featured-three').hover(function(){     
+        jQuery('.featured-image-display').addClass('featured-item-three');
+        jQuery('.featured-image-display').removeClass('featured-item-one');
+        jQuery('.featured-image-display').removeClass('featured-item-two');     
+    },function(){    
+       jQuery('.featured-image-display').removeClass('featured-item-three');
+       jQuery('.featured-image-display').addClass('featured-item-one');     
+    });
+
+
+  });
