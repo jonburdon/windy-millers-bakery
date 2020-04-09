@@ -28,13 +28,13 @@ $('.sort li a').on("click", function() {
 })
 
 
-// Toggle Hamburger when close / open modal
+/* Toggle Hamburger when close / open modal
 var $hamburger = $(".hamburger--spring, .modal-close");
 $hamburger.on("click", function(e) {
     $hamburger.toggleClass("is-active");
     
 });
-
+*/
 
 
 // Script below adapted from https://elementorcodes.com/elementor-header-show-scroll-up/
@@ -56,7 +56,7 @@ $hamburger.on("click", function(e) {
 // End of adapted snippet from https://elementorcodes.com/elementor-header-show-scroll-up/
 
 
-
+// Show and hide featured images on when associated button is hovered //
   $(document).ready(function() {
     $('.featured-utensil-button-2').hover(function(){     
           $('.featured-utensil-image-1').addClass('display-2');

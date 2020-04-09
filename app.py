@@ -160,6 +160,11 @@ def restore_category(category_id):
 def manage_categories():
     return render_template('manage_categories.html', manage_categories=mongo.db.categories.find())
 
+@app.route('/utensil/<utensil_id>')
+def utensil(utensil_id):
+    return render_template('view_utensil.html',
+    utensil=mongo.db.utensils.find_one({'_id': ObjectId(utensil_id)}))
+
 @app.route('/view_utensils/')
 def view_utensils():
     return render_template('view_utensils.html', view_utensils=mongo.db.utensils.find())

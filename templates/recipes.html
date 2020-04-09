@@ -19,7 +19,7 @@
   <div class="col s6">
     {% for u in utensils %}
       {% if loop.index < 4 %}
-        <p class="btn featured-item-button featured-utensil-button-{{loop.index}}">{{u.utensil_name}}</p>
+        <a href="{{url_for('utensil', utensil_id=u._id)}}" class="btn featured-item-button featured-utensil-button-{{loop.index}}">{{u.utensil_name}}</a>
       {% else %}
       {% endif %}
     
