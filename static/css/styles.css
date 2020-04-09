@@ -30,6 +30,17 @@
 
   ========================================================================== */
 
+.hero-header {
+ min-height: 300px;
+ background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Korb_mit_Br%C3%B6tchen.JPG/1067px-Korb_mit_Br%C3%B6tchen.JPG);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+ 
+}
+
 
 nav {
 

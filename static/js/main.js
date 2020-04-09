@@ -34,3 +34,23 @@ $hamburger.on("click", function(e) {
     $hamburger.toggleClass("is-active");
     
 });
+
+
+
+<!-- Script below adapted from https://elementorcodes.com/elementor-header-show-scroll-up/ -->
+
+  document.addEventListener('DOMContentLoaded', function() {
+  jQuery(function($){
+  var mywindow = $(window);
+  var mypos = mywindow.scrollTop();
+  mywindow.scroll(function() {
+  if (mypos > 120) {
+  if(mywindow.scrollTop() > mypos) {
+  $('#stickyheaders').addClass('headerup');
+  } else {
+  $('#stickyheaders').removeClass('headerup');
+  }
+  }
+  mypos = mywindow.scrollTop();
+  }); }); });
+  
