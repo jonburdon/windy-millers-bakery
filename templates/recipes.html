@@ -2,6 +2,10 @@
 
 
 <div class="row">
+
+
+        
+
 <h1>Recipes</h1>
   <div class="col s12 m10">
     <ul class="tabs filter">
@@ -10,11 +14,13 @@
       {% for c in categories %}
       <li class="tab col "><a class="filteroption" data-name=".{{c.category_name}}">{{c.category_name}}</a></li>
     {% endfor %}
-
+   
     </ul>
+    
+    
   </div>
-  <a class='col s12 m2 dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown1'>Sort By</a>
   <!-- Dropdown Open -->
+  <a class='right col s12 m2 dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown1'>Sort By</a>
 
 </div>
 

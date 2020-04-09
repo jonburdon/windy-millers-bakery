@@ -30,6 +30,18 @@
 
   ========================================================================== */
 
+
+nav {
+
+  padding-right: 40px;
+  padding-left: 40px;
+
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
   @media (min-width: 1000px) {
     .mobile-nav {
       display:none;

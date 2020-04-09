@@ -17,28 +17,32 @@
         
     </head>
     <body>
+
+      <nav>
+        <div class="nav-wrapper cabbages">
+          <a href="#!" class="brand-logo">Logo</a>
+          <a href="#" data-activates="mobile-demo" class="right button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="{{url_for('recipes')}}">Home</a></li>
+            <li><a href="{{url_for('view_categories')}}">Categories</a></li>
+            <li><a href="{{url_for('view_utensils')}}">Utensils</a></li>
+            <li><a href="collapsible.html">About</a></li>
+            <li><a href="{{url_for('manage')}}">Manage</a></li>
+          </ul>
+          <ul class="right side-nav" id="mobile-demo">
+            <li><a href="{{url_for('recipes')}}">Home</a></li>
+            <li><a href="{{url_for('view_categories')}}">Categories</a></li>
+            <li><a href="{{url_for('view_utensils')}}">Utensils</a></li>
+            <li><a href="collapsible.html">About</a></li>
+            <li><a href="{{url_for('manage')}}">Manage</a></li>
+          </ul>
+        </div>
+      </nav>
+
+
         <div class="container">
 
-            <nav>
-                <div class="nav-wrapper">
-                  <a href="#!" class="brand-logo">Logo</a>
-                  <a href="#" data-activates="mobile-demo" class="right button-collapse"><i class="material-icons">menu</i></a>
-                  <ul class="right hide-on-med-and-down">
-                    <li><a href="{{url_for('recipes')}}">Home</a></li>
-                    <li><a href="{{url_for('view_categories')}}">Categories</a></li>
-                    <li><a href="{{url_for('view_utensils')}}">Utensils</a></li>
-                    <li><a href="collapsible.html">About</a></li>
-                    <li><a href="{{url_for('manage')}}">Manage</a></li>
-                  </ul>
-                  <ul class="right side-nav" id="mobile-demo">
-                    <li><a href="{{url_for('recipes')}}">Home</a></li>
-                    <li><a href="{{url_for('view_categories')}}">Categories</a></li>
-                    <li><a href="{{url_for('view_utensils')}}">Utensils</a></li>
-                    <li><a href="collapsible.html">About</a></li>
-                    <li><a href="{{url_for('manage')}}">Manage</a></li>
-                  </ul>
-                </div>
-              </nav>
+
 
 
             
@@ -129,6 +133,7 @@
             $('select').material_select();
             $('.modal').modal();
             $(".button-collapse").sideNav();
+            $('.carousel.carousel-slider').carousel({fullWidth: true});
             
             document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.sidenav');

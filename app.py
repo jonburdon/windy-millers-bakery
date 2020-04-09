@@ -24,7 +24,8 @@ from flask import Flask, render_template, redirect, request, url_for
 def recipes():
     recipes = list(mongo.db.recipes.find())
     categories=mongo.db.categories.find()
-    return render_template("recipes.html", recipes=recipes, categories=categories )
+    utensils=mongo.db.utensils.find()
+    return render_template("recipes.html", recipes=recipes, categories=categories, utensils=utensils )
 
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):
