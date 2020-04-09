@@ -58,22 +58,28 @@ $hamburger.on("click", function(e) {
 
 
   $(document).ready(function() {
-    $('.featured-two').hover(function(){     
-          $('.featured-image-display').addClass('featured-item-two');
-          $('.featured-image-display').removeClass('featured-item-one');
-          $('.featured-image-display').removeClass('featured-item-three');     
+    $('.featured-utensil-button-2').hover(function(){     
+          $('.featured-utensil-image-1').addClass('display-2');
+          $('.featured-utensil-image-1').removeClass('display-1');
+          $('.featured-utensil-image-2').removeClass('display-2');
+          $('.featured-utensil-image-2').addClass('display-1');
       },function(){    
-         $('.featured-image-display').removeClass('featured-item-two');
-         $('.featured-image-display').addClass('featured-item-one');     
+         $('.featured-utensil-image-2').addClass('display-2');
+         $('.featured-utensil-image-2').removeClass('display-1');
+         $('.featured-utensil-image-1').addClass('display-1');
+         $('.featured-utensil-image-1').removeClass('display-2');     
       });
 
-      $('.featured-three').hover(function(){     
-        $('.featured-image-display').addClass('featured-item-three');
-        $('.featured-image-display').removeClass('featured-item-one');
-        $('.featured-image-display').removeClass('featured-item-two');     
+      $('.featured-utensil-button-3').hover(function(){     
+        $('.featured-utensil-image-1').addClass('display-2');
+        $('.featured-utensil-image-1').removeClass('display-1');
+        $('.featured-utensil-image-3').removeClass('display-3');
+        $('.featured-utensil-image-3').addClass('display-1');
     },function(){    
-       $('.featured-image-display').removeClass('featured-item-three');
-       $('.featured-image-display').addClass('featured-item-one');     
+       $('.featured-utensil-image-3').addClass('display-3');
+       $('.featured-utensil-image-3').removeClass('display-1');
+       $('.featured-utensil-image-1').addClass('display-1');
+       $('.featured-utensil-image-1').removeClass('display-2');     
     });
 
 

@@ -73,17 +73,18 @@
   background-position: center;
 }
 
-.featured-item-one {
-  background: url(https://upload.wikimedia.org/wikipedia/commons/3/39/Breadindia.jpg);
+.display-1 {
+  display: block;
 }
 
-.featured-item-two {
-  background: url(https://upload.wikimedia.org/wikipedia/commons/4/45/Strucla_sweet_bread02.jpg);
+.display-2 {
+  display:none;
 }
 
-.featured-item-three {
-  background: url(https://upload.wikimedia.org/wikipedia/commons/e/ea/Essene_Bread_Spelt_Sproud_cut.JPG);
+.display-3 {
+  display:none;
 }
+
 
 nav {
 
