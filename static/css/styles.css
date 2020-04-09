@@ -42,6 +42,16 @@ nav {
   z-index: 10;
 }
 
+#stickyheaders{
+  -webkit-transition: transform 0.34s ease;
+  transition : transform 0.34s ease;
+  }
+  .headerup{
+  transform: translateY(-110px); /*adjust this value to the height of your header*/
+  }
+
+
+
   @media (min-width: 1000px) {
     .mobile-nav {
       display:none;

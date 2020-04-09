@@ -18,7 +18,7 @@
     </head>
     <body>
 
-      <nav>
+      <nav id="stickyheaders">
         <div class="nav-wrapper cabbages">
           <a href="#!" class="brand-logo">Logo</a>
           <a href="#" data-activates="mobile-demo" class="right button-collapse"><i class="material-icons">menu</i></a>
@@ -150,6 +150,27 @@
 
 
     </script>
+<!-- Script below adapted from https://elementorcodes.com/elementor-header-show-scroll-up/ -->
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+  jQuery(function($){
+  var mywindow = $(window);
+  var mypos = mywindow.scrollTop();
+  mywindow.scroll(function() {
+  if (mypos > 80) {
+  if(mywindow.scrollTop() > mypos) {
+  $('#stickyheaders').addClass('headerup');
+  } else {
+  $('#stickyheaders').removeClass('headerup');
+  }
+  }
+  mypos = mywindow.scrollTop();
+  }); }); });
+  
+  </script>
+
+
 
     </body>
 </html>
