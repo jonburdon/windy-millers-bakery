@@ -37,7 +37,7 @@ $hamburger.on("click", function(e) {
 
 
 
-<!-- Script below adapted from https://elementorcodes.com/elementor-header-show-scroll-up/ -->
+// Script below adapted from https://elementorcodes.com/elementor-header-show-scroll-up/
 
   document.addEventListener('DOMContentLoaded', function() {
   jQuery(function($){
@@ -53,27 +53,27 @@ $hamburger.on("click", function(e) {
   }
   mypos = mywindow.scrollTop();
   }); }); });
-  
+// End of adapted snippet from https://elementorcodes.com/elementor-header-show-scroll-up/
 
 
 
-  jQuery(document).ready(function() {
-    jQuery('.featured-two').hover(function(){     
-          jQuery('.featured-image-display').addClass('featured-item-two');
-          jQuery('.featured-image-display').removeClass('featured-item-one');
-          jQuery('.featured-image-display').removeClass('featured-item-three');     
+  $(document).ready(function() {
+    $('.featured-two').hover(function(){     
+          $('.featured-image-display').addClass('featured-item-two');
+          $('.featured-image-display').removeClass('featured-item-one');
+          $('.featured-image-display').removeClass('featured-item-three');     
       },function(){    
-         jQuery('.featured-image-display').removeClass('featured-item-two');
-         jQuery('.featured-image-display').addClass('featured-item-one');     
+         $('.featured-image-display').removeClass('featured-item-two');
+         $('.featured-image-display').addClass('featured-item-one');     
       });
 
-      jQuery('.featured-three').hover(function(){     
-        jQuery('.featured-image-display').addClass('featured-item-three');
-        jQuery('.featured-image-display').removeClass('featured-item-one');
-        jQuery('.featured-image-display').removeClass('featured-item-two');     
+      $('.featured-three').hover(function(){     
+        $('.featured-image-display').addClass('featured-item-three');
+        $('.featured-image-display').removeClass('featured-item-one');
+        $('.featured-image-display').removeClass('featured-item-two');     
     },function(){    
-       jQuery('.featured-image-display').removeClass('featured-item-three');
-       jQuery('.featured-image-display').addClass('featured-item-one');     
+       $('.featured-image-display').removeClass('featured-item-three');
+       $('.featured-image-display').addClass('featured-item-one');     
     });
 
 

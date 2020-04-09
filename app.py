@@ -25,7 +25,9 @@ def recipes():
     recipes = list(mongo.db.recipes.find())
     categories=mongo.db.categories.find()
     utensils=mongo.db.utensils.find()
-    return render_template("recipes.html", recipes=recipes, categories=categories, utensils=utensils )
+    utensils2=mongo.db.utensils.find()
+    utensil3=["one", "two", "three"]
+    return render_template("recipes.html", recipes=recipes, categories=categories, utensils=utensils, utensils2=utensils2 )
 
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):

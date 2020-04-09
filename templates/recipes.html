@@ -1,5 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 
+<head>
+
+
+</head>
+
 <div class="hero-header valign-wrapper center-align">
   <div class="row">
     <h1 class="col s12 main-site-title">Windy Miller's Bakery</h1>
@@ -12,23 +17,35 @@
 <div class="row featured-area valign-wrapper ">
 
   <div class="col s6">
-    <p class="btn featured-item-button featured-one">Featured Item 1</p>
-    <p class="btn featured-item-button featured-two">Featured Item 2</p>
-    <p class="btn featured-item-button featured-three">Featured Item 3</p>
+    {% for u in utensils %}
+      {% if loop.index < 4 %}
+        <p class="btn featured-item-button featured-utensil-button-{{loop.index}}">{{u.utensil_name}}</p>
+      {% else %}
+      {% endif %}
     
-
-  </div>
-  <div class="col s6 featured-image-display featured-item-one">
-    
+    {% endfor %}
 
   </div>
   
+  <div class="col s6">
+    {% for u in utensils2 %}
+      {% if loop.index < 4 %}
+         <img class="featured-utensil-image-{{loop.index}}" src="{{u.image_url}}" width=100 height=100>
+      {% else %}
+      {% endif %}
+    {%endfor%}
+
+  </div>
+
 
 </div>
 
 <div class="row">
 
+  <div class="col s6 featured-image-display featured-item-one">
+    
 
+  </div>
         
 
 <h1>Recipes</h1>
@@ -99,3 +116,7 @@
 
 {% endblock %}
 </div>
+
+<script>
+
+</script>
