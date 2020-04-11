@@ -60,7 +60,7 @@ Duck egg blue - #c3e7e7 - background colour for featured content - purpose is to
 
 :root {
 
---dark-brown: #a19a82;
+--dark-brown: #796b55;
 --off-white: #eeefe6;
 --medium-brown: #a19a82;
 --medium-blue1: #b9cac0;
@@ -80,6 +80,10 @@ background-color: var(--dark-background);
 
 .light-section {
   background-color: var(--medium-blue1);
+  color: var(--dark-brown);
+}
+.light-section h3 {
+  color: var(--dark-brown);
 }
 
 .medium-section-brown {
@@ -96,9 +100,6 @@ background-color: var(--dark-background);
 }
 
 
-body {
-  font-family: 'Lato', sans-serif;
-}
 
 h1, h2, h3, h4 {
   font-family: 'Lato', sans-serif;
