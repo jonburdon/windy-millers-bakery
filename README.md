@@ -218,3 +218,18 @@ Paste in connection string
 Create an instance of pymongo, add app with constructor method.
 
     mongo = Pymongo(app)
+
+
+
+    ## Known issues:
+
+Featured recipes stat count displayed archived and unarchived featured recipes. When the $and operator is used with the following syntax, the error code here is displayed:  Error : TypeError: string indices must be integers
+
+    { "$and"
+[
+{"recipe_featured": { "$in": ["on"]}}
+,
+{"published": { "$in": ["on"]}}
+]
+
+}

@@ -1,9 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<head>
 
-
-</head>
 
 <div class="hero-header valign-wrapper center-align">
   <div class="row">
@@ -12,11 +9,10 @@
 </div>
 
 <div class="container">
-  
+ <h2>Featured Utensils from the Miller Utensil Range</h2> 
+<div class="row content-section featured-area valign-wrapper">
 
-<div class="row featured-area valign-wrapper ">
-
-  <div class="col s6">
+  <div class="col s12">
     {% for u in utensils %}
       {% if loop.index < 4 %}
         <a href="{{url_for('utensil', utensil_id=u._id)}}" class="btn featured-item-button featured-utensil-button-{{loop.index}}">{{u.utensil_name}}</a>
@@ -26,20 +22,16 @@
     {% endfor %}
 
   </div>
-  
  
     {% for u in utensils2 %}
       {% if loop.index < 4 %}
       <div class="featured-image-display featured-utensil-image-{{loop.index}} display-{{loop.index}} 
-        col s6" style="background: url({{u.image_url}});">
+        col s12" style="background: url({{u.image_url}});">
       </div>  
       {% else %}
       {% endif %}
       
     {%endfor%}
-
-  
-
 
 </div>
 
@@ -48,7 +40,7 @@
 
         
 
-<h1>Recipes</h1>
+<h2>Recipes</h2>
   <div class="col s12 m10">
     <ul class="tabs filter">
       <li class="tab col disabled"><a>Filter By :</a></li>
@@ -113,9 +105,10 @@
 
   {% endif %} {% endfor %}
 </div>
+</div>
 
 {% endblock %}
-</div>
+
 
 <script>
 

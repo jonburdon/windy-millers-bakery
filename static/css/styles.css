@@ -56,12 +56,21 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+.content-section {
+  
+  margin-top: 80px;
+  margin-bottom: 80px;
+  
+}
+
 .featured-area {
   height: 300px;
 }
 
 .featured-item-button {
   display:block;
+  margin-top: 10px;
+  
 }
 
 .featured-image-display {
