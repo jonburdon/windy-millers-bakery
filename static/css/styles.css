@@ -91,14 +91,19 @@ body {
   color: var(--dark-brown);
 }
 
-.medium-section-blue {
-
-}
-
 .highlight-section {
-
-
+  background-color: var(--highlight-blue);
+  color: var(--dark-brown);
 }
+
+.highlight-section btn {
+  background-color: var(--medium-blue2);
+}
+
+.medium-section-blue {
+  
+}
+
 
 
 
