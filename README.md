@@ -5,6 +5,59 @@
 
 [View Site on Heroku](https://windy-miller.herokuapp.com/)
 
+
+INDEX:
+Project Aims and Minimum Requirements
+Developer Aims
+Technologies Used
+User Stories
+
+
+
+Design
+
+Wireframes
+
+Features of the Project
+
+Current Features
+
+Planned Features
+
+Technologies Used
+
+Languages
+
+Libraries
+
+Tools
+
+Hosting
+
+Testing
+
+Testing Introduction, Code Validation, Responsiveness and Rendering, Browser Compatibility, Features Testing, Unit Testing
+
+Deployment, Deployment to Heroku, Local Deployment
+
+Credits - Content, Media, Acknowledgements
+
+Workflow and Project Process
+Agree specification for Project with (fictitous client)
+    Site Structure
+    Header
+    Footer
+    Minimum Functions
+    Nice to have Functions
+
+Working Process:
+CRUD Operations Stage
+Integrating Frameworks - Materialize, Isotope, AOS
+Customised Front End
+Content Migration
+Final enhancements
+
+
 ## Project Aims / Minimum Requirements:
 
 1. Data handling: Build a MongoDB-backed Flask project for a web application that allows users to store and manipulate data records about a particular domain.
@@ -219,9 +272,24 @@ Create an instance of pymongo, add app with constructor method.
 
     mongo = Pymongo(app)
 
+## Reference Sites
+
+### Technical
+https://caniuse.com/
+https://css-tricks.com/
+https://docs.mongodb.com/manual/reference/
 
 
-    ## Known issues:
+
+## Colour Palette:
+The following image was used for colour palette inspiration:
+https://www.pinterest.co.uk/pin/524880531556508076/
+The website https://imagecolorpicker.com/en/ was used to autogenerate a wider range of colour codes from the original reference image.
+
+## Design
+Reference was taken from Doves Farm for inspiration
+
+## Known issues:
 
 Featured recipes stat count displayed archived and unarchived featured recipes. When the $and operator is used with the following syntax, the error code here is displayed:  Error : TypeError: string indices must be integers
 
