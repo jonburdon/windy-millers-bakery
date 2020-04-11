@@ -27,10 +27,18 @@ def recipes():
     utensils=mongo.db.utensils.find()
     utensils2=mongo.db.utensils.find()
     utensil3=["one", "two", "three"]
-    return render_template("recipes.html", recipes=recipes, categories=categories, utensils=utensils, utensils2=utensils2 )
+    return render_template("recipes.html", recipes=recipes, categories=categories, utensils=utensils, utensils2=utensils2, 
+    recipecount=mongo.db.recipes.count_documents({"published": { "$in": ["on"]}})
+    , featuredrecipes=mongo.db.recipes.count_documents(
+                    {"recipe_featured": { "$in": ["on"]}}
+        )
+    , recipecategories=mongo.db.categories.count_documents({"published": { "$in": ["on"]}})
+    
+    )
 
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):
+    
     return render_template('view_recipe.html',
     recipe=mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)}), 
     recipecount=mongo.db.recipes.count_documents({"published": { "$in": ["on"]}})

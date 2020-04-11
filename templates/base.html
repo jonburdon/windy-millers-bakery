@@ -39,13 +39,7 @@
         </div>
       </nav>
 
-
-        
-
-
-
-
-            
+      
 
 <!--          
         <ul>
@@ -64,16 +58,9 @@
         </ul>
 -->  
 
-        
-
-
         {% block content %} {% endblock %}
 
 
-        
-    
-
-    
 
     <div class="fixed-action-btn">
         <a class="btn-floating btn-large red">
@@ -86,12 +73,58 @@
           <li><a class="btn-floating blue" href="{{url_for('add_recipe')}}"><i class="material-icons">cake</i></a></li>
         </ul>
       </div>
+      
+      
+      <footer class="content-section light-section padded-wide-section">
+        
+        <div class="row">
+          <div class="col s12">
+            <h3 class="white-text">Our Growing Collection of recipes contains: </h3>
+          </div>
+
+        </div>
+
+        <div class="row ">
+          <div class="col l4 s12 content-200">
+                
+            <p class="center-align">Recipe Count: </p>
+            <h4 class="featured-stat center-align">{{recipecount}}</h4>
+            
+            
+          </div>
+
+          <div class="col l4 s12">
+                
+            <p class="center-align">Featured Recipes: </p>
+            <h4 class="featured-stat center-align">{{featuredrecipes}}</h4>
+            
+            
+          </div>
+
+          <div class="col l4 s12">
+    
+            <p class="center-align">Categories: </p>
+            <h4 class="featured-stat center-align">{{recipecategories}}</h4>
+            
+           </div>
+
+        </div>
+
+
+
+      </div>
+    
+      
+    </footer>
+
 
       <footer class="page-footer">
         
           <div class="row">
             <div class="col l6 s12">
               <h5 class="white-text">Footer Content</h5>
+                  
+
               <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
             </div>
             <div class="col l4 offset-l2 s12">

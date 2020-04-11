@@ -25,9 +25,12 @@
  
     {% for u in utensils2 %}
       {% if loop.index < 4 %}
-      <div class="featured-image-display featured-utensil-image-{{loop.index}} display-{{loop.index}} 
-        col s12" style="background: url({{u.image_url}});">
+      
+      <div class="hoverable featured-image-display featured-utensil-image-{{loop.index}} display-{{loop.index}} 
+        col s12 valign-wrapper" >
+       <a href="{{url_for('utensil', utensil_id=u._id)}}"> <img src="{{u.image_url}}" width=100%></a>
       </div>  
+    
       {% else %}
       {% endif %}
       
