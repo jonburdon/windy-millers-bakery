@@ -4,12 +4,12 @@
 
 <div class="hero-header valign-wrapper center-align">
   <div class="row">
-    <h1 class="col s12 main-site-title">Windy Miller's Bakery</h1>
+    <h1 class="col s12" id="main-site-title">Windy Miller's Bakery</h1>
   </div>
 </div>
 
-<div class="container">
- <h2>Featured Utensils from the Miller Utensil Range</h2> 
+<div class="container ">
+ <h2 class="content-section">Featured Utensils from the Miller Utensil Range</h2> 
 <div class="row content-section featured-area valign-wrapper">
 
   <div class="col s12">
@@ -43,7 +43,7 @@
 
         
 
-<h2>Recipes</h2>
+<h2 class="content-section">Windy Miller's Recipes</h2>
   <div class="col s12 m10">
     <ul class="tabs filter">
       <li class="tab col disabled"><a>Filter By :</a></li>
@@ -80,7 +80,7 @@
     <div class="card ">
       <div class="card-image">
         <img src="{{r.photo_url}}" />
-        <span class="card-title">{{r.recipe_name}}</span>
+        <h4 class="card-title">{{r.recipe_name}}</h4>
       </div>
       <div class="card-content">
         {% if r.recipe_featured %}
@@ -94,7 +94,7 @@
           {{r.preparation_time}} mins.
         </p>
         <p class="cookingtime">{{r.cooking_time}}</p>
-        <p class="name">{{r.recipe_description}}</p>
+        <p class="name ">{{r.recipe_description}}</p>
       </div>
       <div class="card-action">
         <a
