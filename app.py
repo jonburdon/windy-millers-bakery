@@ -32,7 +32,10 @@ def recipes():
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):
     return render_template('view_recipe.html',
-    recipe=mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)}), recipecount=mongo.db.recipes.count())
+    recipe=mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)}), 
+    recipecount=mongo.db.recipes.count(),
+    featuredrecipes=mongo.db.recipes.count({recipe_featured: { $in: ["on"]}})
+    )
     
 
 @app.route('/add_recipe')
