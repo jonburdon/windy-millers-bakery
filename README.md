@@ -301,3 +301,7 @@ Featured recipes stat count displayed archived and unarchived featured recipes. 
 ]
 
 }
+
+Compatibility issues:
+https://jonsuh.com/hamburgers/
+https://michalsnik.github.io/aos/

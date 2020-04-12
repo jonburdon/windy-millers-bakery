@@ -96,9 +96,7 @@ body {
   color: var(--dark-brown);
 }
 
-.highlight-section btn {
-  background-color: var(--medium-blue2);
-}
+
 
 .medium-section-blue {
   
@@ -202,7 +200,9 @@ nav {
  }
  
 
- 
+ .full-width {
+   padding: 50px;
+ }
  
  .padded-wide-section {
    padding:  80px 200px;
