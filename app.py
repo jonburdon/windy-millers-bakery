@@ -38,6 +38,17 @@ def recipes():
 
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):
+    i= 0
+    all_recipes = mongo.db.recipes.find()
+    for recipe in all_recipes:
+        for r in recipe:
+            print(r)
+            #print(recipe.preparation_time)
+            #if recipe.preparation_time <= 15:
+            #    i+=1
+            #print(recipe)
+        print(i)
+   
     
     return render_template('view_recipe.html',
     recipe=mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)}), 
@@ -46,8 +57,9 @@ def view_recipe(recipe_id):
                     {"recipe_featured": { "$in": ["on"]}}
         )
     , recipecategories=mongo.db.categories.count_documents({"published": { "$in": ["on"]}})
-    #,
-    #quickrecipes=mongo.db.recipes.count_documents({"int(preparation_time)": { "$lt": [15]}})
+    ,
+    quickrecipes=mongo.db.recipes.count_documents({"preparation_time": { "$lt": 15}})
+    
     
     )
     
