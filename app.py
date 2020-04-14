@@ -42,11 +42,19 @@ def view_recipe(recipe_id):
     all_recipes = mongo.db.recipes.find()
     for recipe in all_recipes:
         for r in recipe:
-            print(r)
-            #print(recipe.preparation_time)
-            #if recipe.preparation_time <= 15:
-            #    i+=1
-            #print(recipe)
+ 
+            #if recipe[r] ==12:
+            if r == "preparation_time":
+                print(r)
+                bob = (recipe[r])
+                print(recipe[r])
+                print("Bob is...")
+                print(bob)
+                #if int(bob) == 12:
+                #    print ("That was 12")
+                #    i +=1
+                #    print (i)
+                
         print(i)
    
     
