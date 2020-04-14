@@ -71,7 +71,7 @@ Duck egg blue - #c3e7e7 - background colour for featured content - purpose is to
 
 body {
   font-family: 'Lato', sans-serif;
-  background-color: #eeefe6;
+  background-color: var(--off-white);
 }
 
 .dark-section {
@@ -79,21 +79,21 @@ body {
 }
 
 .light-section {
-  background-color: #b9cac0;
-  color: #796b55;
+  background-color: var(--medium-blue1);
+  color: var(--dark-brown);
 }
 .light-section h3 {
-  color: #796b55;
+  color: var(--dark-brown);
 }
 
 .medium-section-brown {
-  background-color: #a19a82;
-  color: #796b55;
+  background-color: var(--medium-brown);
+  color: var(--dark-brown);
 }
 
 .highlight-section {
   background-color: #c3e7e7;
-  color: #796b55;
+  color: var(--dark-brown);
 }
 
 
@@ -132,7 +132,7 @@ margin-top: 20px;
 
 .stats-icon {
   font-size:60pt;
-  color: #a19a82;
+  color: var(--medium-brown);
   margin-right: -40px;
   
 }

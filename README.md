@@ -289,6 +289,13 @@ The website https://imagecolorpicker.com/en/ was used to autogenerate a wider ra
 ## Design
 Reference was taken from Doves Farm for inspiration
 
+## Testing
+
+During testing cross browser issues were discovered with the following libraries. They were therefore not used:
+Css variables
+https://jonsuh.com/hamburgers/
+https://michalsnik.github.io/aos/
+
 ## Known issues:
 
 Featured recipes stat count displayed archived and unarchived featured recipes. When the $and operator is used with the following syntax, the error code here is displayed:  Error : TypeError: string indices must be integers
@@ -302,6 +309,3 @@ Featured recipes stat count displayed archived and unarchived featured recipes. 
 
 }
 
-Compatibility issues:
-https://jonsuh.com/hamburgers/
-https://michalsnik.github.io/aos/
