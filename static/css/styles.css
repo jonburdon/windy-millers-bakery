@@ -46,7 +46,7 @@
 
 /*
 Color pallette:
-Brown: #796b55 - for main headings and text
+Dark Brown: #796b55 - for main headings and text
 Off white: #eeefe6 - used for text over images. Use for background colour on light sections
 
 Background colouring, Highlights and Accents:
@@ -71,7 +71,7 @@ Duck egg blue - #c3e7e7 - background colour for featured content - purpose is to
 
 body {
   font-family: 'Lato', sans-serif;
-  background-color: var(--off-white);
+  background-color: #eeefe6;
 }
 
 .dark-section {
@@ -79,21 +79,21 @@ body {
 }
 
 .light-section {
-  background-color: var(--medium-blue1);
-  color: var(--dark-brown);
+  background-color: #b9cac0;
+  color: #796b55;
 }
 .light-section h3 {
-  color: var(--dark-brown);
+  color: #796b55;
 }
 
 .medium-section-brown {
-  background-color: var(--medium-brown);
-  color: var(--dark-brown);
+  background-color: #a19a82;
+  color: #796b55;
 }
 
 .highlight-section {
-  background-color: var(--highlight-blue);
-  color: var(--dark-brown);
+  background-color: #c3e7e7;
+  color: #796b55;
 }
 
 
@@ -132,7 +132,7 @@ margin-top: 20px;
 
 .stats-icon {
   font-size:60pt;
-  color: var(--medium-brown);
+  color: #a19a82;
   margin-right: -40px;
   
 }
