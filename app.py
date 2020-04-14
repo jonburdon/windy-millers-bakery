@@ -42,21 +42,16 @@ def view_recipe(recipe_id):
     all_recipes = mongo.db.recipes.find()
     for recipe in all_recipes:
         for r in recipe:
- 
-            #if recipe[r] ==12:
             if r == "preparation_time":
-                print(r)
-                bob = (recipe[r])
-                print(recipe[r])
-                print("Bob is...")
-                print(bob)
-                #if int(bob) == 12:
-                #    print ("That was 12")
-                #    i +=1
-                #    print (i)
-                
+                time = (recipe[r])
+                prep_time = int(time)
+                print ("Prep time:")
+                print (prep_time)
+                if prep_time < 15:
+                    print ("that was less than 15")
+                    i +=1
+        print ("Quick recipe total is:")        
         print(i)
-   
     
     return render_template('view_recipe.html',
     recipe=mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)}), 
@@ -66,8 +61,7 @@ def view_recipe(recipe_id):
         )
     , recipecategories=mongo.db.categories.count_documents({"published": { "$in": ["on"]}})
     ,
-    quickrecipes=mongo.db.recipes.count_documents({"preparation_time": { "$lt": 15}})
-    
+    quickrecipes=i
     
     )
     
