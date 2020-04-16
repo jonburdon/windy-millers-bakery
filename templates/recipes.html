@@ -49,6 +49,8 @@
         
 
 <h2 class="content-section">Windy Miller's Recipes</h2>
+
+
   <div class="col s12 m10">
     <ul class="tabs  tabs-fixed-width filter">
       <li class="tab col disabled"><a>Filter By :</a></li>
@@ -61,8 +63,8 @@
     
     
   </div>
-  <!-- Dropdown Open -->
-  <a class='right col s12 m2 dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown1'>Sort By</a>
+  <!-- Dropdown Open for sorting -->
+  <a class='right col s12 m2 dropdown-button btn waves-effect waves-light' data-beloworigin="true"  data-activates='dropdown1'>Sort By</a>
 
 </div>
 
@@ -78,7 +80,7 @@
 
 
 <!-- Main grid for recipe content -->
-<div class="row grid-main content-section">
+<div class="row grid-main content-section-sm">
   {% for r in recipes %} {% if r.published == 'on' %}
 
   <div class="col s12 m6 l4 grid-item {{r.category_name}} ">

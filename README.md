@@ -86,12 +86,12 @@ Final enhancements
 * Mongodb
 * Flask 
 * [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
-* Materialize
+* Materialize 0.100.2
 * [Bootstrap](https://getbootstrap.com/)
 * [Font Awesome](https://fontawesome.com/)
 * [Flex](http://flexboxgrid.com/) as implemented through Bootstrap 4
 * [VSCode](https://code.visualstudio.com/) Files were created locally using Visual Studio. GIT was used to push files to Github
-* [jQuery](https://jquery.com/) was used throughout, particularly to watch for events in the DOM and react accordingly.
+* [jQuery](https://jquery.com/) *** WHICH VERSION ** NB MUST MATCH ISOTOPE ** was used throughout, particularly to watch for events in the DOM and react accordingly.
 * [Popper.js](https://popper.js.org/) was loaded by Bootstrap in order to implement the collapsable navbar
 * [Git](https://git-scm.com/)
 
