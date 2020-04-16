@@ -275,6 +275,7 @@ Create an instance of pymongo, add app with constructor method.
 
 # Features of current version:
 Home Page:
+Smooth scrolling from anchor link to another position on the same page
 Content organised in to sections with appropriate mobile optimised padding
 Google icons
 css variables used throughout to enable global changes to site colour theme

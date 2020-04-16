@@ -31,13 +31,9 @@ def recipes():
                 time = (recipe[r])
                 #string to int
                 prep_time = int(time)
-                # print ("Prep time:")
-                # print (prep_time)
                 if prep_time < 15:
-                    # print ("that was less than 15")
                     i +=1
-        # print ("Quick recipe total is:")        
-        # print(i)
+        
     quickrecipes=i
     recipes = list(mongo.db.recipes.find())
     categories=mongo.db.categories.find()

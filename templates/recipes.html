@@ -98,17 +98,16 @@
                 <div class="card-image">
                     <img src="{{r.photo_url}}" />
                     <h4 class="card-title">{{r.recipe_name}}</h4>
+
                 </div>
                 <div class="card-content">
                     {% if r.recipe_featured %}
-                    <span>
-                      **This is a featured recipe**
-                      </span> {% endif %}
+                    <span class="featured-badge new badge" data-badge-caption="Featured"><i class="tiny-icon material-icons prefix ">thumb_up</i></span><br> {% endif %}
 
                     <p>
                         Serves {{r.recipe_serves}}. Delicious and ready in {{r.preparation_time}} mins.
                     </p>
-                    <p class="cookingtime">{{r.cooking_time}}</p>
+                    <p class="cookingtime"><i class="small-icon material-icons prefix ">alarm_on</i> Cooking time {{r.cooking_time}}</p>
                     <p class="name ">{{r.recipe_description}}</p>
                 </div>
                 <div class="card-action">

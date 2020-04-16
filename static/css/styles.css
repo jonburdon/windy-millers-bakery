@@ -139,6 +139,14 @@ h2 {
     font-size: 28pt;
 }
 
+.tiny-icon {
+    font-size: 8pt;
+}
+
+.small-icon {
+    font-size: 12pt;
+}
+
 #main-site-title {
     font-family: 'Lato', sans-serif;
     text-shadow: 0px 0px 12px black;
@@ -230,9 +238,9 @@ nav {
 - Content
 ============================================================================= */
 
-.hero-header {
+.hero-header,
+.hero-header-secondary {
     height: 300px;
-    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Korb_mit_Br%C3%B6tchen.JPG/1067px-Korb_mit_Br%C3%B6tchen.JPG);
     background-repeat: no-repeat;
     background-size: auto;
     background-attachment: fixed;
@@ -240,7 +248,12 @@ nav {
     background-size: cover;
 }
 
-.hero-header:after {
+.hero-header {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Korb_mit_Br%C3%B6tchen.JPG/1067px-Korb_mit_Br%C3%B6tchen.JPG);
+}
+
+.hero-header:after,
+.hero-header-secondary:after {
     position: absolute;
     content: " ";
     top: 120;
