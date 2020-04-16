@@ -272,12 +272,24 @@ Create an instance of pymongo, add app with constructor method.
 
     mongo = Pymongo(app)
 
+
+# Features of current version:
+Home Page:
+Content organised in to sections with appropriate mobile optimised padding
+Google icons
+css variables used throughout to enable global changes to site colour theme
+Grow on hover
+Animate on scroll
+Filter and Sort - controls for these are mobile optimised - ie filter tabs are only displayed on desktop view, select fields are used on mobile view
+Floating buttons for database utilities enable easy access
+
 ## Reference Sites
 
 ### Technical
 https://caniuse.com/
 https://css-tricks.com/
 https://docs.mongodb.com/manual/reference/
+https://www.w3schools.com/
 
 
 

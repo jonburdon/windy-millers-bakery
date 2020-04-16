@@ -24,8 +24,8 @@
         <div class="col s12 m6 l4 inner-box" data-aos="zoom-in" data-aos-delay="500">
 
             <h4 class="center-align ">Featured Recipes: </h4>
-            <div class="">
-                <A href="">
+            <div class="grow">
+                <A href="{{url_for('recipes')}}#recipesection">
                     <h4 class="featured-stat center-align "><i class="stats-icon material-icons prefix ">cake</i>{{featuredrecipes}}</h4>
                 </A>
             </div>
@@ -34,12 +34,12 @@
 
         </div>
 
-        <div class="col s12 m6 l4 inner-box " data-aos="zoom-in" data-aos-delay="1000">
+        <div class="col s12 m6 l4 inner-box " data-aos="zoom-in " data-aos-delay="1000 ">
 
-            <h4 class="center-align">Categories: </h4>
-            <div class="grow">
-                <A href="{{url_for('view_categories')}}">
-                    <h4 class="featured-stat center-align"><i class="stats-icon material-icons prefix">create_new_folder</i>{{recipecategories}}</h4>
+            <h4 class="center-align ">Categories: </h4>
+            <div class="grow ">
+                <A href="{{url_for( 'view_categories')}} ">
+                    <h4 class="featured-stat center-align "><i class="stats-icon material-icons prefix ">create_new_folder</i>{{recipecategories}}</h4>
                 </A>
             </div>
 
@@ -59,17 +59,17 @@
 <!-- Lower dashboard - lighter - with CTA to add a recipe -->
 
 
-<div class="light-section padded-wide-section">
+<div class="light-section padded-wide-section ">
 
 
     <div class="row ">
 
 
-        <div class="col s12 m6 l4 inner-box" data-aos="zoom-in">
+        <div class="col s12 m6 l4 inner-box " data-aos="zoom-in ">
 
             <h4 class="center-align ">Utensils: </h4>
-            <div class="grow">
-                <A href="{{url_for('view_utensils')}}">
+            <div class="grow ">
+                <A href="{{url_for( 'view_utensils')}} ">
                     <h4 class="featured-stat center-align "><i class="stats-icon material-icons prefix ">local_dining</i>{{featuredrecipes}}</h4>
                 </A>
             </div>
@@ -78,17 +78,19 @@
 
         </div>
 
-        <div class="col s12 m6 l4 inner-box " data-aos="zoom-in" data-aos-delay="500">
+        <div class="col s12 m6 l4 inner-box " data-aos="zoom-in " data-aos-delay="500 ">
 
-            <h4 class="center-align">Quick Prep Recipes: </h4>
-            <div class="">
-                <h4 class="featured-stat center-align"><i class="stats-icon material-icons prefix">alarm_on</i>{{quickrecipes}}</h4>
+            <h4 class="center-align ">Quick Prep Recipes: </h4>
+            <div class="grow">
+                <A href="{{url_for('recipes')}}#recipesection">
+                    <h4 class="featured-stat center-align "><i class="stats-icon material-icons prefix ">alarm_on</i>{{quickrecipes}}</h4>
+                </A>
             </div>
 
 
         </div>
 
-        <div data-aos="flip-left" class="col s12 m6 l4 inner-box" data-aos="zoom-in" data-aos-delay="1000">
+        <div data-aos="flip-left " class="col s12 m6 l4 inner-box " data-aos="zoom-in " data-aos-delay="1000 ">
 
             <h4 class="center-align ">Why not add your own? </h4>
             <h4 class="featured-stat center-align "><i class="grow stats-icon material-icons prefix tap-target-opener clickable-item ">add_circle</i></h4>

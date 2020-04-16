@@ -68,6 +68,13 @@ Duck egg blue - #c3e7e7 - background colour for featured content - purpose is to
     --highlight-blue: #c3e7e7;
 }
 
+
+/* Enable smooth scrolling between sections*/
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Lato', sans-serif;
     background-color: var(--off-white);
