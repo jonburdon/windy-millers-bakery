@@ -334,9 +334,17 @@ nav {
     color: var(--dark-brown);
 }
 
+
+/* Tap Target  and floating action icons*/
+
 .btn-floating i {
     background-color: var(--off-white);
     color: var(--dark-brown);
+}
+
+.tap-target {
+    background-color: var(--highlight-blue);
+    color: var(--darker-blue);
 }
 
 
