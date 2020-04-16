@@ -283,6 +283,9 @@ Grow on hover
 Animate on scroll
 Filter and Sort - controls for these are mobile optimised - ie filter tabs are only displayed on desktop view, select fields are used on mobile view
 Floating buttons for database utilities enable easy access
+Quote box
+Data dashboard
+Reuseable components - quote section and data dashboard
 
 ## Reference Sites
 

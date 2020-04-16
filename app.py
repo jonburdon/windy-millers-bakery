@@ -80,6 +80,7 @@ def view_recipe(recipe_id):
     , recipecategories=mongo.db.categories.count_documents({"published": { "$in": ["on"]}})
     ,
     quickrecipes=i
+    , recipes = list(mongo.db.recipes.find())
     
     )
     
