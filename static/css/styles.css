@@ -128,6 +128,10 @@ body {
     color: var(--dark-brown);
 }
 
+h2 {
+    font-size: 28pt;
+}
+
 #main-site-title {
     font-family: 'Lato', sans-serif;
     text-shadow: 0px 0px 12px black;
@@ -157,7 +161,7 @@ body {
 }
 
 .section-icon {
-    font-size: 200pt;
+    font-size: 120pt;
 }
 
 .highlight-section .section-icon {
@@ -169,8 +173,8 @@ body {
 }
 
 .heading-with-icon {
-    margin-top: -180px;
-    padding: 0% 20% 5%;
+    margin-top: -100px;
+    padding: 0px 20px 40px;
 }
 
 .medium-section-blue a {
@@ -396,6 +400,9 @@ nav {
 }
 
 @media (min-width: 600px) {
+    h2 {
+        font-size: 45pt;
+    }
     #vertical-align-large {
         padding-top: 50px;
     }
@@ -407,6 +414,14 @@ nav {
     }
     .dropdown-button {
         margin-bottom: 0px;
+    }
+    /* Section Headings with icons behind */
+    .section-icon {
+        font-size: 200pt;
+    }
+    .heading-with-icon {
+        margin-top: -180px;
+        padding: 0% 20% 5%;
     }
 }
 
