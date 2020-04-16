@@ -7,36 +7,40 @@
     <h1 class="col s12" id="main-site-title">Windy Miller's Bakery</h1>
   </div>
 </div>
+
 <div class="full-width highlight-section">
 <h2 class="content-section highlight-section">Featured Utensils from the Miller Utensil Range</h2> 
 
-<div class="row content-section highlight-section featured-area valign-wrapper">
-
-  <div class="col s12">
+<div class="row ">
+<div class="col s12 m6 l6 " id="vertical-align-large">
+  
     {% for u in utensils %}
-      {% if loop.index < 4 %}
-        <a href="{{url_for('utensil', utensil_id=u._id)}}" class="btn featured-item-button featured-utensil-button-{{loop.index}}">{{u.utensil_name}}</a>
-      {% else %}
-      {% endif %}
-    
-    {% endfor %}
+    {% if loop.index < 4 %}
 
-  </div>
- 
-    {% for u in utensils2 %}
-      {% if loop.index < 4 %}
-      
-      <div class="hoverable featured-image-display featured-utensil-image-{{loop.index}} display-{{loop.index}} 
-        col s12 valign-wrapper" >
-       <a href="{{url_for('utensil', utensil_id=u._id)}}"> <img src="{{u.image_url}}" width=100%></a>
-      </div>  
+      <a href="{{url_for('utensil', utensil_id=u._id)}}" class="btn featured-item-button featured-utensil-button-{{loop.index}}">{{u.utensil_name}}</a>
+
+    {% else %}
+    {% endif %}
+  {% endfor %}
+  
+</div>
+<div class="col s12 m6 l6">
+  {% for u in utensils2 %}
+  {% if loop.index < 4 %}
+    <div class="hoverable featured-image-display featured-utensil-image-{{loop.index}} display-{{loop.index}} 
+       " >
+
+     <a href="{{url_for('utensil', utensil_id=u._id)}}"> <img src="{{u.image_url}}" width=100%></a>
     
-      {% else %}
-      {% endif %}
-      
-    {%endfor%}
+    </div>  
+  
+  {% else %}
+  {% endif %}
+  {%endfor%}
+</div>
 
 </div>
+
 
 </div>
 <div class="container ">

@@ -233,6 +233,8 @@ nav {
    margin-top: 10px;
    
  }
+
+ 
  
  .featured-image-display {
    margin-top: 50px;
@@ -331,6 +333,15 @@ background-color: var(--darker-blue);
 7. MOBILE MEDIA QUERIES
 ============================================================================= */
 
+@media (min-width: 600px) {
+
+  #vertical-align-large {
+    padding-top: 50px ;
+  }
+
+}
+
+
   @media (min-width: 1000px) {
     .mobile-nav {
       display:none;
@@ -346,6 +357,11 @@ background-color: var(--darker-blue);
     .inner-box {
       margin: 0px;
     }
+
+    #vertical-align-large {
+      padding-top: 100px ;
+    }
+
   }
 
  
