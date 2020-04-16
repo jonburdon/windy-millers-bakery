@@ -173,6 +173,14 @@ body {
     padding: 0% 20% 5%;
 }
 
+.medium-section-blue a {
+    color: var(--off-white);
+}
+
+.light-section a {
+    color: var(--dark-brown);
+}
+
 
 /* =============================================================================
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -360,6 +368,17 @@ nav {
 
 .display-3 {
     display: none;
+}
+
+
+/* Animation */
+
+.grow {
+    transition: all .3s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1.3);
 }
 
 
