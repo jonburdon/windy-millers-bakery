@@ -2,48 +2,52 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
-        <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}" type="text/css" />
-        <link rel="stylesheet" href="{{url_for('static', filename='css/hamburgers.css')}}" type="text/css" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap" rel="stylesheet">
-        
-    </head>
-    <body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-      <nav id="stickyheaders" class="medium-section-brown">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/hamburgers.css')}}" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav id="stickyheaders" class="medium-section-brown">
         <div class="nav-wrapper medium-section-brown">
-          <a href="#!" class="brand-logo">Logo</a>
-          <a href="#" data-activates="mobile-demo" class="right button-collapse"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="{{url_for('recipes')}}">Home</a></li>
-            <li><a href="{{url_for('view_categories')}}">Categories</a></li>
-            <li><a href="{{url_for('view_utensils')}}">Utensils</a></li>
-            <li><a href="collapsible.html">About</a></li>
-            <li><a href="{{url_for('manage')}}">Manage</a></li>
-          </ul>
-          <ul class="right side-nav" id="mobile-demo">
-            <li><a href="{{url_for('recipes')}}">Home</a></li>
-            <li><a href="{{url_for('view_categories')}}">Categories</a></li>
-            <li><a href="{{url_for('view_utensils')}}">Utensils</a></li>
-            <li><a href="collapsible.html">About</a></li>
-            <li><a href="{{url_for('manage')}}">Manage</a></li>
-          </ul>
+            <a href="#!" class="brand-logo">Logo</a>
+            <a href="#" data-activates="mobile-demo" class="right button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{{url_for('recipes')}}">Home</a></li>
+                <li><a href="{{url_for('view_categories')}}">Categories</a></li>
+                <li><a href="{{url_for('view_utensils')}}">Utensils</a></li>
+                <li><a href="collapsible.html">About</a></li>
+                <li><a href="{{url_for('manage')}}">Manage</a></li>
+            </ul>
+            <ul class="right side-nav" id="mobile-demo">
+                <li><a href="{{url_for('recipes')}}">Home</a></li>
+                <li><a href="{{url_for('view_categories')}}">Categories</a></li>
+                <li><a href="{{url_for('view_utensils')}}">Utensils</a></li>
+                <li><a href="collapsible.html">About</a></li>
+                <li><a href="{{url_for('manage')}}">Manage</a></li>
+            </ul>
         </div>
-      </nav>
+    </nav>
 
-      
 
-<!--          
+
+    <!--          
         <ul>
             <li><A href="{{url_for('view_categories')}}">Categories</A></li>
             <li><A href="{{url_for('recipes')}}">Recipes</A></li>
@@ -58,100 +62,100 @@
             <li><A href="{{url_for('manage')}}">Manage</A></li>
 
         </ul>
--->  
+-->
 
-        {% block content %} {% endblock %}
+    {% block content %} {% endblock %}
 
 
-<!-- Floating Actions Buttons -->
-    <div class="fixed-action-btn" >
+    <!-- Floating Actions Buttons -->
+    <div class="fixed-action-btn">
 
-      
- 
+
+
 
         <a class="btn-floating btn-large red" id="menu">
-          <i class="large material-icons">add</i>
+            <i class="large material-icons">add</i>
         </a>
         <div class="tap-target" data-activates="menu">
-          <div class="tap-target-content">
-            <h5>Add your own!</h5>
-            <p>Recipes, Categories and Utensils!!</p>
-          </div>
+            <div class="tap-target-content">
+                <h5>Add your own!</h5>
+                <p>Recipes, Categories and Utensils!!</p>
+            </div>
         </div>
         <ul>
             <li><a class="btn-floating yellow darken-1" href="{{url_for('manage')}}"><i class="material-icons">settings</i></a></li>
-          <li><a class="btn-floating yellow darken-1" href="{{url_for('add_utensil')}}"><i class="material-icons">local_dining</i></a></li>
-          <li><a class="btn-floating green" href="{{url_for('add_category')}}"><i class="material-icons">create_new_folder</i></a></li>
-          <li><a class="btn-floating blue" href="{{url_for('add_recipe')}}"><i class="material-icons">cake</i></a></li>
+            <li><a class="btn-floating yellow darken-1" href="{{url_for('add_utensil')}}"><i class="material-icons">local_dining</i></a></li>
+            <li><a class="btn-floating green" href="{{url_for('add_category')}}"><i class="material-icons">create_new_folder</i></a></li>
+            <li><a class="btn-floating blue" href="{{url_for('add_recipe')}}"><i class="material-icons">cake</i></a></li>
         </ul>
 
 
 
     </div>
-<!-- End of Floating Actions Buttons -->
-<!-- Tap Target Message -->
+    <!-- End of Floating Actions Buttons -->
+    <!-- Tap Target Message -->
 
 
 
 
-      <footer class="page-footer medium-section-brown">
-        
-          <div class="row">
+    <footer class="page-footer medium-section-brown">
+
+        <div class="row">
             <div class="col l6 s12">
-              <h5 class="white-text">Footer Content</h5>
-                  
+                <h5 class="white-text">Footer Content</h5>
 
-              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
             </div>
             <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Links</h5>
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-              </ul>
+                <h5 class="white-text">Links</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
             </div>
-          </div>
+        </div>
         </div>
         <div class="footer-copyright">
-          <div class="container">
-          © 2014 Copyright Text
-          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-          </div>
-        
-      </footer>
+            <div class="container">
+                © 2014 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
 
-        <!--[if lt IE 7]>
+    </footer>
+
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
-        <script src="" async defer>
 
-
-        </script>
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-        <script src="{{url_for('static', filename='js/isotope.pkgd.min.js')}}"></script>
-        <script src="{{url_for('static', filename='js/main.js')}}"></script>
+    <script src="" async defer>
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="{{url_for('static', filename='js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
 
 
     <script type="text/javascript">
         $(document).ready(function() {
-          
+
             $('.collapsible').collapsible();
             $('select').material_select();
             $('.modal').modal();
             $(".button-collapse").sideNav();
-            $('.carousel.carousel-slider').carousel({fullWidth: true});
-            
+            $('.carousel.carousel-slider').carousel({
+                fullWidth: true
+            });
 
-            $('.tap-target-opener').click(function(){
-              $('.tap-target').tapTarget('open');
-              });
-            
-            
-            document.addEventListener('DOMContentLoaded', function() {
+
+            $('.tap-target-opener').click(function() {
+                $('.tap-target').tapTarget('open');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
             M.AutoInit();
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems, options);
@@ -161,16 +165,14 @@
             var elems = document.querySelectorAll('.dropdown-trigger');
             var elems = document.querySelectorAll('.tap-target');
             var instances = M.TapTarget.init(elems, options);
-        
-            
+
+
         });
-
-
     </script>
 
-<script>
-  
-</script>
+    <script>
+    </script>
 
-    </body>
+</body>
+
 </html>

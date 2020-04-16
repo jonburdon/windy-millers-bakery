@@ -290,7 +290,10 @@ background-color: var(--darker-blue);
   color: var(--darker-blue);
 }
 
-
+/* NB this is removed on large screens by a media query */
+.dropdown-button {
+  margin-bottom: 20px;
+}
 
 /* DROPDOWN TEXT */
 .dropdown-content li>a{
@@ -333,10 +336,26 @@ background-color: var(--darker-blue);
 7. MOBILE MEDIA QUERIES
 ============================================================================= */
 
+.medium-large-only {
+  display: none;
+}
+
 @media (min-width: 600px) {
 
   #vertical-align-large {
     padding-top: 50px ;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  .medium-large-only {
+    display: block;
+  }
+
+  .dropdown-button {
+    margin-bottom: 0px;
   }
 
 }

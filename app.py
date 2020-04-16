@@ -41,6 +41,7 @@ def recipes():
     quickrecipes=i
     recipes = list(mongo.db.recipes.find())
     categories=mongo.db.categories.find()
+    categories2=mongo.db.categories.find()
     utensils=mongo.db.utensils.find()
     utensils2=mongo.db.utensils.find()
     utensil3=["one", "two", "three"]
@@ -52,6 +53,7 @@ def recipes():
     , recipecategories=mongo.db.categories.count_documents({"published": { "$in": ["on"]}})
     , utensilcount=mongo.db.utensils.count_documents({"published": { "$in": ["on"]}})
     , quickrecipes=quickrecipes
+    ,categories2=categories2
     )
 
 @app.route('/view_recipe/<recipe_id>')

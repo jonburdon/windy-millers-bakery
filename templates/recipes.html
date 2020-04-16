@@ -3,130 +3,121 @@
 
 
 <div class="hero-header valign-wrapper center-align">
-  <div class="row">
-    <h1 class="col s12" id="main-site-title">Windy Miller's Bakery</h1>
-  </div>
+    <div class="row">
+        <h1 class="col s12" id="main-site-title">Windy Miller's Bakery</h1>
+    </div>
 </div>
 
 <div class="full-width highlight-section">
-<h2 class="content-section highlight-section">Featured Utensils from the Miller Utensil Range</h2> 
+    <h2 class="content-section highlight-section">Featured Utensils from the Miller Utensil Range</h2>
 
-<div class="row ">
-<div class="col s12 m6 l6 " id="vertical-align-large">
-  
-    {% for u in utensils %}
-    {% if loop.index < 4 %}
+    <div class="row ">
+        <div class="col s12 m6 l6 " id="vertical-align-large">
 
-      <a href="{{url_for('utensil', utensil_id=u._id)}}" class="btn featured-item-button featured-utensil-button-{{loop.index}}">{{u.utensil_name}}</a>
+            {% for u in utensils %} {% if loop.index
+            < 4 %} <a href="{{url_for('utensil', utensil_id=u._id)}}" class="btn featured-item-button featured-utensil-button-{{loop.index}}">{{u.utensil_name}}</a>
 
-    {% else %}
-    {% endif %}
-  {% endfor %}
-  
-</div>
-<div class="col s12 m6 l6">
-  {% for u in utensils2 %}
-  {% if loop.index < 4 %}
-    <div class="hoverable featured-image-display featured-utensil-image-{{loop.index}} display-{{loop.index}} 
-       " >
+                {% else %} {% endif %} {% endfor %}
 
-     <a href="{{url_for('utensil', utensil_id=u._id)}}"> <img src="{{u.image_url}}" width=100%></a>
-    
-    </div>  
-  
-  {% else %}
-  {% endif %}
-  {%endfor%}
-</div>
+        </div>
+        <div class="col s12 m6 l6">
+            {% for u in utensils2 %} {% if loop.index
+            < 4 %} <div class="hoverable featured-image-display featured-utensil-image-{{loop.index}} display-{{loop.index}} 
+       ">
+
+                <a href="{{url_for('utensil', utensil_id=u._id)}}"> <img src="{{u.image_url}}" height=100% width=100%></a>
+
+        </div>
+
+        {% else %} {% endif %} {%endfor%}
+    </div>
 
 </div>
 
 
 </div>
 <div class="container ">
- 
+
+    <div class="row">
+
+        <h2 class="content-section">Windy Miller's Recipes</h2>
 
 
-<div class="row">
+        <div class="col s12 m10 medium-large-only">
+            <ul class="tabs  tabs-fixed-width filter">
+                <li class="tab col disabled"><a>Filter By :</a></li>
+                <li class="tab col "><a class="active filteroption" data-name="*">All</a></li>
+                {% for c in categories %}
+                <li class="tab col "><a class="filteroption" data-name=".{{c.category_name}}">{{c.category_name}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
 
+        <!-- Dropdown Open for sorting -->
+        <a class='right col s12 m2 dropdown-button btn waves-effect waves-light' data-beloworigin="true" data-activates='dropdown1'>Sort By</a>
 
-        
+        <!-- Dropdown Open for FILTERING - *MOBILE ONLY* -->
+        <a class='right col s12 m2 mobile-only dropdown-button btn waves-effect waves-light' data-beloworigin="true" data-activates='dropdown2'>Filter By</a>
 
-<h2 class="content-section">Windy Miller's Recipes</h2>
+    </div>
 
-
-  <div class="col s12 m10">
-    <ul class="tabs  tabs-fixed-width filter">
-      <li class="tab col disabled"><a>Filter By :</a></li>
-      <li class="tab col "><a class="active filteroption" data-name="*">All</a></li>
-      {% for c in categories %}
-      <li class="tab col "><a class="filteroption" data-name=".{{c.category_name}}">{{c.category_name}}</a></li>
-    {% endfor %}
-   
+    <!-- Dropdown Structure for sorting-->
+    <ul id='dropdown1' class='dropdown-content sort'>
+        <li><a href="#!" data-name="name">Name</a></li>
+        <li><a href="#!" data-name="original-order">Original</a></li>
+        <li><a href="#!" data-name="random">Random</a></li>
+        <li><a href="#!" data-name="cookingtime"><i class="material-icons">timer</i>Time</a></li>
     </ul>
-    
-    
-  </div>
-  <!-- Dropdown Open for sorting -->
-  <a class='right col s12 m2 dropdown-button btn waves-effect waves-light' data-beloworigin="true"  data-activates='dropdown1'>Sort By</a>
+
+    <!-- Dropdown Structure for sorting *MOBILE ONLY*-->
+    <ul id='dropdown2' class=' mobile-only dropdown-content filter'>
+        <li class="tab col "><a class="active filteroption" data-name="*">All</a></li>
+        {% for c in categories2 %}
+        <li><a href="#!" class="filteroption" data-name=".{{c.category_name}}">{{c.category_name}}</a></li>
+        {% endfor %}
+
+    </ul>
 
 </div>
 
 
-  
-<!-- Dropdown Structure for sorting-->
-<ul id='dropdown1' class='dropdown-content sort'>
-  <li><a href="#!" data-name="name">Name</a></li>
-  <li><a href="#!" data-name="original-order">Original</a></li>
-  <li><a href="#!" data-name="random">Random</a></li>
-  <li><a href="#!" data-name="cookingtime"><i class="material-icons">timer</i>Time</a></li>
-</ul>
+
+
 
 
 <!-- Main grid for recipe content -->
-<div class="row grid-main content-section-sm">
-  {% for r in recipes %} {% if r.published == 'on' %}
+<div class="container">
+    <div class="row grid-main content-section-sm">
+        {% for r in recipes %} {% if r.published == 'on' %}
 
-  <div class="col s12 m6 l4 grid-item {{r.category_name}} ">
-    <div class="card ">
-      <div class="card-image">
-        <img src="{{r.photo_url}}" />
-        <h4 class="card-title">{{r.recipe_name}}</h4>
-      </div>
-      <div class="card-content">
-        {% if r.recipe_featured %}
-        <span>
-          **This is a featured recipe**
-        </span>
-        {% endif %}
+        <div class="col s12 m6 l4 grid-item {{r.category_name}} ">
+            <div class="card ">
+                <div class="card-image">
+                    <img src="{{r.photo_url}}" />
+                    <h4 class="card-title">{{r.recipe_name}}</h4>
+                </div>
+                <div class="card-content">
+                    {% if r.recipe_featured %}
+                    <span>
+                      **This is a featured recipe**
+                      </span> {% endif %}
 
-        <p>
-          Serves {{r.recipe_serves}}. Delicious and ready in
-          {{r.preparation_time}} mins.
-        </p>
-        <p class="cookingtime">{{r.cooking_time}}</p>
-        <p class="name ">{{r.recipe_description}}</p>
-      </div>
-      <div class="card-action">
-        <a
-          href="{{url_for('view_recipe', recipe_id =r._id)}}"
-          class="waves-effect waves-light btn"
-          >View</a
-        >
-      </div>
+                    <p>
+                        Serves {{r.recipe_serves}}. Delicious and ready in {{r.preparation_time}} mins.
+                    </p>
+                    <p class="cookingtime">{{r.cooking_time}}</p>
+                    <p class="name ">{{r.recipe_description}}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{{url_for('view_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn">View</a>
+                </div>
+            </div>
+        </div>
+        {% endif %} {% endfor %}
     </div>
-  </div>
 
-  {% endif %} {% endfor %}
-</div>
 </div>
 
 
 
-{% include 'components/data_dashboard.html' %}
-
-{% include 'components/quotebox.html' %}
-
-{% endblock %}
-
-
+{% include 'components/data_dashboard.html' %} {% include 'components/quotebox.html' %} {% endblock %}
