@@ -156,6 +156,55 @@ def update_recipe(recipe_id):
 def view_categories():
     return render_template('view_categories.html', view_categories=mongo.db.categories.find())
 
+
+@app.route('/view_category/<category_id>', methods=['GET', 'POST'])
+def view_category(category_id):
+    # Count number of recipes with under 15 mins cooking time and assign to variable
+    i= 0
+    all_recipes = mongo.db.recipes.find()
+    for recipe in all_recipes:
+        for r in recipe:
+            if r == "preparation_time":
+                time = (recipe[r])
+                #string to int
+                prep_time = int(time)
+                if prep_time < 15:
+                    i +=1
+
+
+    all_categories = mongo.db.categories.find()
+    for category in all_categories:
+        for c in category:
+            print ("******** THIS IS THE CATEGORY ID I'M LOOKING FOR")
+            print(category_id)
+            print ("******** HERE IS SOME DATA FROM THE CATEGORY DOCUMENT")
+            print (category[c])
+            if (category[c]) == (category_id):
+                print ("========== WE HAVE A MATCH!! ================")
+                #Somehow get the name from this document and assign it to a string
+
+            
+
+    quickrecipes=i
+    recipes = list(mongo.db.recipes.find())
+    categories=mongo.db.categories.find()
+    categories2=mongo.db.categories.find()
+    utensils=mongo.db.utensils.find()
+    utensils2=mongo.db.utensils.find()
+    utensil3=["one", "two", "three"]
+    return render_template("view_category.html", recipes=recipes, categories=categories, utensils=utensils, utensils2=utensils2, 
+    recipecount=mongo.db.recipes.count_documents({"published": { "$in": ["on"]}})
+    ,
+    specialcategory=mongo.db.recipes.find({'_id': ObjectId(category_id)})
+    , featuredrecipes=mongo.db.recipes.count_documents(
+                    {"recipe_featured": { "$in": ["on"]}}
+        )
+    , recipecategories=mongo.db.categories.count_documents({"published": { "$in": ["on"]}})
+    , utensilcount=mongo.db.utensils.count_documents({"published": { "$in": ["on"]}})
+    , quickrecipes=quickrecipes
+    ,categories2=categories2
+    )
+
 @app.route('/insert_category', methods=["POST"])
 def insert_category():
     category_doc = {'category_name': request.form.get('category_name')}

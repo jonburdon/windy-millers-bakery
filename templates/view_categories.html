@@ -1,9 +1,46 @@
-
 {% extends 'base.html' %} {% block content %}
 
-{% for c in view_categories %}
-<h3>{{c.category_name}}</h3>
-<img src="{{c.category_image}}" width=300>
-{% endfor %}
 
-{% endblock %}
+<div class="hero-header valign-wrapper center-align">
+    <div class="row ">
+        <h1 class="col s12" id="main-site-title">Categories</h1>
+    </div>
+</div>
+
+<div class="container content-section">
+
+    <div class="row">
+
+        {% for c in view_categories %} {% if c.published == 'on' %}
+        <div class="col s12 m6 l4 ">
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{c.category_image}}">
+                    <span class="card-title">{{c.category_name}}</span>
+                </div>
+
+                <div class="card-action">
+                    <a href="{{url_for('view_category', category_id =c._id, category_name =c.category_name)}}" class="waves-effect waves-light btn">View</a>
+                </div>
+            </div>
+
+        </div>
+        {% endif %} {% endfor %}
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+{% include 'components/quotebox.html' %} {% endblock %}
