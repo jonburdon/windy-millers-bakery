@@ -38,21 +38,23 @@ def recipes():
 
 @app.route('/view_recipe/<recipe_id>')
 def view_recipe(recipe_id):
+    # Count number of recipes with under 15 mins cooking time and assign to variable
     i= 0
     all_recipes = mongo.db.recipes.find()
     for recipe in all_recipes:
         for r in recipe:
             if r == "preparation_time":
                 time = (recipe[r])
+                #string to int
                 prep_time = int(time)
-                print ("Prep time:")
-                print (prep_time)
+                # print ("Prep time:")
+                # print (prep_time)
                 if prep_time < 15:
-                    print ("that was less than 15")
+                    # print ("that was less than 15")
                     i +=1
-        print ("Quick recipe total is:")        
-        print(i)
-    
+        # print ("Quick recipe total is:")        
+        # print(i)
+
     return render_template('view_recipe.html',
     recipe=mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)}), 
     recipecount=mongo.db.recipes.count_documents({"published": { "$in": ["on"]}})

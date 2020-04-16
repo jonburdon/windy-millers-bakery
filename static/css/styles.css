@@ -82,6 +82,7 @@ body {
   background-color: var(--medium-blue1);
   color: var(--dark-brown);
 }
+
 .light-section h3 {
   color: var(--dark-brown);
 }
@@ -96,12 +97,14 @@ body {
   color: var(--dark-brown);
 }
 
-
-
 .medium-section-blue {
-  
+  background-color: var(--medium-blue2);
+  color: var(--off-white);
 }
 
+.medium-section-blue h3 {
+  color: var(--off-white);
+}
 
 
 
@@ -130,7 +133,14 @@ h1, h2, h3, h4 {
 margin-top: 20px;
 }
 
-.stats-icon {
+.medium-section-blue .stats-icon {
+  font-size:60pt;
+  color: var(--medium-blue1);
+  margin-right: -40px;
+  
+}
+
+.light-section .stats-icon {
   font-size:60pt;
   color: var(--medium-brown);
   margin-right: -40px;

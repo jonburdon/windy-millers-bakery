@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
         <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}" type="text/css" />
+        <link rel="stylesheet" href="{{url_for('static', filename='css/hamburgers.css')}}" type="text/css" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap" rel="stylesheet">
         
@@ -76,54 +77,7 @@
       </div>
       
       
-      <footer class="content-section light-section padded-wide-section">
-        
-        <div class="row">
-          <div class="col s12">
-            <h3 >Our Growing Collection of recipes contains: </h3>
-          </div>
 
-        </div>
-
-        <div class="row ">
-          <div class="col l3 s12 content-200">
-                
-            <p class="center-align">Recipe Count: </p>
-            <h4 class="featured-stat center-align"><i class="stats-icon material-icons prefix">cake</i>{{recipecount}}</h4>
-            
-            
-          </div>
-
-          <div class="col l3 s12">
-                
-            <p class="center-align">Featured Recipes: </p>
-            <h4 class="featured-stat center-align"><i class="stats-icon material-icons prefix">cake</i>{{featuredrecipes}}</h4>
-            
-            
-          </div>
-
-          <div class="col l3 s12">
-    
-            <p class="center-align">Categories: </p>
-            <h4 class="featured-stat center-align"><i class="stats-icon material-icons prefix">create_new_folder</i>{{recipecategories}}</h4>
-            
-           </div>
-
-           <div data-aos="flip-left" class="col l3 s12">
-    
-            <p class="center-align">Utensils: </p>
-            <h4 class="featured-stat center-align"><i class="stats-icon material-icons prefix">local_dining</i>{{utensilcount}}</h4>
-            
-           </div>
-
-        </div>
-
-
-
-      </div>
-    
-      
-    </footer>
 
 
       <footer class="page-footer medium-section-brown">
