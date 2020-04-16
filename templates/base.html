@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{url_for('static', filename='css/hamburgers.css')}}" type="text/css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap" rel="stylesheet">
 
@@ -139,7 +140,7 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-
+            AOS.init();
             $('.collapsible').collapsible();
             $('select').material_select();
             $('.modal').modal();
@@ -169,6 +170,7 @@
 
     <script>
     </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 </body>
 
