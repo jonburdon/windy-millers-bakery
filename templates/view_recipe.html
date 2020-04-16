@@ -3,57 +3,72 @@
 <div class="hero-header-secondary valign-wrapper center-align" style="background: url({{recipe.photo_url}});">
     <div class="row ">
         <h1 class="col s12" id="main-site-title">{{recipe.recipe_name}}</h1>
+        <div class="right-align">
+            {% if recipe.recipe_featured %}<a class="waves-effect waves-light btn recipe-label">Featured</a>{% endif %}
+        </div>
+
+
     </div>
 </div>
 
-<div class="container">
+<div class="container content-section">
     <div class="row">
 
+        <section class="col s12 m7 l7 section-with-sidebar">
 
-        <h3>{{recipe.recipe_name}}</h3>
-
-        {% if recipe.recipe_featured %}
-        <span>
-    **This is a featured recipe**
-    </span> {% endif %}
-
-        <p class="{{recipe.recipe_category}}">Serves {{recipe.recipe_serves}}. Delicious and ready in {{recipe.preparation_time}} mins.</p>
-        <h4>Description:</h4>
-        <p>{{recipe.recipe_description}}</p>
-        <h4>Timings</h4>
-        <ul>
-            <li>Oven Temperature: {{recipe.oven_temperature}}</li>
-            <li>Preparation Time: {{recipe.preparation_time}}</li>
-            <li>Cooking Time: {{recipe.cooking_time}}</li>
-        </ul>
-
-        <h4>Equipment:</h4>
-        <p>{{recipe.utensil_list}}</p>
-        <p>Why not try using our {{recipe.featured_utensil}}?</p>
-        <!--<ul>
-    {% for i in range(0, recipe.Equipment | length, 1) %}
-        
-                <li >{{recipe.Equipment[i]}}</li>      
-        
-    {% endfor %}
-</ul>
--->
-        <h4>Ingredients:</h4>
-
-        {{recipe.ingredient_list}}
+            <div class="content-section-sm">
+                <h2>Description:</h2>
+                <blockquote class="flow-text">{{recipe.recipe_description}}</blockquote>
+            </div>
 
 
-        <h4>Method:</h4>
-        <p>{{recipe.method}}</p>
-        <h4>Tips: {{recipe.tips}}</h4>
-        <h4>Photos:</h4>
-        <img src="{{recipe.photo_url}}" width=300> </p>
+            <div class="content-section-sm">
+                <h4>Before you bake:</h4>
+                <ul>
+                    <li><i class="small material-icons">people_outline</i><span class="recipe-stat">Serves {{recipe.recipe_serves}}</span></li>
+                    <li><i class="small material-icons">alarm_on</i><span class="recipe-stat">Prep in: {{recipe.preparation_time}}</span></li>
+                    <li><i class="small material-icons">alarm_on</i><span class="recipe-stat">Cook in: {{recipe.cooking_time}}</span></li>
+                    <li><i class="small material-icons">local_dining</i><span class="recipe-stat">Needs: {{recipe.utensil_list}}</span></li>
+
+                </ul>
+            </div>
 
 
-        <hr> Recipe Count: <span>{{recipecount}} - Featured: {{featuredrecipes}}</span> Categories: {{recipecategories}}<br> Quick Recipes (prep less than 15 mins): {{quickrecipes}}<br> Category Count hyperlinked to categories page:<br> Utensils Count hyperlinked
-        to utentils page:<br> Count documents that match a query eg those with this utensil, in this category:<br> {% for r in recipes %} {% if r.published == 'on' %} {% if loop.index
-        < 2 %} {% if r.recipe_featured %} <div class="col s12 m6 l4 grid-item {{r.category_name}} ">
-            <div class="card ">
+            <i class="small material-icons">local_dining</i><span class="recipe-stat">Try using Windy's <a href="{{url_for('view_utensils')}}">{{recipe.featured_utensil}}</a></span>
+
+
+            <div class="content-section-sm">
+                <h4>Ingredients:</h4>
+
+                {{recipe.ingredient_list}}
+
+            </div>
+
+
+            <div class="content-section-sm">
+
+                <h4>Method:</h4>
+                <p>{{recipe.method}}</p>
+
+            </div>
+
+            <i class="small material-icons">check_circle</i><span class="recipe-stat">Windy's Tip: {{recipe.tips}}</span>
+
+
+
+
+
+
+        </section>
+
+        <!--  *** SIDEBAR AREA ***  -->
+
+        <aside class="col s12 m4 l4">
+
+            <h3 class="sidebar-text">You may also like ...</h3>
+
+            {% for r in recipes %} {% if r.published == 'on' %} {% if loop.index
+            < 2 %} {% if r.recipe_featured %} <div class="card" data-aos="flip-left">
                 <div class="card-image">
                     <img src="{{r.photo_url}}" />
                     <h4 class="card-title">{{r.recipe_name}}</h4>
@@ -72,9 +87,27 @@
                 <div class="card-action">
                     <a href="{{url_for('view_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn">View</a>
                 </div>
-            </div>
     </div>
+
+
+    <div>
+
+        <h4 class="center-align sidebar-text">Add your own recipe</h4>
+        <h4 class="featured-stat center-align "><i class="grow sidebar-icon material-icons prefix tap-target-opener clickable-item ">add_circle</i></h4>
+
+
+
+    </div>
+
     {% else %} {% endif %} {% else %} {% endif %} {% endif %} {% endfor %}
+    </aside>
+
+
+
+
+    </a>
+
+
 </div>
 </div>
-{% include 'components/quotebox.html' %} {% endblock %}
+{% include 'components/data_dashboard.html' %} {% include 'components/quotebox.html' %} {% endblock %}

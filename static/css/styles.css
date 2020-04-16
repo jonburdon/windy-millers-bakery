@@ -139,6 +139,10 @@ h2 {
     font-size: 28pt;
 }
 
+a {
+    color: var(--darker-blue);
+}
+
 .tiny-icon {
     font-size: 8pt;
 }
@@ -198,6 +202,18 @@ h2 {
 
 .light-section a {
     color: var(--dark-brown);
+}
+
+.sidebar-text {
+    padding: 30px 0px;
+    border-style: dotted;
+    border: solid;
+    border-width: 1px 0px;
+    margin: 60px 0px;
+}
+
+.recipe-stat {
+    font-size: 2rem;
 }
 
 
@@ -264,6 +280,10 @@ nav {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+.container .section-inner {
+    margin: 0px;
+}
+
 .full-width {
     padding: 50px;
 }
@@ -308,6 +328,10 @@ nav {
 
 /***** UX and utility / components styling classes *****/
 
+blockquote {
+    border-left-color: var(--darker-blue);
+}
+
 .clickable-item {
     cursor: pointer;
 }
@@ -350,6 +374,19 @@ nav {
 .btn:hover {
     background-color: var(--highlight-blue);
     color: var(--darker-blue);
+}
+
+.recipe-label {
+    background-color: var(--highlight-blue);
+    color: var(--darker-blue);
+    border-radius: 5px;
+    cursor: arrow;
+}
+
+.btn:hover {
+    background-color: var(--highlight-blue);
+    color: var(--darker-blue);
+    cursor: arrow;
 }
 
 
@@ -423,6 +460,9 @@ nav {
     h2 {
         font-size: 45pt;
     }
+    .section-with-sidebar {
+        margin-right: 40px !important;
+    }
     #vertical-align-large {
         padding-top: 50px;
     }
@@ -442,6 +482,10 @@ nav {
     .heading-with-icon {
         margin-top: -180px;
         padding: 0% 20% 5%;
+    }
+    .sidebar-icon {
+        font-size: 120pt;
+        color: var(--dark-brown);
     }
 }
 

@@ -72,7 +72,7 @@ def view_recipe(recipe_id):
         # print(i)
 
     return render_template('view_recipe.html',
-    recipe=mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)}), 
+    recipe=mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)}),
     recipecount=mongo.db.recipes.count_documents({"published": { "$in": ["on"]}})
     , featuredrecipes=mongo.db.recipes.count_documents(
                     {"recipe_featured": { "$in": ["on"]}}
