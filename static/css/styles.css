@@ -31,7 +31,6 @@
   ========================================================================== */
 
 
-
 /* =============================================================================
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   1. BASE STYLES   
@@ -40,9 +39,11 @@
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ============================================================================= */
 
+
 /* =============================================================================
 - Base
 ============================================================================= */
+
 
 /*
 Color pallette:
@@ -59,92 +60,117 @@ Duck egg blue - #c3e7e7 - background colour for featured content - purpose is to
 */
 
 :root {
-
---dark-brown: #796b55;
---off-white: #eeefe6;
---medium-brown: #a19a82;
---medium-blue1: #b9cac0;
---darker-blue: #4f7673;
---highlight-blue: #c3e7e7;
+    --dark-brown: #796b55;
+    --off-white: #eeefe6;
+    --medium-brown: #a19a82;
+    --medium-blue1: #b9cac0;
+    --darker-blue: #4f7673;
+    --highlight-blue: #c3e7e7;
 }
 
 body {
-  font-family: 'Lato', sans-serif;
-  background-color: var(--off-white);
+    font-family: 'Lato', sans-serif;
+    background-color: var(--off-white);
 }
 
 .dark-section {
-  background-color: var(--dark-brown);
-  color: var(--off-white);
+    background-color: var(--dark-brown);
+    color: var(--off-white);
 }
 
 .light-section {
-  background-color: var(--medium-blue1);
-  color: var(--dark-brown);
+    background-color: var(--medium-blue1);
+    color: var(--dark-brown);
 }
 
 .light-section h3 {
-  color: var(--dark-brown);
+    color: var(--dark-brown);
 }
 
 .medium-section-brown {
-  background-color: var(--medium-brown);
-  color: var(--dark-brown);
+    background-color: var(--medium-brown);
+    color: var(--dark-brown);
 }
 
 .highlight-section {
-  background-color: #c3e7e7;
-  color: var(--dark-brown);
+    background-color: #c3e7e7;
+    color: var(--dark-brown);
 }
 
 .medium-section-blue {
-  background-color: var(--darker-blue);
-  color: var(--off-white);
+    background-color: var(--darker-blue);
+    color: var(--off-white);
+}
+
+.section-offwhite {
+    background-color: var(--off-white);
+    color: var(--darker-blue);
 }
 
 .medium-section-blue h3 {
-  color: var(--off-white);
+    color: var(--off-white);
 }
 
-
-
-h1, h2, h3, h4 {
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
 }
-
 
 
 /* =============================================================================
 - Typography
 ============================================================================= */
 
+body {
+    color: var(--dark-brown);
+}
+
 #main-site-title {
-  font-family: 'Lato', sans-serif;
-  text-shadow: 0px 0px 12px black;
-  color: white;
-  font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    text-shadow: 0px 0px 12px black;
+    color: white;
+    font-weight: 700;
 }
 
 .featured-stat {
-  font-size: 100pt;
-  font-weight: 700;
-  z-index:10;
-margin-top: 20px;
+    font-size: 100pt;
+    font-weight: 700;
+    z-index: 10;
+    margin-top: 20px;
+}
+
+.medium-section-blue .stats-icon,
+.light-section .stats-icon {
+    font-size: 60pt;
+    margin-right: -40px;
 }
 
 .medium-section-blue .stats-icon {
-  font-size:60pt;
-  color: var(--medium-blue1);
-  margin-right: -40px;
-  
+    color: var(--medium-blue1);
 }
 
 .light-section .stats-icon {
-  font-size:60pt;
-  color: var(--medium-brown);
-  margin-right: -40px;
-  
+    color: var(--medium-brown);
+}
+
+.section-icon {
+    font-size: 200pt;
+}
+
+.highlight-section .section-icon {
+    color: var(--off-white);
+}
+
+.container .section-icon {
+    color: var(--highlight-blue);
+}
+
+.heading-with-icon {
+    margin-top: -180px;
+    padding: 0% 20% 5%;
 }
 
 
@@ -155,166 +181,178 @@ margin-top: 20px;
 =============================================================================
 ============================================================================= */
 
+
 /* =============================================================================
 - Header
 ============================================================================= */
 
 nav {
-
-  padding-right: 40px;
-  padding-left: 40px;
-
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-  z-index: 10;
+    padding-right: 40px;
+    padding-left: 40px;
+    position: -webkit-sticky;
+    /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
-#stickyheaders{
-  -webkit-transition: transform 0.34s ease;
-  transition : transform 0.34s ease;
-  }
-  .headerup{
-  transform: translateY(-110px); /*adjust this value to the height of your header*/
-  }
+#stickyheaders {
+    -webkit-transition: transform 0.34s ease;
+    transition: transform 0.34s ease;
+}
+
+.headerup {
+    transform: translateY(-110px);
+    /*adjust this value to the height of your header*/
+}
+
 
 /* =============================================================================
 - Content
 ============================================================================= */
 
-
-
 .hero-header {
-  height: 300px;
-  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Korb_mit_Br%C3%B6tchen.JPG/1067px-Korb_mit_Br%C3%B6tchen.JPG);
-   background-repeat: no-repeat;
-   background-size: auto;
-   background-attachment: fixed;
-   background-position: center;
-   background-size: cover; 
- }
- 
- .hero-header:after {
-   position: absolute;
-   content: " ";
-   top: 120;
-   left: 0;
-   width: 100%;
-   height: 300px;
-   z-index: 0;
-   background-color: rgba(0, 0, 0, 0.2);
- }
- 
- .full-width {
-   padding: 50px;
- }
- 
- .padded-wide-section {
-  padding-top:  50px;
-  padding-bottom: 50px;
+    height: 300px;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Korb_mit_Br%C3%B6tchen.JPG/1067px-Korb_mit_Br%C3%B6tchen.JPG);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
- 
- .content-section {
-   margin-top: 120px;
-   margin-bottom: 120px;
- }
 
- .content-section-sm {
-  margin-top: 60px;
-  margin-bottom: 60px;
+.hero-header:after {
+    position: absolute;
+    content: " ";
+    top: 120;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.2);
 }
- 
- .featured-area {
-   height: 300px;
- }
- 
- .featured-item-button {
-   display:block;
-   margin-top: 10px;
-   
- }
 
- 
- 
- .featured-image-display {
-   margin-top: 50px;
-   height: 300px;
-   background-repeat: no-repeat;
-   background-size: contain;
-   background-attachment: fixed;
-   background-position: center;
- }
- 
+.full-width {
+    padding: 50px;
+}
+
+.padded-wide-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.content-section {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.content-section-sm {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.featured-area {
+    height: 300px;
+}
+
+.featured-item-button {
+    display: block;
+    margin-top: 10px;
+}
+
+.featured-image-display {
+    margin-top: 50px;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: center;
+}
 
 .inner-box {
-  margin: 60px  0px;
+    margin: 60px 0px;
 }
 
 
- /***** UX and utility / components styling classes *****/
- .clickable-item {
-   cursor: pointer;
- }
+/***** UX and utility / components styling classes *****/
+
+.clickable-item {
+    cursor: pointer;
+}
+
 
 /* TABS */
- .tabs-fixed-width {
-  background-color: var(--off-white);
- }
 
-.tabs .tab a, .tabs .tab a.active, .tabs tab.disabled a {
-  color: var(--dark-brown);
+.tabs-fixed-width {
+    background-color: var(--off-white);
+}
+
+.tabs .tab a,
+.tabs .tab a.active,
+.tabs tab.disabled a {
+    color: var(--dark-brown);
 }
 
 .tabs .tab a:hover {
-  color: var(--darker-blue);
+    color: var(--darker-blue);
 }
 
 .tabs .indicator {
-background-color: var(--darker-blue);
+    background-color: var(--darker-blue);
 }
 
-.tabs .tab.disabled a, .tabs .tab.disabled a:hover {
-  color: var(--dark-brown);
-  cursor: default;
+.tabs .tab.disabled a,
+.tabs .tab.disabled a:hover {
+    color: var(--dark-brown);
+    cursor: default;
 }
+
 
 /* BUTTONS */
 
 .btn {
-  background-color: var(--medium-brown);
-  border-radius: 5px;
+    background-color: var(--medium-brown);
+    border-radius: 5px;
 }
 
 .btn:hover {
-  background-color: var(--highlight-blue);
-  color: var(--darker-blue);
+    background-color: var(--highlight-blue);
+    color: var(--darker-blue);
 }
+
 
 /* NB this is removed on large screens by a media query */
+
 .dropdown-button {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
+
 
 /* DROPDOWN TEXT */
-.dropdown-content li>a{
-  color: var(--dark-brown);
+
+.dropdown-content li>a {
+    color: var(--dark-brown);
 }
 
- /* Classes to be used by jquery for targetting linked classes generated by jinja  */
- .display-1 {
-   display: block;
- }
- 
- .display-2 {
-   display:none;
- }
- 
- .display-3 {
-   display:none;
- }
- 
- 
+.btn-floating i {
+    background-color: var(--off-white);
+    color: var(--dark-brown);
+}
 
+
+/* Classes to be used by jquery for targetting linked classes generated by jinja  */
+
+.display-1 {
+    display: block;
+}
+
+.display-2 {
+    display: none;
+}
+
+.display-3 {
+    display: none;
+}
 
 
 /* =============================================================================
@@ -322,65 +360,43 @@ background-color: var(--darker-blue);
 ============================================================================= */
 
 
-
-
-
-
-
-
-
-
-
-
 /* =============================================================================
 7. MOBILE MEDIA QUERIES
 ============================================================================= */
 
 .medium-large-only {
-  display: none;
+    display: none;
 }
 
 @media (min-width: 600px) {
-
-  #vertical-align-large {
-    padding-top: 50px ;
-  }
-
-  .mobile-only {
-    display: none;
-  }
-
-  .medium-large-only {
-    display: block;
-  }
-
-  .dropdown-button {
-    margin-bottom: 0px;
-  }
-
+    #vertical-align-large {
+        padding-top: 50px;
+    }
+    .mobile-only {
+        display: none;
+    }
+    .medium-large-only {
+        display: block;
+    }
+    .dropdown-button {
+        margin-bottom: 0px;
+    }
 }
 
-
-  @media (min-width: 1000px) {
+@media (min-width: 1000px) {
     .mobile-nav {
-      display:none;
+        display: none;
     }
-  }
+}
 
-
-  @media (min-width: 1000px) {
+@media (min-width: 1000px) {
     .padded-wide-section {
-      padding:  80px 200px;
+        padding: 80px 200px;
     }
-
     .inner-box {
-      margin: 0px;
+        margin: 0px;
     }
-
     #vertical-align-large {
-      padding-top: 100px ;
+        padding-top: 100px;
     }
-
-  }
-
- 
+}
