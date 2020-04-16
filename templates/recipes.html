@@ -68,7 +68,7 @@
 
 
   
-<!-- Dropdown Structure -->
+<!-- Dropdown Structure for sorting-->
 <ul id='dropdown1' class='dropdown-content sort'>
   <li><a href="#!" data-name="name">Name</a></li>
   <li><a href="#!" data-name="original-order">Original</a></li>
@@ -77,8 +77,8 @@
 </ul>
 
 
-
-<div class="row grid-main">
+<!-- Main grid for recipe content -->
+<div class="row grid-main content-section">
   {% for r in recipes %} {% if r.published == 'on' %}
 
   <div class="col s12 m6 l4 grid-item {{r.category_name}} ">
@@ -115,8 +115,11 @@
 </div>
 </div>
 
+
+
 {% include 'components/data_dashboard.html' %}
 
+{% include 'components/quotebox.html' %}
 
 {% endblock %}
 

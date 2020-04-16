@@ -22,6 +22,23 @@ from flask import Flask, render_template, redirect, request, url_for
 @app.route('/')
 @app.route('/recipes')
 def recipes():
+    # Count number of recipes with under 15 mins cooking time and assign to variable
+    i= 0
+    all_recipes = mongo.db.recipes.find()
+    for recipe in all_recipes:
+        for r in recipe:
+            if r == "preparation_time":
+                time = (recipe[r])
+                #string to int
+                prep_time = int(time)
+                # print ("Prep time:")
+                # print (prep_time)
+                if prep_time < 15:
+                    # print ("that was less than 15")
+                    i +=1
+        # print ("Quick recipe total is:")        
+        # print(i)
+    quickrecipes=i
     recipes = list(mongo.db.recipes.find())
     categories=mongo.db.categories.find()
     utensils=mongo.db.utensils.find()
@@ -34,6 +51,7 @@ def recipes():
         )
     , recipecategories=mongo.db.categories.count_documents({"published": { "$in": ["on"]}})
     , utensilcount=mongo.db.utensils.count_documents({"published": { "$in": ["on"]}})
+    , quickrecipes=quickrecipes
     )
 
 @app.route('/view_recipe/<recipe_id>')
