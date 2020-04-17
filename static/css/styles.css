@@ -166,7 +166,8 @@ a {
 }
 
 .medium-section-blue .stats-icon,
-.light-section .stats-icon {
+.light-section .stats-icon,
+.cta-icon {
     font-size: 60pt;
     margin-right: -40px;
 }
