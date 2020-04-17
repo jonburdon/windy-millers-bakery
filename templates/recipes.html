@@ -17,7 +17,7 @@
         <div class="col s12 m6 l6 " id="vertical-align-large">
 
             {% for u in utensils %} {% if loop.index
-            < 4 %} <a href="{{url_for('utensil', utensil_id=u._id)}}" class="btn featured-item-button featured-utensil-button-{{loop.index}}">{{u.utensil_name}}</a>
+            < 4 %} <a href="{{url_for('utensil', utensil_id=u._id, utensil_name=u.utensil_name)}}" class="btn featured-item-button featured-utensil-button-{{loop.index}}">{{u.utensil_name}}</a>
 
                 {% else %} {% endif %} {% endfor %}
 
@@ -27,7 +27,7 @@
             < 4 %} <div class="hoverable featured-image-display featured-utensil-image-{{loop.index}} display-{{loop.index}} 
        ">
 
-                <a href="{{url_for('utensil', utensil_id=u._id)}}"> <img src="{{u.image_url}}" height=100% width=100%></a>
+                <a href="{{url_for('utensil', utensil_id=u._id, utensil_name=u.utensil_name)}}"> <img src="{{u.image_url}}" height=100% width=100%></a>
 
         </div>
 

@@ -6,10 +6,43 @@
     </div>
 </div>
 
-<span>TRY THIS:</span> {% for s in selected_recipes %} {% if s.published == 'on' %} {{s.recipe_name}} {% endif %} {% endfor %}
-<br><br> {% for r in recipes %} {% if r.published == 'on' %} {% if r.category_name == category_name %}
 
 
-<span>{{r.recipe_name}}</span> {% endif %} {% endif %} {% endfor %}
+<div class="container content-section">
+
+    <div class="row">
+
+        {% for s in selected_recipes %} {% if s.published == 'on' %}
+        <div class="col s12 m6 l4 ">
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{s.photo_url}}">
+                    <span class="card-title">{{s.recipe_name}}</span>
+                </div>
+                <div class="card-content">
+                    {% if s.recipe_featured %}
+                    <span class="featured-badge new badge" data-badge-caption="Featured"><i class="tiny-icon material-icons prefix ">thumb_up</i></span><br> {% endif %}
+
+                    <p>
+                        Serves {{s.recipe_serves}}. Delicious and ready in {{s.preparation_time}} mins.
+                    </p>
+                    <p class="cookingtime"><i class="small-icon material-icons prefix ">alarm_on</i> Cooking time {{s.cooking_time}}</p>
+                    <p class="name ">{{s.recipe_description}}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{{url_for('view_recipe', recipe_id =s._id)}}" class="waves-effect waves-light btn">View</a>
+                </div>
+            </div>
+
+        </div>
+        {% endif %} {% endfor %}
+    </div>
+
+
+</div>
+</div>
+
+
 
 <span></span> {% endblock %}
