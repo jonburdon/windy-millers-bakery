@@ -5,7 +5,9 @@
         <h1 class="col s12" id="main-site-title">Windy's <br>{{category_name}} Recipes</h1>
     </div>
 </div>
-{% for r in recipes %} {% if r.published == 'on' %} {% if r.category_name == category_name %}
+
+<span>TRY THIS:</span> {% for s in selected_recipes %} {% if s.published == 'on' %} {{s.recipe_name}} {% endif %} {% endfor %}
+<br><br> {% for r in recipes %} {% if r.published == 'on' %} {% if r.category_name == category_name %}
 
 
 <span>{{r.recipe_name}}</span> {% endif %} {% endif %} {% endfor %}

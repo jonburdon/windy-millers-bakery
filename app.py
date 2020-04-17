@@ -157,6 +157,16 @@ def view_categories():
     return render_template('view_categories.html', view_categories=mongo.db.categories.find())
 
 
+
+#@app.route('/utensil/<utensil_id>.<utensil_name>', methods=['GET', 'POST'])
+#def utensil(utensil_id, utensil_name):
+ #   selected_recipes = mongo.db.recipes.find({"featured_utensil": utensil_name })
+ #   return render_template('view_utensil.html',
+  #  utensil_name=utensil_name,
+   # recipes = selected_recipes,
+    #utensil=mongo.db.utensils.find_one({'_id': ObjectId(utensil_id)}))
+
+
 @app.route('/view_category/<category_id>.<category_name>', methods=['GET', 'POST'])
 def view_category(category_id, category_name):
     # Count number of recipes with under 15 mins cooking time and assign to variable
@@ -170,7 +180,7 @@ def view_category(category_id, category_name):
                 prep_time = int(time)
                 if prep_time < 15:
                     i +=1
-
+    selected_recipes = mongo.db.recipes.find({"category_name": category_name })
 
     all_categories = mongo.db.categories.find()
     for category in all_categories:
@@ -195,6 +205,7 @@ def view_category(category_id, category_name):
     return render_template("view_category.html", recipes=recipes, categories=categories, utensils=utensils, utensils2=utensils2, category_name=category_name,
     recipecount=mongo.db.recipes.count_documents({"published": { "$in": ["on"]}})
     ,
+    selected_recipes=selected_recipes,
     specialcategory=mongo.db.recipes.find({'_id': ObjectId(category_id)})
     , featuredrecipes=mongo.db.recipes.count_documents(
                     {"recipe_featured": { "$in": ["on"]}}
@@ -264,7 +275,7 @@ def manage_categories():
 
 @app.route('/utensil/<utensil_id>.<utensil_name>', methods=['GET', 'POST'])
 def utensil(utensil_id, utensil_name):
-    selected_recipes = mongo.db.recipes.find({"utensil_name": utensil_name })
+    selected_recipes = mongo.db.recipes.find({"featured_utensil": utensil_name })
     return render_template('view_utensil.html',
     utensil_name=utensil_name,
     recipes = selected_recipes,
