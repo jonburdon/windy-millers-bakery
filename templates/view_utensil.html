@@ -1,11 +1,13 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <h1>Utensil Page for {{utensil.utensil_name}}</h1>
 
+<span>
+    Here are some recipes with this utensil:
+{% for r in recipes %}
+{r.recipe_name}
+{% endfor %}
 
+</span>
 
-
-Display other utensils here? Load a reuseable component from another html file?
-
-{% endblock %}
+<br>TO DO: Display other utensils or recipes in a sidebar.<br> {% endblock %}

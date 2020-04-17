@@ -260,9 +260,14 @@ def restore_category(category_id):
 def manage_categories():
     return render_template('manage_categories.html', manage_categories=mongo.db.categories.find())
 
-@app.route('/utensil/<utensil_id>')
-def utensil(utensil_id):
+
+
+@app.route('/utensil/<utensil_id>.<utensil_name>', methods=['GET', 'POST'])
+def utensil(utensil_id, utensil_name):
+    selected_recipes = mongo.db.recipes.find({"utensil_name": utensil_name })
     return render_template('view_utensil.html',
+    utensil_name=utensil_name,
+    recipes = selected_recipes,
     utensil=mongo.db.utensils.find_one({'_id': ObjectId(utensil_id)}))
 
 @app.route('/view_utensils/')
