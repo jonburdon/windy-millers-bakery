@@ -188,6 +188,11 @@ a {
     font-size: 120pt;
 }
 
+.delete-icon {
+    color: red;
+    font-size: 24pt;
+}
+
 .highlight-section .section-icon {
     color: var(--off-white);
 }

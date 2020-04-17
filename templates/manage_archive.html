@@ -1,98 +1,114 @@
-{% extends 'base.html' %}
-{% block content %}
-<div class="container">
-<div class="row">
-    <div class="col s12">
-        <h1>Archive</h1>
-      <ul class="tabs tabs-fixed-width">
-        <li class="tab col s3 disabled"><a >Manage Archived : </a></li>
-        <li class="tab col s3"><a class="active" href="#test1">Recipes</a></li>
-        <li class="tab col s3"><a href="#test2">Categories</a></li>
-        <li class="tab col s3"><a href="#test3">Utensils</a></li>
-      </ul>
+{% extends 'base.html' %} {% block content %}
+
+<div class="hero-header valign-wrapper center-align">
+    <div class="row ">
+        <h1 class="col s12" id="main-site-title">Manage Archive</h1>
     </div>
-<!-- ** Recipe Archive Content ** -->
-    <div id="test1" class="col s12">
-
-        <ul class="collapsible" data-collapsible="accordion">
-            {% for r in manage_recipes %}   
-                {% if r.published == 'off' %}
-                    <li>
-                        <div class="collapsible-header">
-                            <a href="{{url_for('delete_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn btn_small blue">Del</a>
-                            <a href="{{url_for('restore_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn btn_small blue">Restore</a>
-                            <div class=" task_header col s8">
-                                <strong>{{r.recipe_name}}</strong> 
-                            </div>
-    
-                        </div>
-                    </li>
-                 {% endif %}
-            {% endfor %}
-        </ul>
-
-    </div>
-
-<!-- ** Categories Archive Content ** -->
-    <div id="test2" class="col s12">
-
-        <ul class="collapsible" data-collapsible="accordion">
-            {% for category in manage_categories %}
-                {% if category.published == 'off' %}
-                    <li>
-                        <div class="collapsible-header">
-                                    <a href="{{url_for('delete_category', category_id =category._id)}}" class="waves-effect waves-light btn btn_small blue">Del</a>
-                                    <a href="{{url_for('restore_category', category_id =category._id)}}" class="waves-effect waves-light btn btn_small blue">Restore</a>
-                            <div class=" task_header col s8">
-                                <strong>{{category.category_name}}</strong> 
-                            </div>
-                        </div>
-                    </li>
-               {% endif %}
-            {% endfor %}
-        </ul>
-
-    </div>
-
-<!-- ** Utensils Archive Content ** -->
-    <div id="test3" class="col s12">
-        <ul class="collapsible" data-collapsible="accordion">
-            {% for utensil in manage_utensils %}
-                {% if utensil.published == 'off' %}
-                    <li>
-                        <div class="collapsible-header">
-                                    <a href="{{url_for('delete_utensil', utensil_id =utensil._id)}}" class="waves-effect waves-light btn btn_small blue">Del *careful*</a>
-                                    <a href="{{url_for('restore_utensil', utensil_id =utensil._id)}}" class="waves-effect waves-light btn btn_small blue">Restore</a>
-                            <div class=" task_header col s8">
-                                <strong>{{utensil.utensil_name}}</strong> 
-                            </div>
-                        </div>
-                    </li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-
-    </div>
-    
-
-    
-  </div>
-
-
-  <div class="card">
-    <div class="card-image waves-effect waves-block waves-light">
-      <h1 class="activator">Title</h1>
-    </div>
-    <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert DEL</i></span>
-      <p><a href="#">This is a link</a></p>
-    </div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>Card Title</span>
-      <p>Are you sure you want to delete?</p>
-    </div>
-  </div>
-
-
-{% endblock %}
 </div>
+
+
+<div class="container content-section">
+    <div class="row">
+        <div class="col s12">
+
+            <ul class="tabs tabs-fixed-width">
+                <li class="tab col s3 disabled"><a>Manage Archived : </a></li>
+                <li class="tab col s3"><a class="active" href="#test1">Recipes</a></li>
+                <li class="tab col s3"><a href="#test2">Categories</a></li>
+                <li class="tab col s3"><a href="#test3">Utensils</a></li>
+            </ul>
+        </div>
+        <!-- ** Recipe Archive Content ** -->
+        <div id="test1" class="col s12 content-section-sm">
+
+
+            {% for r in manage_recipes %} {% if r.published == 'off' %}
+            <div class="col s12 m6 l4 ">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <h4 class="activator">{{r.recipe_name}}</h4>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Delete {{r.recipe_name}} permanently.<i class="material-icons right delete-icon">delete_forever</i></span>
+                        <a href="{{url_for('restore_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn btn_small ">Restore safely</a>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>Delete {{r.recipe_name}}</span>
+                        <p>This can NOT be undone.</p>
+                        <a href="{{url_for('delete_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn btn_small red">Yes - Delete Permanently</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %} {% endfor %}
+
+
+        </div>
+
+        <!-- ** Categories Archive Content ** -->
+        <div id="test2" class="col s12 content-section-sm">
+
+
+            {% for category in manage_categories%} {% if category.published == 'off' %}
+            <div class="col s12 m6 l4 ">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <h4 class="activator">{{category.category_name}}</h4>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Delete {{category.category_name}} category permanently.<i class="material-icons right delete-icon">delete_forever</i></span>
+                        <a href="{{url_for('restore_category', category_id =category._id)}}" class="waves-effect waves-light btn btn_small ">Restore safely</a>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>Delete {{category.category_name}} Category</span>
+                        <p>This can NOT be undone.</p>
+                        <a href="{{url_for('delete_category', category_id =category._id)}}" class="waves-effect waves-light btn btn_small red">Yes - Delete Permanently</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %} {% endfor %}
+
+
+        </div>
+
+
+
+        <!-- ** Utensils Archive Content ** -->
+
+        <div id="test3" class="col s12 content-section-sm">
+
+
+            {% for utensil in manage_utensils%} {% if utensil.published == 'off' %}
+            <div class="col s12 m6 l4 ">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <h4 class="activator">{{utensil.utensil_name}}</h4>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Delete {{utensil.utensil_name}} utensil permanently.<i class="material-icons right delete-icon">delete_forever</i></span>
+                        <a href="{{url_for('restore_utensil', utensil_id =utensil._id)}}" class="waves-effect waves-light btn btn_small ">Restore safely</a>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>Delete {{utensil.utensil_name}} Utensil</span>
+                        <p>This can NOT be undone.</p>
+                        <a href="{{url_for('delete_utensil', utensil_id =utensil._id)}}" class="waves-effect waves-light btn btn_small red">Yes - Delete Permanently</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %} {% endfor %}
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+</div>
+
+{% include 'components/quotebox.html' %} {% endblock %}

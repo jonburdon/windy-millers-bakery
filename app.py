@@ -119,7 +119,7 @@ def archive_recipe(recipe_id):
    { "_id": ObjectId(recipe_id) },
    { "$set": { "published": "off" } }
 )
-    return redirect(url_for('manage_recipes'))
+    return redirect(url_for('manage_archive'))
 
 @app.route('/restore_recipe/<recipe_id>')
 def restore_recipe(recipe_id):
@@ -256,7 +256,7 @@ def archive_category(category_id):
    { "_id": ObjectId(category_id) },
    { "$set": { "published": "off" } }
 )
-    return redirect(url_for('manage_categories'))
+    return redirect(url_for('manage_archive'))
 
 @app.route('/restore_category/<category_id>')
 def restore_category(category_id):
@@ -308,7 +308,7 @@ def archive_utensil(utensil_id):
    { "_id": ObjectId(utensil_id) },
    { "$set": { "published": "off" } }
 )
-    return redirect(url_for('manage_utensils'))
+    return redirect(url_for('manage_archive'))
 
 @app.route('/restore_utensil/<utensil_id>')
 def restore_utensil(utensil_id):
