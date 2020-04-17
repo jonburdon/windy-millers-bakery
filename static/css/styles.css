@@ -278,6 +278,9 @@ nav {
     background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Korb_mit_Br%C3%B6tchen.JPG/1067px-Korb_mit_Br%C3%B6tchen.JPG);
 }
 
+
+/* Add opacity overlay over image and text */
+
 .hero-header:after,
 .hero-header-secondary:after {
     position: absolute;
@@ -287,7 +290,7 @@ nav {
     width: 100%;
     height: 300px;
     z-index: 0;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .container .section-inner,
@@ -398,6 +401,10 @@ blockquote {
 .btn,
 .btn-large {
     background-color: var(--medium-brown);
+}
+
+.container .btn-large,
+.inner-box .btn-large {
     border-radius: 5px;
 }
 

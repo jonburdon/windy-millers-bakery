@@ -275,6 +275,8 @@ Create an instance of pymongo, add app with constructor method.
 
 # Features of current version:
 Home Page:
+Header slides up on scroll down and re-appears on scroll up
+Hero header with opacity overlay and parallax effect
 Smooth scrolling from anchor link to another position on the same page
 Content organised in to sections with appropriate mobile optimised padding
 Google icons
@@ -286,6 +288,10 @@ Floating buttons for database utilities enable easy access
 Quote box
 Data dashboard
 Reuseable components - quote section and data dashboard
+
+### Defensive design
+* Required form fields
+* Delete confirmation
 
 ## Reference Sites
 
