@@ -179,6 +179,10 @@ a {
     color: var(--medium-brown);
 }
 
+.white-section {
+    background-color: white;
+}
+
 .section-icon {
     font-size: 120pt;
 }
@@ -294,7 +298,12 @@ nav {
     padding-bottom: 50px;
 }
 
-.content-section {
+.padded-grid-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.inn .content-section {
     margin-top: 120px;
     margin-bottom: 120px;
 }
@@ -392,6 +401,10 @@ blockquote {
     background-color: var(--highlight-blue);
     color: var(--darker-blue);
     cursor: arrow;
+}
+
+.btn-row {
+    margin-top: 5px;
 }
 
 
