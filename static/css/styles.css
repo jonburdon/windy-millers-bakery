@@ -314,6 +314,11 @@ nav {
     margin-bottom: 60px;
 }
 
+.content-section-xsm {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .featured-area {
     height: 300px;
 }
@@ -334,6 +339,10 @@ nav {
 
 .inner-box {
     margin: 60px 0px;
+}
+
+.nav-section .inner-box {
+    padding: 0px 40px;
 }
 
 .inner-content {
@@ -381,26 +390,23 @@ blockquote {
 
 /* BUTTONS */
 
-.btn {
+.btn,
+.btn-large {
     background-color: var(--medium-brown);
     border-radius: 5px;
 }
 
-.btn:hover {
+.btn:hover,
+.btn-large:hover {
     background-color: var(--highlight-blue);
     color: var(--darker-blue);
+    cursor: arrow;
 }
 
 .recipe-label {
     background-color: var(--highlight-blue);
     color: var(--darker-blue);
     border-radius: 5px;
-    cursor: arrow;
-}
-
-.btn:hover {
-    background-color: var(--highlight-blue);
-    color: var(--darker-blue);
     cursor: arrow;
 }
 
