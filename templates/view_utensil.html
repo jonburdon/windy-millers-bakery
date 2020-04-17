@@ -1,13 +1,73 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Utensil Page for {{utensil.utensil_name}}</h1>
 
-<span>
-    Here are some recipes with this utensil:
-{% for r in recipes %}
-{{r.recipe_name}}
-{% endfor %}
+<div class="hero-header valign-wrapper center-align">
+    <div class="row ">
+        <h1 class="col s12" id="main-site-title">Windy's <br>{{utensil.utensil_name}}</h1>
+        <div class="right-align">
+            {% if utensil.delux_range %}<a class="waves-effect waves-light btn recipe-label">Delux Range</a>{% endif %}
+        </div>
+    </div>
+</div>
 
-</span>
+<div class="medium-section-blue  padded-wide-section">
 
-<br>TO DO: Display other utensils or recipes in a sidebar.<br> {% endblock %}
+    <div class="row ">
+
+
+        <div class="col s12 m12 l12 inner-box center-align" data-aos="zoom-in">
+            <img class="hoverable grow" src="{{utensil.image_url}}" width=50%>
+            <h3>{{utensil.utensil_description}}</h3>
+            <div class="center-align">
+                <a class="waves-effect waves-light btn " href="{{utensil.shop_url}}">Buy Now</a>
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+</div>
+
+<div class="container content-section">
+    <h1>Recipes using Windy's {{utensil.utensil_name}}</h1>
+    <div class="row">
+
+        {% for s in recipes %} {% if s.published == 'on' %}
+        <div class="col s12 m6 l4 ">
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{s.photo_url}}">
+                    <span class="card-title">{{s.recipe_name}}</span>
+                </div>
+                <div class="card-content">
+                    {% if s.recipe_featured %}
+                    <span class="featured-badge new badge" data-badge-caption="Featured"><i class="tiny-icon material-icons prefix ">thumb_up</i></span><br> {% endif %}
+
+                    <p>
+                        Serves {{s.recipe_serves}}. Delicious and ready in {{s.preparation_time}} mins.
+                    </p>
+                    <p class="cookingtime"><i class="small-icon material-icons prefix ">alarm_on</i> Cooking time {{s.cooking_time}}</p>
+                    <p class="name ">{{s.recipe_description}}</p>
+                </div>
+                <div class="card-action">
+                    <a href="{{url_for('view_recipe', recipe_id =s._id)}}" class="waves-effect waves-light btn">View</a>
+                </div>
+            </div>
+
+        </div>
+        {% endif %} {% endfor %}
+    </div>
+
+
+</div>
+</div>
+
+
+{% endblock %}
