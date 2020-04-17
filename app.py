@@ -157,8 +157,8 @@ def view_categories():
     return render_template('view_categories.html', view_categories=mongo.db.categories.find())
 
 
-@app.route('/view_category/<category_id>', methods=['GET', 'POST'])
-def view_category(category_id):
+@app.route('/view_category/<category_id>.<category_name>', methods=['GET', 'POST'])
+def view_category(category_id, category_name):
     # Count number of recipes with under 15 mins cooking time and assign to variable
     i= 0
     all_recipes = mongo.db.recipes.find()
@@ -192,7 +192,7 @@ def view_category(category_id):
     utensils=mongo.db.utensils.find()
     utensils2=mongo.db.utensils.find()
     utensil3=["one", "two", "three"]
-    return render_template("view_category.html", recipes=recipes, categories=categories, utensils=utensils, utensils2=utensils2, 
+    return render_template("view_category.html", recipes=recipes, categories=categories, utensils=utensils, utensils2=utensils2, category_name=category_name,
     recipecount=mongo.db.recipes.count_documents({"published": { "$in": ["on"]}})
     ,
     specialcategory=mongo.db.recipes.find({'_id': ObjectId(category_id)})

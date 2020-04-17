@@ -2,9 +2,12 @@
 
 <div class="hero-header valign-wrapper center-align">
     <div class="row ">
-        <h1 class="col s12" id="main-site-title">Recipes in this category</h1>
+        <h1 class="col s12" id="main-site-title">Windy's <br>{{category_name}} Recipes</h1>
     </div>
 </div>
-{% for c in specialcategories %}
+{% for r in recipes %} {% if r.published == 'on' %} {% if r.category_name == category_name %}
 
-<span></span> {% endfor %} {% endblock %}
+
+<span>{{r.recipe_name}}</span> {% endif %} {% endif %} {% endfor %}
+
+<span></span> {% endblock %}

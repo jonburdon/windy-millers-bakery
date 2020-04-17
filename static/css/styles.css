@@ -217,6 +217,14 @@ a {
 }
 
 
+/*
+.nav-section .inner-box {
+    background-color: var(--off-white);
+    color: var(--dark-brown);
+}
+*/
+
+
 /* =============================================================================
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2. STRUCTURE
@@ -323,6 +331,10 @@ nav {
 
 .inner-box {
     margin: 60px 0px;
+}
+
+.inner-content {
+    margin-top: 40px;
 }
 
 
