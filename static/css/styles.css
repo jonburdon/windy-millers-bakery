@@ -217,14 +217,6 @@ a {
 }
 
 
-/*
-.nav-section .inner-box {
-    background-color: var(--off-white);
-    color: var(--dark-brown);
-}
-*/
-
-
 /* =============================================================================
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 2. STRUCTURE
@@ -288,7 +280,8 @@ nav {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-.container .section-inner {
+.container .section-inner,
+.section-inner {
     margin: 0px;
 }
 

@@ -34,9 +34,14 @@
 
 </div>
 
+
+
+
+
 <div class="container content-section">
     <h1>Recipes using Windy's {{utensil.utensil_name}}</h1>
     <div class="row">
+
 
         {% for s in recipes %} {% if s.published == 'on' %}
         <div class="col s12 m6 l4 ">
@@ -69,5 +74,55 @@
 </div>
 </div>
 
+</div>
+
+<div class=" light-section padded-wide-section ">
+
+    <h2>Utensils in Windy's Range:</h2>
+
+
+    <div class="row ">
+
+
+        {% for u in utensils %} {% if u.published == 'on' %}
+        <div class="col s12 m6 l4 ">
+
+            <div class="card ">
+                <div class="card-image ">
+                    <img src="{{u.image_url}} ">
+                    <span class="card-title ">{{u.utensil_name}}</span>
+                </div>
+                <div class="card-content ">
+                    {% if u.delux_range == 'on' %}
+                    <span class="featured-badge new badge " data-badge-caption="Delux "><i class="tiny-icon material-icons prefix ">thumb_up</i></span><br> {% endif %}
+                    <p>{{u.utensil_description}}</p>
+
+                </div>
+                <div class="card-action ">
+                    <a href="{{url_for( 'utensil', utensil_id=u._id, utensil_name=u.utensil_name)}} " class="waves-effect waves-light btn ">View</a>
+                    <a href="{{u.shop_url}} " class="waves-effect waves-light btn ">Buy</a>
+                </div>
+            </div>
+
+        </div>
+        {% endif %} {% endfor %}
+
+
+
+        <div class="col s12 m6 l4 " data-aos="zoom-in" data-aos-delay="1000">
+
+            <h4 class="center-align ">Why not add your own? </h4>
+            <h4 class="featured-stat center-align "><i class="grow stats-icon material-icons prefix tap-target-opener clickable-item ">add_circle</i></h4>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
 
 {% endblock %}

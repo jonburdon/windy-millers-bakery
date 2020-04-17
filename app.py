@@ -276,7 +276,9 @@ def manage_categories():
 @app.route('/utensil/<utensil_id>.<utensil_name>', methods=['GET', 'POST'])
 def utensil(utensil_id, utensil_name):
     selected_recipes = mongo.db.recipes.find({"featured_utensil": utensil_name })
+    utensils=mongo.db.utensils.find()
     return render_template('view_utensil.html',
+    utensils=utensils,
     utensil_name=utensil_name,
     recipes = selected_recipes,
     utensil=mongo.db.utensils.find_one({'_id': ObjectId(utensil_id)}))
