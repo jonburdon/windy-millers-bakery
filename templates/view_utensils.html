@@ -1,19 +1,54 @@
-
 {% extends 'base.html' %} {% block content %}
 
-{% for u in view_utensils %}
 
-<h3>{{u.utensil_name}}</h3>
-<p>{{u.utensil_description}}</p>
-<a href="{{u.shop_url}}">Click to buy</a><br>
-<img src="{{u.image_url}}" width=300>
+<div class="hero-header valign-wrapper center-align">
+    <div class="row ">
+        <h1 class="col s12" id="main-site-title">Utensils</h1>
+    </div>
+</div>
 
-{% if u.delux_range == 'on' %}
-                    <h4>
-                    **Part of our delux range. Ooooo!**
-                    </h4>
- {% endif %} 
 
-{% endfor %}
 
-{% endblock %}
+<div class="container content-section>
+
+    <div class=" row ">
+
+        {% for u in view_utensils %} {% if u.published == 'on' %}
+        <div class="col s12 m6 l4 ">
+
+            <div class="card ">
+                <div class="card-image ">
+                    <img src="{{u.image_url}} ">
+                    <span class="card-title ">{{u.utensil_name}}</span>
+                </div>
+                <div class="card-content ">
+                    {% if u.delux_range == 'on' %}
+                    <span class="featured-badge new badge " data-badge-caption="Delux "><i class="tiny-icon material-icons prefix ">thumb_up</i></span><br> {% endif %}
+                    <p>{{u.utensil_description}}</p>
+
+                </div>
+                <div class="card-action ">
+                    <a href="{{url_for( 'utensil', utensil_id=u._id)}} " class="waves-effect waves-light btn ">View</a>
+                    <a href="{{u.shop_url}} " class="waves-effect waves-light btn ">Buy</a>
+                </div>
+            </div>
+
+        </div>
+        {% endif %} {% endfor %}
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+{% include 'components/quotebox.html' %} {% endblock %}
