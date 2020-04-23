@@ -544,7 +544,7 @@ blockquote {
     background-color: var(--highlight-blue);
     color: var(--darker-blue);
     border-radius: 5px;
-    cursor: arrow;
+    cursor: default;
 }
 
 
