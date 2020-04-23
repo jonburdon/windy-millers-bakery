@@ -302,6 +302,8 @@ https://docs.mongodb.com/manual/reference/
 https://www.w3schools.com/
 
 
+### Credits
+https://en.wikibooks.org/wiki/Cookbook:Table_of_Contents
 
 ## Colour Palette:
 The following image was used for colour palette inspiration:
