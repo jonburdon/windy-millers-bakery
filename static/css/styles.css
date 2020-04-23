@@ -143,6 +143,10 @@ a {
     color: var(--darker-blue);
 }
 
+.brand-logo {
+    font-size: 10pt !important;
+}
+
 .tiny-icon {
     font-size: 8pt;
 }
@@ -415,6 +419,9 @@ nav {
 .text-box-inner {
     margin-bottom: 30px;
     margin-top: 30px;
+}
+
+.email-text {
     word-break: break-all;
 }
 
@@ -638,6 +645,9 @@ blockquote {
     .text-box-inner {
         margin-bottom: 0px;
         margin-top: 0px;
+    }
+    .brand-logo {
+        font-size: 18pt !important;
     }
 }
 
