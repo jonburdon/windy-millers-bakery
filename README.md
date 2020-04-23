@@ -304,6 +304,9 @@ https://www.w3schools.com/
 
 ### Credits
 https://en.wikibooks.org/wiki/Cookbook:Table_of_Contents
+https://pixabay.com/
+
+ALL images Compressed using UPic image optimisation software.
 
 ## Colour Palette:
 The following image was used for colour palette inspiration:
