@@ -70,7 +70,7 @@
             {% for r in recipes %} {% if r.published == 'on' %} {% if loop.index
             < 2 %} {% if r.recipe_featured %} <div class="card" data-aos="flip-left">
                 <div class="card-image">
-                    <img src="{{r.photo_url}}" />
+                    <img src="../../static/images/{{r.photo_url}}" />
                     <h4 class="card-title">{{r.recipe_name}}</h4>
 
                 </div>
