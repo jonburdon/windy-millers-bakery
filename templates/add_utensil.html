@@ -1,61 +1,71 @@
-{% extends 'base.html'%}
+{% extends 'base.html'%} {% block content %}
+<div class="hero-header valign-wrapper center-align">
+    <div class="row ">
+        <h1 class="col s12" id="main-site-title">Add Utensil</h1>
+    </div>
+</div>
 
-{% block content %}
-<h3>Add utensil</h3>
-<form action="{{ url_for('insert_utensil') }}" method="POST" class="col s12">
-    <div class="row">
-        <div class="input-field col s12">
-            <i class="material-icons prefix">poll</i>
-            <input id="utensil_name" name="utensil_name" type="text" class="validate">
-            <label for="utensil_name">Utensil Name</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s12">
-            <i class="material-icons prefix">poll</i>
-            <input id="utensil_description" name="utensil_description" type="text" class="validate">
-            <label for="utensil_description">Utensil Description</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s12">
-            <i class="material-icons prefix">poll</i>
-            <input id="image_url" name="image_url" type="text" class="validate">
-            <label for="image_url">Utensil Photo Url</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s12">
-            <i class="material-icons prefix">poll</i>
-            <input id="shop_url" name="shop_url" type="text" class="validate">
-            <label for="shop_url">Purchase URL</label>
-        </div>
-    </div>
+<div class="container content-section">
+
+
 
     <div class="row">
-        <div class="switch">
-            <label>
+        <form action="{{ url_for('insert_utensil') }}" method="POST" class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">poll</i>
+                    <input id="utensil_name" name="utensil_name" type="text" class="validate">
+                    <label for="utensil_name">Utensil Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">poll</i>
+                    <input id="utensil_description" name="utensil_description" type="text" class="validate">
+                    <label for="utensil_description">Utensil Description</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">poll</i>
+                    <input id="image_url" name="image_url" type="text" class="validate">
+                    <label for="image_url">Utensil Photo Url</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">poll</i>
+                    <input id="shop_url" name="shop_url" type="text" class="validate">
+                    <label for="shop_url">Purchase URL</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="switch">
+                    <label>
               <input id="delux_range" name="delux_range" type="checkbox" checked>
               <span class="lever"></span>
               Delux Range
             </label>
-        </div>
-    </div>
+                </div>
+            </div>
 
-    <div class="row">
-        <div class="switch">
-            <label>
+            <div class="row">
+                <div class="switch">
+                    <label>
               <input id="published" name="published" type="checkbox" checked>
               <span class="lever"></span>
               Published
             </label>
-        </div>
-    </div>
+                </div>
+            </div>
 
-    <div class="row">
-        <button class="btn waves-effect waves-light" type="submit" name="action">Add Utensil
+            <div class="row">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Add Utensil
             <i class="material-icons right">playlist_add</i>
         </button>
+            </div>
+        </form>
     </div>
-</form>
+</div>
 {% endblock %}
