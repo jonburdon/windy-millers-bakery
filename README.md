@@ -103,6 +103,15 @@ Final enhancements
 
 
 
+
+### Testing:
+
+- http://www.cssdrive.com/cssautoprefixer/
+
+Note: The css validator throws errors relating to use of :root, var and also some webkit prefixes. These do not affect the project's performance.
+
+
+
 ## Scope agreed with (fictitious) client prior to project start:
 ### Credit: Adapted from Code Institute project spec)
 
@@ -172,6 +181,8 @@ Final enhancements
 15. [] Facility to convert units from metric to imperial
 16. [] Add isotope.js to animate the sorting, filtering and displaying of data 
 17. [] Delete function will only mark recipe as 'archived.' To permanently delete, user must enter archive manager and then permanently delete the item.
+18. [] Submit image through form and use Cloudinary to host images. API Documentation here: https://cloudinary.com/documentation/cloudinary_references
+
 
 
 ## Wireframes
@@ -328,14 +339,5 @@ https://michalsnik.github.io/aos/
 
 ## Known issues:
 
-Featured recipes stat count displayed archived and unarchived featured recipes. When the $and operator is used with the following syntax, the error code here is displayed:  Error : TypeError: string indices must be integers
-
-    { "$and"
-[
-{"recipe_featured": { "$in": ["on"]}}
-,
-{"published": { "$in": ["on"]}}
-]
-
-}
+Sort by cooking time not working.
 

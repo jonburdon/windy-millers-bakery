@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="hero-header-secondary valign-wrapper center-align" style="background: url(../static/images/{{recipe.photo_url}});">
+<div class="hero-header-secondary valign-wrapper center-align" style="background: url({{recipe.photo_url}});">
     <div class="row ">
         <h1 class="col s12" id="main-site-title">{{recipe.recipe_name}}</h1>
         <div class="right-align">
@@ -70,7 +70,7 @@
             {% for r in recipes %} {% if r.published == 'on' %} {% if loop.index
             < 2 %} {% if r.recipe_featured %} <div class="card" data-aos="flip-left">
                 <div class="card-image">
-                    <img src="../../static/images/{{r.photo_url}}" />
+                    <img src="{{r.photo_url}}" />
                     <h4 class="card-title">{{r.recipe_name}}</h4>
 
                 </div>
