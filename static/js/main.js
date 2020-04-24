@@ -72,12 +72,13 @@ $(window).on("load", function() {
 
 
 
-/* Toggle Hamburger when close / open modal
+/* Toggle Hamburger when close / open modal 
 var $hamburger = $(".hamburger--spring, .modal-close");
 $hamburger.on("click", function(e) {
     $hamburger.toggleClass("is-active");
-    
+
 });
+
 */
 
 // ----------- * HEADER * -----------
@@ -107,6 +108,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Show and hide featured images in recipe.html  when associated button is hovered //
 $(document).ready(function() {
+
+
+
     $('.featured-utensil-button-2').hover(function() {
         $('.featured-utensil-image-1').addClass('display-2');
         $('.featured-utensil-image-1').removeClass('display-1');

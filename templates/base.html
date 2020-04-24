@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{url_for('static', filename='css/hamburgers.css')}}" type="text/css" />
+    <link href="dist/hamburgers.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap" rel="stylesheet">
@@ -63,13 +64,20 @@
                 <li class="mobile-heading"><a href="{{url_for('view_utensils')}}">Utensils</a></li>
                 <li class="mobile-heading"><a href="collapsible.html">About</a></li>
                 <li class="mobile-heading"><a href="{{url_for('manage')}}">Manage</a></li>
+                <li class="mobile-heading"><a class="tap-target-opener">Add</a></li>
 
 
             </ul>
         </div>
 
     </div>
-
+    <!--
+    <button class="hamburger hamburger-spring" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button> 
+      -->
     {% block content %} {% endblock %}
 
 
