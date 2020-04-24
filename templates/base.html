@@ -28,7 +28,10 @@
     <nav id="stickyheaders" class="medium-section-brown">
         <div class="nav-wrapper medium-section-brown">
             <a href="{{url_for('recipes')}}" class="brand-logo"><i class="material-icons">cake</i>Windy's Bakery</a>
-            <a href="#" data-activates="mobile-demo" class="right button-collapse"><i class="material-icons">menu</i></a>
+
+            <!-- <a href="#" class="right button-collapse"><i class="material-icons">menu</i></a> -->
+            <!-- Modal Trigger -->
+            <a class="waves-effect right waves-light modal-trigger mobile-popup-icon" href="#modal1"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{url_for('recipes')}}">Home</a></li>
                 <li><a href="{{url_for('view_categories')}}">Categories</a></li>
@@ -44,28 +47,28 @@
                 <li><a href="collapsible.html">About</a></li>
                 <li><a href="{{url_for('manage')}}">Manage</a></li>
 
+
             </ul>
         </div>
     </nav>
 
 
+    <!-- Modal Structure for Mobile popup menu -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
 
-    <!--          
-        <ul>
-            <li><A href="{{url_for('view_categories')}}">Categories</A></li>
-            <li><A href="{{url_for('recipes')}}">Recipes</A></li>
-            <li><A href="{{url_for('view_utensils')}}">Utensils</A></li>
-            <li><A href="{{url_for('add_category')}}">Add Category</A></li>
-            <li><A href="{{url_for('manage_categories')}}">Manage Categories</A></li>
-            <li><A href="{{url_for('add_recipe')}}">Add Recipe</A></li>
-            <li><A href="{{url_for('manage_recipes')}}">Manage Recipes</A></li>
-            <li><A href="{{url_for('add_utensil')}}">Add Utensil</A></li>
-            <li><A href="{{url_for('manage_utensils')}}">Manage Utensils</A></li>
-            <li><A href="{{url_for('manage_archive')}}">Manage Archive</A></li>
-            <li><A href="{{url_for('manage')}}">Manage</A></li>
+            <ul>
+                <li class="mobile-heading"><a href="{{url_for('recipes')}}">Home</a></li>
+                <li class="mobile-heading"><a href="{{url_for('view_categories')}}">Categories</a></li>
+                <li class="mobile-heading"><a href="{{url_for('view_utensils')}}">Utensils</a></li>
+                <li class="mobile-heading"><a href="collapsible.html">About</a></li>
+                <li class="mobile-heading"><a href="{{url_for('manage')}}">Manage</a></li>
 
-        </ul>
--->
+
+            </ul>
+        </div>
+
+    </div>
 
     {% block content %} {% endblock %}
 

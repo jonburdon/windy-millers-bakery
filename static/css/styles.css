@@ -208,6 +208,14 @@ a {
     color: var(--off-white)
 }
 
+.mobile-heading {
+    font-size: 18pt;
+}
+
+.mobile-heading a {
+    color: var (var(--dark-brown))
+}
+
 
 /* =============================================================================
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -675,6 +683,9 @@ blockquote {
     }
     .brand-logo {
         font-size: 18pt !important;
+    }
+    .mobile-popup-icon {
+        display: none;
     }
 }
 
