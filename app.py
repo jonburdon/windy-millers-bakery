@@ -183,14 +183,14 @@ def view_category(category_id, category_name):
     selected_recipes = mongo.db.recipes.find({"category_name": category_name })
 
     all_categories = mongo.db.categories.find()
-    for category in all_categories:
-        for c in category:
-            print ("******** THIS IS THE CATEGORY ID I'M LOOKING FOR")
-            print(category_id)
-            print ("******** HERE IS SOME DATA FROM THE CATEGORY DOCUMENT")
-            print (category[c])
-            if (category[c]) == (category_id):
-                print ("========== WE HAVE A MATCH!! ================")
+    # for category in all_categories:
+      #  for c in category:
+            # print ("******** THIS IS THE CATEGORY ID I'M LOOKING FOR")
+            # print(category_id)
+            # print ("******** HERE IS SOME DATA FROM THE CATEGORY DOCUMENT")
+       #     print (category[c])
+        #    if (category[c]) == (category_id):
+         #       print ("========== WE HAVE A MATCH!! ================")
                 #Somehow get the name from this document and assign it to a string
 
             

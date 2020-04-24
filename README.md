@@ -313,6 +313,9 @@ The following image was used for colour palette inspiration:
 https://www.pinterest.co.uk/pin/524880531556508076/
 The website https://imagecolorpicker.com/en/ was used to autogenerate a wider range of colour codes from the original reference image.
 
+Convert hex to rgb, rgba:
+https://www.hexcolortool.com/
+
 ## Design
 Reference was taken from Doves Farm for inspiration
 
