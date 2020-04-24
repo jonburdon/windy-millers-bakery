@@ -3,6 +3,23 @@ $(document).ready(function() {
 
     // ----------- * FILTERING * -----------
 
+    jQuery(function() {
+        console.log("Filtering started");
+
+        // BUG: The filtering happens before the images are loaded, so the grid breaks.
+        // Try to fix by waiting for images to load
+        // Same issue discussed here: https://github.com/metafizzy/isotope/issues/611
+
+        // var $container = jQuery('.grid-main');
+        // $container.imagesLoaded(function() {
+        $grid.isotope({
+            filter: '*',
+            layoutMode: 'fitRows'
+        });
+        // });
+        console.log("Filtering done");
+    });
+
     // Filter by category 
     $('.filter li .filteroption').on("click", function() {
         var value = $(this).attr('data-name');
@@ -18,7 +35,7 @@ $(document).ready(function() {
 
 
     // ----------- * SORTING * -----------
-    // Sort by cooking time
+    // Get sort data
 
     var $grid = $('.grid-main').isotope({
         itemSelector: '.grid-item',
@@ -31,6 +48,7 @@ $(document).ready(function() {
         }
     });
 
+
     // Sort by name, original or random 
     $('.sort li a').on("click", function() {
         var value = $(this).attr('data-name');
@@ -41,7 +59,7 @@ $(document).ready(function() {
         $('.sort li a').removeClass('active');
         // Add active class to this
         $(this).addClass('active');
-    })
+    });
 
 
 
