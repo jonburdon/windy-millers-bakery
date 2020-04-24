@@ -1,4 +1,6 @@
 // ** USE ISOTOPE FRAMEWORK FOR FILTERING AND SORTING **
+
+
 $(document).ready(function() {
 
     // ----------- * FILTERING * -----------
