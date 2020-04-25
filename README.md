@@ -5,6 +5,7 @@
 
 [View Deployed Site](https://windy-miller.herokuapp.com/)
 
+Introduction text.
 
 INDEX:
 Project Aims and Minimum Requirements
@@ -12,35 +13,34 @@ Project Aims and Minimum Requirements
 Technologies Used
 User Stories
 
+### Aims & Purpose:
+Developer aims, Project Spec
+
+### Overview:
+UX, User Stories, Data Structure, Surface Design, Wireframes
+
+### Features of the Project:
+Current Features, Planned Features
+
+### Technologies Used:
+Languages, Libraries, Tools, Hosting
+
+### Data Structure:
+Rationale, Database Overview, Collections, DB Fields
+
+### Workflow:
 
 
-Design
 
-Wireframes
-
-Features of the Project
-
-Current Features
-
-Planned Features
-
-Technologies Used
-
-Languages
-
-Libraries
-
-Tools
-
-Hosting
-
-Testing
+### Testing:
 
 Testing Introduction, Code Validation, Responsiveness and Rendering, Browser Compatibility, Features Testing, Unit Testing
 
-Deployment, Deployment to Heroku, Local Deployment
+### Deployment:
+Deployment to Heroku, Local Deployment
 
-Credits - Content, Media, Acknowledgements
+### Credits:
+Content, Media, Acknowledgements
 
 Workflow and Project Process
 Agree specification for Project with (fictitous client)
@@ -101,7 +101,9 @@ Final enhancements
 - To check Javascript for errors: https://www.jslint.com/
 - To pick colours from image when building colour scheme: https://imagecolorpicker.com/
 
-
+### Features
+Make it clear which features OF CODE have been used.
+Make Defensive design clear
 
 
 ### Testing:

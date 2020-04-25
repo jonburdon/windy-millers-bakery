@@ -95,7 +95,7 @@ def insert_recipe():
     recipes = mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
     
-    return redirect(url_for('recipes'))
+    return redirect(url_for('thankyou'))
 
 @app.route('/manage_recipes/')
 def manage_recipes():
@@ -222,7 +222,7 @@ def insert_category():
     mongo.db.categories.insert_one(category_doc)
     category_doc = {'category_image': request.form.get('category_image')}
     mongo.db.categories.insert_one(category_doc)
-    return redirect(url_for('view_categories'))
+    return redirect(url_for('thankyou'))
 
 @app.route('/add_category/')
 def add_category():
@@ -327,7 +327,7 @@ def add_utensil():
 def insert_utensil():
     utensils = mongo.db.utensils
     utensils.insert_one(request.form.to_dict())
-    return redirect(url_for('view_utensils'))
+    return redirect(url_for('thankyou'))
 
 @app.route('/update_utensil/<utensil_id>', methods=['POST'])
 def update_utensil(utensil_id):
@@ -358,6 +358,10 @@ def manage():
 @app.route('/about/')
 def about():
     return render_template('about.html')
+
+@app.route('/thankyou/')
+def thankyou():
+    return render_template('form_confirm.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',

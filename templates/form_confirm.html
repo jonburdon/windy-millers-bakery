@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="hero-header valign-wrapper center-align">
+    <div class="row ">
+        <h1 class="col s12" id="main-site-title">Thanks!</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row medium-section-blue center-align text-box">
+
+        <div class="col s12 m6 text-box-inner">
+            <h2>Thankyou</h2>
+            <h4>For submitting successfully to Windy's recipe database.</h4>
+        </div>
+        <div class="col s12 m6 ">
+            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+            <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_jBvjF3.json" background="b9cac0" speed="1" style="width: 300px; height: 300px;" hover loop autoplay></lottie-player>
+        </div>
+    </div>
+
+    <div class="row medium-section-blue center-align text-box">
+
+        <div class="col s12 m4  text-box-inner">
+            <A href="{{url_for('add_recipe')}}">
+                <h4><i class="stats-icon material-icons prefix">cake</i>Add another recipe</h4>
+            </A>
+
+        </div>
+
+        <div class="col s12 m4  text-box-inner">
+            <A href="{{url_for('add_category')}}">
+                <h4><i class="stats-icon material-icons prefix ">create_new_folder</i>Add another category</h4>
+            </A>
+
+        </div>
+
+        <div class="col s12 m4  text-box-inner">
+            <A href="{{url_for('add_utensil')}}">
+                <h4><i class="stats-icon material-icons prefix ">local_dining</i>Add another utensil</h4>
+            </A>
+
+        </div>
+
+    </div>
+
+
+</div>
+{% include 'components/data_dashboard.html' %} {% endblock %}
