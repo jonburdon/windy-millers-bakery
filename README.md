@@ -1,46 +1,133 @@
 # Windy Miller's Bakery - Data Centric Design
 
-
+Introduction paragraph.
 ## View site:
 
 [View Deployed Site](https://windy-miller.herokuapp.com/)
 
-Introduction text.
-
-INDEX:
-Project Aims and Minimum Requirements
-[Developer Aims](#developer-aims)
-Technologies Used
-User Stories
-
-### Aims & Purpose:
-Developer aims, Project Spec
-
-### Overview:
-UX, User Stories, Data Structure, Surface Design, Wireframes
-
-### Features of the Project:
-Current Features, Planned Features
-
-### Technologies Used:
-Languages, Libraries, Tools, Hosting
-
-### Data Structure:
-Rationale, Database Overview, Collections, DB Fields
-
-### Workflow:
 
 
 
-### Testing:
+[### Aims & Purpose:](#aims-and-purpose)
+[Developer Aims](#developer-aims), [Project Spec](#project-spec)
 
-Testing Introduction, Code Validation, Responsiveness and Rendering, Browser Compatibility, Features Testing, Unit Testing
+[### Overview:](#overview)
+[UX](#ux), [User Stories](#user-stories), [Data Structure](#data-structure), [Surface design](#surface-design), [Wireframes](#wireframes)
 
-### Deployment:
-Deployment to Heroku, Local Deployment
+[### Features of the Project:](#features)
+[Current Features](#current-features), [Planned Features](#planned-features)
 
-### Credits:
-Content, Media, Acknowledgements
+[### Technologies Used:](#technologies-used)
+[Languages](#languages), [Libraries](#libraries), [Tools](#tools), [Hosting](#hosting)
+
+[### Data Structure:](#data-stucture)
+[Rationale](#rationale), [Database Overview](#database-overview), [Collections](#collections), [DB Fields](#db-fields)
+
+[### Workflow:](#workflow)
+
+[### Testing:](#testing)
+
+[Code Validation](#code-validation), [Responsiveness and Rendering](#responsiveness-and-rendering), [Browser Compatibility](#browser-compatibility), [Features Testing](#features-testing), [Unit Tests](#unit-tests)
+
+[### Deployment:](#deployment)
+[Deployment to Heroku](#deployment-to-heroku), [Local Deployment](#local-deployment)
+
+[### Credits:](#credits)
+[Copy](#copy), [Media](#media), [Acknowledgements](#acknowledgements)
+
+
+
+
+<a name="aims-and-purpose">## Aims & Purpose:</a> 
+
+#### Developer Aims]<a name="developer-aims"></a> , #### Project Spec <a name="project-spec"></a> 
+
+<a name="overview">## Overview</a> 
+
+<a name="ux">####UX </a>
+
+
+<a name="user-stories">#### User Stories</a>
+
+
+<a name="data-structure">#### Data Structure </a>
+
+<a name="surface-design">#### Surface design </a>
+
+<a name="wireframes">#### Wireframes </a> 
+
+
+
+<a name="features">## Features of the Project:</a> 
+
+<a name="current-features">#### Current Features </a>
+
+<a name="planned-features">#### Planned Features </a> 
+
+
+
+
+<a name="technologies-used">## Technologies Used:</a> 
+
+<a name="languages">#### Languages </a>
+
+<a name="libraries">#### Libraries </a>
+
+<a name="tools">#### Tools </a>
+
+<a name="hosting">#### Hosting </a> 
+
+
+
+<a name="data-stucture">## Data Structure:</a> 
+
+<a name="rationale">#### Rationale </a>
+<a name="database-overview">#### Database Overview </a>
+<a name="collections">#### Collections </a>
+<a name="db-fields">#### DB Fields </a> 
+
+
+
+<a name="workflow">## Workflow:</a> 
+
+
+
+
+<a name="testing">## Testing:</a> 
+
+<a name="code-validation">#### Code Validation </a>
+
+<a name="responsiveness-and-rendering">#### Responsiveness and Rendering </a>
+
+<a name="browser-compatibility">#### Browser Compatibility </a>
+
+<a name="features-testing">#### Features Testing </a>
+
+<a name="unit-tests">#### Unit Tests </a> 
+
+
+
+
+<a name="deployment">## Deployment:</a> 
+
+<a name="deployment-to-heroku">#### Deployment to Heroku </a>
+
+<a name="local-deployment">#### Local Deployment </a> 
+
+
+
+
+<a name="credits">## Credits:</a> 
+#### Copy <a name="copy"></a>
+
+<a name="media">#### Media </a>
+
+<a name="acknowledgements">#### Acknowledgements </a> 
+
+
+
+
+
 
 Workflow and Project Process
 Agree specification for Project with (fictitous client)
@@ -104,6 +191,8 @@ Final enhancements
 ### Features
 Make it clear which features OF CODE have been used.
 Make Defensive design clear
+Form confirm page
+Testing - use dead link checker
 
 
 ### Testing:
@@ -111,7 +200,8 @@ Make Defensive design clear
 - http://www.cssdrive.com/cssautoprefixer/
 
 Note: The css validator throws errors relating to use of :root, var and also some webkit prefixes. These do not affect the project's performance.
-
+Use dead link checker
+Mobile menu link - old link found
 
 
 ## Scope agreed with (fictitious) client prior to project start:
