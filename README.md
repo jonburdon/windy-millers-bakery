@@ -203,6 +203,8 @@ Testing - use dead link checker
 7. Update form to verify all form fields and only accept forms accordingly.
 8. Facility to convert units from metric to imperial
 9. Submit image through form and use Cloudinary to host images. API Documentation here: https://cloudinary.com/documentation/cloudinary_references
+10. Add a hierarchy to the recipe database categories collection so that 'Sourdough' and 'Yeast Breads' could be organised under the main category of 'Bread.'
+11. Add array items to the recipe ingredients so that individual ingredients and their quanitities can be added or deleted as individual fields in the database. Use the same functionality for steps in the recipe method.
 
 
 
@@ -242,9 +244,35 @@ Testing - use dead link checker
  ## <a name="data-stucture"></a> ## Data Structure:
 
  #### <a name="rationale"></a> Rationale
+
+One main for the project for the developer was to keep the projects simple and work to find the minimum level fo complexity needed to deliver a result. For this reason, each data field in the recipe collection is a single string field. This meant the form to dict methof could be used to send data straight from the form to the database rather that manipulating the form data programatically before submitting it.
+
  #### <a name="database-overview"></a> Database Overview
+
+The data is organised on Mongo db in three collections: Recipes, Categories and Utensils.
+
+Consideration was given to adding individual ingredients and separate steps in the recipe method as array items within a custom field in the recipe collection. Ingredient quantities were also considered. This feature could be added in a future release.
+
+Consideration was given to other collections such as 'Regions of the World,' or 'Difficulty.' Two types of Bread exist as separate categories - Sourdough and Bread. And improved data structure might use a hierarchy of categories so that Soughdough and Yeast Breads exists as sub categories within the main 'Bread' category. This feature could be added in a future release.
+
  #### <a name="collections"></a> Collections
+
+The Recipes collectioncontains string variables relevant to a single recipe. The category field is used to match the document with that name in the categories collection. There is a data field for utensils and a separate field for featured utensils. This field is matched to the document of the same name in the utensils collection. 
+
+The Utensils collection contains documents for individual 'featured utensils' which can be selected as fields and referenced by name in the 'featured- utensil' field in recipes collection. 
+
  #### <a name="db-fields"></a> DB Fields 
+
+##### Recipes Collection
+
+##### Categories Collection
+
+##### Utensils Collection
+
+
+
+
+
 
 
 
@@ -399,12 +427,17 @@ Create an instance of pymongo, add app with constructor method.
 
  #### <a name="local-deployment"></a> Local Deployment 
 
-Instructions:
-1. 
+With the above setup, to deploy locally on a mac:
+
+1. Open a terminal for the virtual environment where the project resides
+2. Type python3 app.py 
+3. Browse to http://0.0.0.0:5000/ 
 
 
- ## <a name="review"></a> Review:
 
+ ## <a name="review"></a> Project Review:
+
+The overriding aim for the developer was to deliver the project in a minimal amount of time. The project was started on 11th March at submitted for review before the end of April. The number of hours was equal to approx 8 working days.
 
 
  ## <a name="acknowledgements"></a> Acknowledgements:
@@ -441,50 +474,31 @@ Instructions:
 ## Wireframes
 
 
-
-
-# Features of current version:
-Home Page:
-Header slides up on scroll down and re-appears on scroll up
-Hero header with opacity overlay and parallax effect
-Smooth scrolling from anchor link to another position on the same page
-Content organised in to sections with appropriate mobile optimised padding
-Google icons
-css variables used throughout to enable global changes to site colour theme
-Grow on hover
-Animate on scroll
-Filter and Sort - controls for these are mobile optimised - ie filter tabs are only displayed on desktop view, select fields are used on mobile view
-Floating buttons for database utilities enable easy access
-Quote box
-Data dashboard
-Reuseable components - quote section and data dashboard
-
 ### Defensive design
 * Required form fields
 * Delete confirmation
 
-## Reference Sites
-
-### Technical
+### Technical Reference 
 https://caniuse.com/
 https://css-tricks.com/
 https://docs.mongodb.com/manual/reference/
 https://www.w3schools.com/
 Add more here eg flex
+Stack Overflow
+Convert hex to rgb, rgba:
+https://www.hexcolortool.com/
 
 ### Credits
 https://en.wikibooks.org/wiki/Cookbook:Table_of_Contents
 https://pixabay.com/
 
-ALL images Compressed using UPic image optimisation software.
 
 ## Colour Palette:
 The following image was used for colour palette inspiration:
 https://www.pinterest.co.uk/pin/524880531556508076/
 The website https://imagecolorpicker.com/en/ was used to autogenerate a wider range of colour codes from the original reference image.
 
-Convert hex to rgb, rgba:
-https://www.hexcolortool.com/
+
 
 ## Design
 Reference was taken from Doves Farm for inspiration
