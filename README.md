@@ -38,91 +38,93 @@ Introduction paragraph.
 
 
 
-<a name="aims-and-purpose">## Aims & Purpose:</a> 
+<a name="aims-and-purpose"></a> ## Aims & Purpose:
 
-#### Developer Aims]<a name="developer-aims"></a> , #### Project Spec <a name="project-spec"></a> 
+<a name="developer-aims"></a>#### Developer Aims
 
-<a name="overview">## Overview</a> 
+<a name="project-spec"></a> #### Project Spec
 
-<a name="ux">####UX </a>
+<a name="overview"></a> ## Overview
 
-
-<a name="user-stories">#### User Stories</a>
-
-
-<a name="data-structure">#### Data Structure </a>
-
-<a name="surface-design">#### Surface design </a>
-
-<a name="wireframes">#### Wireframes </a> 
+<a name="ux"></a> ####UX
 
 
+<a name="user-stories"></a> #### User Stories
 
-<a name="features">## Features of the Project:</a> 
 
-<a name="current-features">#### Current Features </a>
+<a name="data-structure"></a> #### Data Structure
 
-<a name="planned-features">#### Planned Features </a> 
+<a name="surface-design"></a> #### Surface design
+
+<a name="wireframes"></a> #### Wireframes
 
 
 
+<a name="features"></a> ## Features of the Project:
 
-<a name="technologies-used">## Technologies Used:</a> 
+<a name="current-features"></a> #### Current Features
 
-<a name="languages">#### Languages </a>
-
-<a name="libraries">#### Libraries </a>
-
-<a name="tools">#### Tools </a>
-
-<a name="hosting">#### Hosting </a> 
-
-
-
-<a name="data-stucture">## Data Structure:</a> 
-
-<a name="rationale">#### Rationale </a>
-<a name="database-overview">#### Database Overview </a>
-<a name="collections">#### Collections </a>
-<a name="db-fields">#### DB Fields </a> 
-
-
-
-<a name="workflow">## Workflow:</a> 
+<a name="planned-features"></a> #### Planned Features
 
 
 
 
-<a name="testing">## Testing:</a> 
+<a name="technologies-used"></a> ## Technologies Used:
 
-<a name="code-validation">#### Code Validation </a>
+<a name="languages"></a> #### Languages
 
-<a name="responsiveness-and-rendering">#### Responsiveness and Rendering </a>
+<a name="libraries"></a> #### Libraries
 
-<a name="browser-compatibility">#### Browser Compatibility </a>
+<a name="tools"></a> #### Tools
 
-<a name="features-testing">#### Features Testing </a>
-
-<a name="unit-tests">#### Unit Tests </a> 
+<a name="hosting"></a> #### Hosting
 
 
 
+<a name="data-stucture"></a> ## Data Structure:
 
-<a name="deployment">## Deployment:</a> 
-
-<a name="deployment-to-heroku">#### Deployment to Heroku </a>
-
-<a name="local-deployment">#### Local Deployment </a> 
-
-
+<a name="rationale"></a> #### Rationale
+<a name="database-overview"></a> #### Database Overview
+<a name="collections"></a> #### Collections
+<a name="db-fields"></a> #### DB Fields 
 
 
-<a name="credits">## Credits:</a> 
-#### Copy <a name="copy"></a>
 
-<a name="media">#### Media </a>
+<a name="workflow"></a> ## Workflow: 
 
-<a name="acknowledgements">#### Acknowledgements </a> 
+
+
+
+<a name="testing"></a> ## Testing: 
+
+<a name="code-validation"></a> #### Code Validation 
+
+<a name="responsiveness-and-rendering"></a> #### Responsiveness and Rendering
+
+<a name="browser-compatibility"></a> #### Browser Compatibility
+
+<a name="features-testing"></a> #### Features Testing
+
+<a name="unit-tests"></a> #### Unit Tests 
+
+
+
+
+<a name="deployment"></a> ## Deployment: 
+
+<a name="deployment-to-heroku"></a> #### Deployment to Heroku
+
+<a name="local-deployment"></a> #### Local Deployment 
+
+
+
+
+<a name="credits"></a>## Credits:
+<a name="copy"></a>#### Copy 
+
+<a name="media"></a>#### Media
+
+<a name="acknowledgements"></a>#### Acknowledgements 
 
 
 
