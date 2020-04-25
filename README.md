@@ -32,99 +32,102 @@ Introduction paragraph.
 [### Deployment:](#deployment)
 [Deployment to Heroku](#deployment-to-heroku), [Local Deployment](#local-deployment)
 
-[### Credits:](#credits)
-[Copy](#copy), [Media](#media), [Acknowledgements](#acknowledgements)
+[### Acknowledgements:](#acknowledgements)
+[Copy](#copy), [Media](#media), [Code](#code)
 
 
 
 
-<a name="aims-and-purpose"></a> ## Aims & Purpose:
+## <a name="aims-and-purpose"></a> Aims & Purpose:
 
-<a name="developer-aims"></a>#### Developer Aims
+#### <a name="developer-aims"></a> Developer Aims
 
-<a name="project-spec"></a> #### Project Spec
-
-<a name="overview"></a> ## Overview
-
-<a name="ux"></a> ####UX
-
-
-<a name="user-stories"></a> #### User Stories
-
-
-<a name="data-structure"></a> #### Data Structure
-
-<a name="surface-design"></a> #### Surface design
-
-<a name="wireframes"></a> #### Wireframes
+ #### <a name="project-spec"></a> Project Spec
 
 
 
-<a name="features"></a> ## Features of the Project:
+ ## <a name="overview"></a> Overview
 
-<a name="current-features"></a> #### Current Features
-
-<a name="planned-features"></a> #### Planned Features
+ #### <a name="ux"></a>UX
 
 
+ #### <a name="user-stories"></a> User Stories
 
 
-<a name="technologies-used"></a> ## Technologies Used:
+ #### <a name="data-structure"></a> Data Structure
 
-<a name="languages"></a> #### Languages
+ #### <a name="surface-design"></a> Surface design
 
-<a name="libraries"></a> #### Libraries
-
-<a name="tools"></a> #### Tools
-
-<a name="hosting"></a> #### Hosting
+ #### <a name="wireframes"></a> Wireframes
 
 
 
-<a name="data-stucture"></a> ## Data Structure:
+ ## <a name="features"></a> Features of the Project:
 
-<a name="rationale"></a> #### Rationale
-<a name="database-overview"></a> #### Database Overview
-<a name="collections"></a> #### Collections
-<a name="db-fields"></a> #### DB Fields 
+ #### <a name="current-features"></a> Current Features
 
-
-
-<a name="workflow"></a> ## Workflow: 
+ #### <a name="planned-features"></a> Planned Features
 
 
 
 
-<a name="testing"></a> ## Testing: 
+ ## <a name="technologies-used"></a> ## Technologies Used:
 
-<a name="code-validation"></a> #### Code Validation 
+ #### <a name="languages"></a> Languages
 
-<a name="responsiveness-and-rendering"></a> #### Responsiveness and Rendering
+ #### <a name="libraries"></a> Libraries
 
-<a name="browser-compatibility"></a> #### Browser Compatibility
+ #### <a name="tools"></a> Tools
 
-<a name="features-testing"></a> #### Features Testing
-
-<a name="unit-tests"></a> #### Unit Tests 
+ #### <a name="hosting"></a> Hosting
 
 
 
+ ## <a name="data-stucture"></a> ## Data Structure:
 
-<a name="deployment"></a> ## Deployment: 
-
-<a name="deployment-to-heroku"></a> #### Deployment to Heroku
-
-<a name="local-deployment"></a> #### Local Deployment 
-
-
+ #### <a name="rationale"></a> Rationale
+ #### <a name="database-overview"></a> Database Overview
+ #### <a name="collections"></a> Collections
+ #### <a name="db-fields"></a> DB Fields 
 
 
-<a name="credits"></a>## Credits:
-<a name="copy"></a>#### Copy 
 
-<a name="media"></a>#### Media
+ ## <a name="workflow"></a> ## Workflow: 
 
-<a name="acknowledgements"></a>#### Acknowledgements 
+
+
+
+ ## <a name="testing"></a> ## Testing: 
+
+ #### <a name="code-validation"></a> Code Validation 
+
+ #### <a name="responsiveness-and-rendering"></a> Responsiveness and Rendering
+
+ #### <a name="browser-compatibility"></a> Browser Compatibility
+
+ #### <a name="features-testing"></a> Features Testing
+
+ #### <a name="unit-tests"></a> Unit Tests 
+
+
+
+
+ ## <a name="deployment"></a> ## Deployment: 
+
+ #### <a name="deployment-to-heroku"></a> Deployment to Heroku
+
+ #### <a name="local-deployment"></a> Local Deployment 
+
+
+
+
+ ## <a name="acknowledgements"></a> Acknowledgements:
+
+ #### <a name="copy"></a> Copy 
+
+ #### <a name="media"></a> Media
+
+ #### <a name="code"></a> Code 
 
 
 
