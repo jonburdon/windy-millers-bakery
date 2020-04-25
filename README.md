@@ -1,40 +1,41 @@
 # Windy Miller's Bakery - Data Centric Design
 
 Introduction paragraph.
-## View site:
-
-[View Deployed Site](https://windy-miller.herokuapp.com/)
 
 
 
+## [View Deployed Site](https://windy-miller.herokuapp.com/)
 
-[### Aims & Purpose:](#aims-and-purpose)
+
+
+
+### [Aims & Purpose:](#aims-and-purpose)
 [Developer Aims](#developer-aims), [Project Spec](#project-spec)
 
-[### Overview:](#overview)
+### [ Overview:](#overview)
 [UX](#ux), [User Stories](#user-stories), [Data Structure](#data-structure), [Surface design](#surface-design), [Wireframes](#wireframes)
 
-[### Features of the Project:](#features)
+### [ Features of the Project:](#features)
 [Current Features](#current-features), [Planned Features](#planned-features)
 
-[### Technologies Used:](#technologies-used)
+### [ Technologies Used:](#technologies-used)
 [Languages](#languages), [Libraries](#libraries), [Tools](#tools), [Hosting](#hosting)
 
-[### Data Structure:](#data-stucture)
+### [ Data Structure:](#data-stucture)
 [Rationale](#rationale), [Database Overview](#database-overview), [Collections](#collections), [DB Fields](#db-fields)
 
-[### Workflow:](#workflow)
+### [ Workflow:](#workflow)
 
-[### Testing:](#testing)
+### [ Testing:](#testing)
 
 [Code Validation](#code-validation), [Responsiveness and Rendering](#responsiveness-and-rendering), [Browser Compatibility](#browser-compatibility), [Features Testing](#features-testing), [Unit Tests](#unit-tests)
 
-[### Deployment:](#deployment)
+### [ Deployment:](#deployment)
 [Deployment to Heroku](#deployment-to-heroku), [Local Deployment](#local-deployment)
 
-[### Project Review](#review)
+### [ Project Review](#review)
 
-[### Acknowledgements:](#acknowledgements)
+### [ Acknowledgements:](#acknowledgements)
 [Copy](#copy), [Media](#media), [Code](#code)
 
 
@@ -111,22 +112,22 @@ Introduction paragraph.
 
 1. [x] Build upon the required tools field to promote your brand of kitchen tools (e.g. oven, pressure cooker, etc…). Display detail on the utensil itself on a single page view for this utensil
 2. [x] Create a dashboard to provide some statistics about all the recipes. Number of recipes, number in each category, utensils, number of recipes using this utensil
-3. [] Pagination for more than 20 recipes.
-4. [] Sort by name or cooking time in ascending / descending order.
-5. [] Add 'similar recipes' display on single recipe view
+3. [ ] Pagination for more than 20 recipes.
+4. [ ]  Sort by name or cooking time in ascending / descending order.
+5. [ ] Add 'similar recipes' display on single recipe view
 6. [x] Display 'Featured utensils' on home page
-7. [] Carousel display on home page with interactive swipe navigation
-8. [] Add facility to log in order use a provided pin before editing / deletion is permitted. 
+7. [ ] Carousel display on home page with interactive swipe navigation
+8. [ ] Add facility to log in order use a provided pin before editing / deletion is permitted. 
 9. [x] Header is 'sticky' and shrinks on scroll
 10. [x] Background or hero header image parallax effect
-11. [] CTA tab bar floating / sticky on right of screen to encourage user to navigate to utensils page.
-12. [] Update form to verify all form fields and only accept forms accordingly.
+11. [ ] CTA tab bar floating / sticky on right of screen to encourage user to navigate to utensils page.
+12. [ ] Update form to verify all form fields and only accept forms accordingly.
 13. [x] Confirmation messages when data has been added / updated / deleted. Delete confirm message.
 14. [x] Featured Recipe option
-15. [] Facility to convert units from metric to imperial
+15. [ ] Facility to convert units from metric to imperial
 16. [x] Add animation to the sorting, filtering and displaying of data 
 17. [x] Delete function will only mark recipe as 'archived.' To permanently delete, user must enter archive manager and then permanently delete the item.
-18. [] Submit image through form and use Cloudinary to host images. API Documentation here: https://cloudinary.com/documentation/cloudinary_references
+18. [ ] Submit image through form and use Cloudinary to host images. API Documentation here: https://cloudinary.com/documentation/cloudinary_references
 
  #### <a name="user-stories"></a> User Stories
 
@@ -208,7 +209,7 @@ Testing - use dead link checker
 
 
 
- ## <a name="technologies-used"></a> ## Technologies Used:
+ ## <a name="technologies-used"></a> Technologies Used:
 
  #### <a name="languages"></a> Languages
 
@@ -241,7 +242,7 @@ Testing - use dead link checker
 
 * [Heroku](https://www.heroku.com/) - for hosting
 
- ## <a name="data-stucture"></a> ## Data Structure:
+ ## <a name="data-stucture"></a> Data Structure:
 
  #### <a name="rationale"></a> Rationale
 
@@ -276,7 +277,7 @@ The Utensils collection contains documents for individual 'featured utensils' wh
 
 
 
- ## <a name="workflow"></a> ## Workflow: 
+ ## <a name="workflow"></a> Workflow: 
 
 Working Process:
 CRUD Operations Stage
@@ -296,7 +297,7 @@ Agree specification for Project with (fictitous client)
 
 
 
- ## <a name="testing"></a> ## Testing: 
+ ## <a name="testing"></a> Testing: 
 
 
 - http://www.cssdrive.com/cssautoprefixer/
@@ -323,10 +324,8 @@ Mobile menu link - old link found
 
 
 
- ## <a name="deployment"></a> ## Deployment: 
+ ## <a name="deployment"></a> Deployment: 
 
-
-## Deployment: 
 
 #### <a name="deployment-to-heroku"></a> Deployment to Heroku
 ##### Database Setup
