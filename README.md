@@ -3,12 +3,12 @@
 
 ## View site:
 
-[View Site on Heroku](https://windy-miller.herokuapp.com/)
+[View Deployed Site](https://windy-miller.herokuapp.com/)
 
 
 INDEX:
 Project Aims and Minimum Requirements
-Developer Aims
+[Developer Aims](#developer-aims)
 Technologies Used
 User Stories
 
@@ -70,7 +70,7 @@ Final enhancements
 8. Attribution: Maintain clear separation between code written by you and code from external sources (e.g. libraries or tutorials). Attribute any code from external sources to its source via comments above the code and (for larger dependencies) in the README.
 9. Deployment: Deploy the final version of your code to a hosting platform - Heroku.
 
-## Developer Aims
+## <a name="developer-aims"></a> Developer Aims
 1. Apply understanding of how to use CRUD calls to mongodb using Python with Flask application
 2. Build HTML based user interface to demonstrate CRUD calls in action
 3. Style the above using the Materialize framework for improved UX
