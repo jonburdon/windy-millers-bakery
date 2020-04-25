@@ -88,11 +88,27 @@ Introduction paragraph.
 
  ## <a name="technologies-used"></a> ## Technologies Used:
 
+* [HTML 5.0](https://www.w3.org/Style/CSS/)
+* [CSS](https://www.w3.org/Style/CSS/) 
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [Python](https://www.python.org/) - Used to run the back end create, read, update, delete functions and to serve files
+* Flask 
+* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
+
  #### <a name="languages"></a> Languages
 
- #### <a name="libraries"></a> Libraries
+ #### <a name="libraries"></a> Libraries & Frameworks
+ * Materialize 0.100.2
+ * [jQuery](https://jquery.com/)
+ * [Flex](http://flexboxgrid.com/) 
+ * [Isotope](https://isotope.metafizzy.co/)
+ * [Animate on Scroll Library](https://michalsnik.github.io/aos/)
 
  #### <a name="tools"></a> Tools
+* [Git](https://git-scm.com/)
+* Mongodb
+* [VSCode](https://code.visualstudio.com/) Files were created locally using Visual Studio. GIT was used to push files to Github
+
 
  #### <a name="hosting"></a> Hosting
 
@@ -173,22 +189,7 @@ Agree specification for Project with (fictitous client)
 
 
 ## Technologies used
-* HTML, CSS and Javascript programming languages
-    CSS libraries:
-    https://jonsuh.com/hamburgers/
-    Isotope https://isotope.metafizzy.co/
-* Python
-* Mongodb
-* Flask 
-* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
-* Materialize 0.100.2
-* [Bootstrap](https://getbootstrap.com/)
-* [Font Awesome](https://fontawesome.com/)
-* [Flex](http://flexboxgrid.com/) as implemented through Bootstrap 4
-* [VSCode](https://code.visualstudio.com/) Files were created locally using Visual Studio. GIT was used to push files to Github
-* [jQuery](https://jquery.com/) *** WHICH VERSION ** NB MUST MATCH ISOTOPE ** was used throughout, particularly to watch for events in the DOM and react accordingly.
-* [Popper.js](https://popper.js.org/) was loaded by Bootstrap in order to implement the collapsable navbar
-* [Git](https://git-scm.com/)
+
 
 ### Tools used for automation
 - To validate html: https://validator.w3.org/
