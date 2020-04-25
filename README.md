@@ -32,8 +32,11 @@ Introduction paragraph.
 [### Deployment:](#deployment)
 [Deployment to Heroku](#deployment-to-heroku), [Local Deployment](#local-deployment)
 
+[### Project Review](#review)
+
 [### Acknowledgements:](#acknowledgements)
 [Copy](#copy), [Media](#media), [Code](#code)
+
 
 
 
@@ -48,192 +51,27 @@ Introduction paragraph.
 4. Document the project for future reference
 5. Build the project in a time efficient and effective manner to meet initial spec precisely, enhancing this with 'nice to have' features only if time allows.
 
-#### <a name="project-spec"></a> Project Spec
+#### <a name="project-spec"></a> Project Aims
 
+###### Credit: Adapted from Code Institute project spec)
 1. Data handling: Build a MongoDB-backed Flask project for a web application that allows users to store and manipulate data records about a particular domain.
-2. Database structure: A database structure well-suited for the data domain of a recipe book website. Use appropriate nesting relationships between records of different entities.
+2. Database structure: A database structure well-suited for the data domain of a recipe book website.
 3. User functionality: Create functionality for users to create, locate, display, edit and delete records (CRUD functionality).
 4. Use of technologies: Use HTML and custom CSS for the website's front-end.
 5. Structure: Incorporate a main navigation menu and structured layout. This may be achieved with Materialize / Bootstrap
-6. Documentation: Provides detail on what the project does and the value that it provides to its users.
-7. Version control: Use Git & GitHub for version control.
-8. Attribution: Maintain clear separation between code written by you and code from external sources (e.g. libraries or tutorials). Attribute any code from external sources to its source via comments above the code and (for larger dependencies) in the README.
-9. Deployment: Deploy the final version of your code to a hosting platform - Heroku.
+6. Version control: Use Git & GitHub for version control.
+7. Deployment: Deploy the final version of code to a hosting platform - Heroku.
 
 
  ## <a name="overview"></a> Overview
 
  #### <a name="ux"></a>UX
 
-
- #### <a name="user-stories"></a> User Stories
-
-
- #### <a name="data-structure"></a> Data Structure
-
- #### <a name="surface-design"></a> Surface design
-
- #### <a name="wireframes"></a> Wireframes
-
-
-
- ## <a name="features"></a> Features of the Project:
-
- #### <a name="current-features"></a> Current Features
-
- #### <a name="planned-features"></a> Planned Features
-
-
-
-
- ## <a name="technologies-used"></a> ## Technologies Used:
-
-
-
- #### <a name="languages"></a> Languages
-
-* [HTML 5.0](https://www.w3.org/Style/CSS/)
-* [CSS](https://www.w3.org/Style/CSS/) - style the html and add interactivity
-* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - used for manipulating the DOM
-* [Python 3](https://www.python.org/) - Used for back end application
-* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
-
- #### <a name="libraries"></a> Libraries & Frameworks
-* [Flask 1.0.2](https://flask.palletsprojects.com/en/1.1.x/) - A micro web server framework
-* [Pymongo 2.3.0](https://flask-pymongo.readthedocs.io/en/latest/) - Used to perform C.R.U.D. operations in Mongo DB using python
-* [Materialize 0.100.2](http://archives.materializecss.com/0.100.2/) - CSS framework for front end
-* [jQuery](https://jquery.com/) - used for enhanced interactive features
-* [Flex](http://flexboxgrid.com/) - used to achieve responsive layout on About page
-* [Isotope](https://isotope.metafizzy.co/) - used to add sorting and filtering of grid items on the home page
-* [Animate on Scroll Library](https://michalsnik.github.io/aos/) - add animations on scroll
-* [Lottie Files](https://lottiefiles.com/) - Used as source for json based animation files and embedded player
-
- #### <a name="tools"></a> Tools
-* [Git](https://git-scm.com/) - for version control
-* [Github](https://github.com/) - provide hosting for development using Git
-* [Mongodb](https://www.mongodb.com/cloud/atlas) - the database server used
-* [VSCode](https://code.visualstudio.com/) - Local IDE
-* [uPic](https://apps.apple.com/us/app/upic-image-compression/id1341586328?mt=12) - used for Image compression
-
-
- #### <a name="hosting"></a> Hosting
-
-* [Heroku](https://www.heroku.com/) - for hosting
-
- ## <a name="data-stucture"></a> ## Data Structure:
-
- #### <a name="rationale"></a> Rationale
- #### <a name="database-overview"></a> Database Overview
- #### <a name="collections"></a> Collections
- #### <a name="db-fields"></a> DB Fields 
-
-
-
- ## <a name="workflow"></a> ## Workflow: 
-
-Working Process:
-CRUD Operations Stage
-Integrating Frameworks - Materialize, Isotope, AOS
-Customised Front End
-Content Migration
-Final enhancements
-
-
-
- ## <a name="testing"></a> ## Testing: 
-
- #### <a name="code-validation"></a> Code Validation 
-
- #### <a name="responsiveness-and-rendering"></a> Responsiveness and Rendering
-
- #### <a name="browser-compatibility"></a> Browser Compatibility
-
- #### <a name="features-testing"></a> Features Testing
-
- #### <a name="unit-tests"></a> Unit Tests 
-
-
-
-
- ## <a name="deployment"></a> ## Deployment: 
-
- #### <a name="deployment-to-heroku"></a> Deployment to Heroku
-
- #### <a name="local-deployment"></a> Local Deployment 
-
-
-
-
- ## <a name="acknowledgements"></a> Acknowledgements:
-
- #### <a name="copy"></a> Copy 
-
- #### <a name="media"></a> Media
-
- #### <a name="code"></a> Code 
-
-
-
-
-
-
-
-
-
-
-Workflow and Project Process
-Agree specification for Project with (fictitous client)
-    Site Structure
-    Header
-    Footer
-    Minimum Functions
-    Nice to have Functions
-
-
-
-
-
-
-## Technologies used
-
-
-### Tools used for automation
-- To validate html: https://validator.w3.org/
-- To validate css: https://jigsaw.w3.org/css-validator/
-- To check Javascript for errors: https://www.jslint.com/
-- To pick colours from image when building colour scheme: https://imagecolorpicker.com/
-
-### Features
-Make it clear which features OF CODE have been used.
-Make Defensive design clear
-Form confirm page
-Testing - use dead link checker
-
-
-### Testing:
-
-- http://www.cssdrive.com/cssautoprefixer/
-
-Note: The css validator throws errors relating to use of :root, var and also some webkit prefixes. These do not affect the project's performance.
-Use dead link checker
-Mobile menu link - old link found
-
-
-## Scope agreed with (fictitious) client prior to project start:
-### Credit: Adapted from Code Institute project spec)
-
-## User Stories
-### As a customer looking for recipes I want to be able to
-
-1. Easily learn how to navigate the different recipes
-2. Find the type of recipe I am interested in quickly
-3. Add my own recipes to the database
-4. Get reassuring feedback when I update the database (edit, add, delete)
-
+### Scope agreed with (fictitious) client prior to project start:
 ### Site Owners Goals
 1. Promote a brand of kitchen utensils
 
-### Minimum:
+### Minimum deliverable:
 1. Create a web application that allows users to store and easily access cooking recipes. Recipes would include fields such as ingredients, preparation steps, required tools, cuisine, etc.
 2. Create the backend code and frontend form(s) to allow users to add new recipes to the site, edit them and delete them.
 3. Create the backend and frontend functionality for users to locate recipes based on the recipe's fields. You may choose to create a full search functionality, or just a directory of recipes.
@@ -264,31 +102,236 @@ Mobile menu link - old link found
 * Third column with Utensil Products view
 
 
-#### Site Minimum Functions
+#### Fictitious client brief agreed before build - Site Minimum Functions
 1. Implements grid view of recipes. Visual design to be agreed with client / designer / developer before development work starts.
 2. Displays three recipe categories by title with recipes and 'ALL' recipe display. Each category to be viewed separately, or view all option (default).
 3. Sort by recipe name, or cooking time
 
-### Potential advanced features (nice to have):
+### Fiction client brief agreed before build - Potential advanced features (nice to have):
 
-1. [] Build upon the required tools field to promote your brand of kitchen tools (e.g. oven, pressure cooker, etc…). Display detail on the utensil itself on a single page view for this utensil
-2. [] Create a dashboard to provide some statistics about all the recipes. Number of recipes, number in each category, utensils, number of recipes using this utensil
+1. [x] Build upon the required tools field to promote your brand of kitchen tools (e.g. oven, pressure cooker, etc…). Display detail on the utensil itself on a single page view for this utensil
+2. [x] Create a dashboard to provide some statistics about all the recipes. Number of recipes, number in each category, utensils, number of recipes using this utensil
 3. [] Pagination for more than 20 recipes.
 4. [] Sort by name or cooking time in ascending / descending order.
 5. [] Add 'similar recipes' display on single recipe view
-6. [] Display 'Featured utensils' on home page
+6. [x] Display 'Featured utensils' on home page
 7. [] Carousel display on home page with interactive swipe navigation
 8. [] Add facility to log in order use a provided pin before editing / deletion is permitted. 
-9. [] Header is 'sticky' and shrinks on scroll
-10. [] Background or hero header image parallax effect
+9. [x] Header is 'sticky' and shrinks on scroll
+10. [x] Background or hero header image parallax effect
 11. [] CTA tab bar floating / sticky on right of screen to encourage user to navigate to utensils page.
 12. [] Update form to verify all form fields and only accept forms accordingly.
-13. [] Confirmation messages when data has been added / updated / deleted. Delete confirm message.
-14. [] Featured Recipe option
+13. [x] Confirmation messages when data has been added / updated / deleted. Delete confirm message.
+14. [x] Featured Recipe option
 15. [] Facility to convert units from metric to imperial
-16. [] Add isotope.js to animate the sorting, filtering and displaying of data 
-17. [] Delete function will only mark recipe as 'archived.' To permanently delete, user must enter archive manager and then permanently delete the item.
+16. [x] Add animation to the sorting, filtering and displaying of data 
+17. [x] Delete function will only mark recipe as 'archived.' To permanently delete, user must enter archive manager and then permanently delete the item.
 18. [] Submit image through form and use Cloudinary to host images. API Documentation here: https://cloudinary.com/documentation/cloudinary_references
+
+ #### <a name="user-stories"></a> User Stories
+
+##### As a customer looking for recipes I want to be able to
+
+1. Easily learn how to navigate the different recipes
+2. Find the type of recipe I am interested in quickly
+3. Add my own recipes to the database
+4. Get reassuring feedback when I update the database (edit, add, delete)
+
+ #### <a name="data-structure"></a> Data Structure
+
+ #### <a name="surface-design"></a> Surface design
+
+ #### <a name="wireframes"></a> Wireframes
+
+
+
+ ## <a name="features"></a> Features of the Project:
+
+ #### <a name="current-features"></a> Current Features
+
+
+##### Front End Features
+##### Home Page
+##### UX
+1. Nav Bar is sticky (top). This ideas on vertical scroll, and reappears when the user scrolls up from any scroll position.
+2. Mobile modal popup alternative menu.
+3. Hero header area with background image, box shadow text and parallax effect.
+4. Icon graphics are used to establish a visual convention on the home page for Recipes, Categories, Utilities and 'Add.' This convention is maintained throughout the site.
+5. Filtering and sorting of recipe items is displayed on the home page, using isoptope js library. The 'Add your own' CTA box will always appear last.
+6. Data dashboard section displays recipe data.
+7. Floating action buttons for database management tools.
+8. 'Feature Discovery' draws attention to the floating action buttons when 'add' button is clicked within a page or on the 'Add' menu item.
+9. Components - A Quote box, data dashboard and CTA box are added as resueable components and are then visible on different pages throughout the site. This gives the site owner control and facilitates potential for quick and easy addition of targetted marketting content.
+10. About page - left / right two column view switches the order of the content responsively to a stacked one column alternating view of images and body copy on mobile view.
+11. Lottie files animation uses json data only to add an animation resulting in faster load times.
+12. Footer - standard on all pages, includes external links to socal pages and a simple one item footer link (internal).
+##### Front end database management features
+1. Recipes, Categories and Featured Utensils can be added, deleted and updated in the database.
+2. Recipes, Categories and Featured Utensils can be 'archived.' In this case they are marked as 'unpublished' in the database. Before final deletion, a final confirmation message is displayed to warn the user and confirm twice.
+
+##### Back End Features
+
+
+1. [x] Build upon the required tools field to promote your brand of kitchen tools (e.g. oven, pressure cooker, etc…). Display detail on the utensil itself on a single page view for this utensil
+2. [x] Create a dashboard to provide some statistics about all the recipes. Number of recipes, number in each category, utensils, number of recipes using this utensil
+3. [x] Display 'Featured utensils' on home page
+4. [x] Header is 'sticky' and shrinks on scroll
+5. [x] Background or hero header image parallax effect
+6. [x] Confirmation messages when data has been added / updated / deleted. Delete confirm message.
+7. [x] Featured Recipe option
+8. [x] Add animation to the sorting, filtering and displaying of data 
+9. [x] Delete function will only mark recipe as 'archived.' To permanently delete, user must enter archive manager and then permanently delete the item.
+
+Make it clear which features OF CODE have been used.
+Make Defensive design clear
+Form confirm page
+Testing - use dead link checker
+
+ #### <a name="planned-features"></a> Planned Features
+
+
+1. Pagination for more than 20 recipes.
+2. Sort by name or cooking time in ascending / descending order.
+3. Add 'similar recipes' display on single recipe view
+4. Carousel display on home page with interactive swipe navigation
+5. Add facility to log in order use a provided pin before editing / deletion is permitted. 
+6. CTA tab bar floating / sticky on right of screen to encourage user to navigate to utensils page.
+7. Update form to verify all form fields and only accept forms accordingly.
+8. Facility to convert units from metric to imperial
+9. Submit image through form and use Cloudinary to host images. API Documentation here: https://cloudinary.com/documentation/cloudinary_references
+
+
+ ## <a name="technologies-used"></a> ## Technologies Used:
+
+
+
+ #### <a name="languages"></a> Languages
+
+* [HTML 5.0](https://www.w3.org/Style/CSS/)
+* [CSS](https://www.w3.org/Style/CSS/) - style the html and add interactivity
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - used for manipulating the DOM
+* [Python 3](https://www.python.org/) - Used for back end application
+* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) - the templating language
+
+ #### <a name="libraries"></a> Libraries & Frameworks
+* [Flask 1.0.2](https://flask.palletsprojects.com/en/1.1.x/) - A micro web server framework
+* [Pymongo 2.3.0](https://flask-pymongo.readthedocs.io/en/latest/) - Used to perform C.R.U.D. operations in Mongo DB using python
+* [Materialize 0.100.2](http://archives.materializecss.com/0.100.2/) - CSS framework for front end
+* [jQuery](https://jquery.com/) - used for enhanced interactive features
+* [Flex](http://flexboxgrid.com/) - used to achieve responsive layout on About page
+* [Isotope](https://isotope.metafizzy.co/) - used to add sorting and filtering of grid items on the home page
+* [Animate on Scroll Library](https://michalsnik.github.io/aos/) - add animations on scroll
+* [Lottie Files](https://lottiefiles.com/) - Used as source for json based animation files and embedded player
+
+ #### <a name="tools"></a> Tools
+* [Git](https://git-scm.com/) - for version control
+* [Github](https://github.com/) - provide hosting for development using Git
+* [Mongodb](https://www.mongodb.com/cloud/atlas) - the database server used
+* [VSCode](https://code.visualstudio.com/) - Local IDE
+* [uPic](https://apps.apple.com/us/app/upic-image-compression/id1341586328?mt=12) - used for Image compression
+* To pick colours from image when building colour scheme: https://imagecolorpicker.com/
+
+
+ #### <a name="hosting"></a> Hosting
+
+* [Heroku](https://www.heroku.com/) - for hosting
+
+ ## <a name="data-stucture"></a> ## Data Structure:
+
+ #### <a name="rationale"></a> Rationale
+ #### <a name="database-overview"></a> Database Overview
+ #### <a name="collections"></a> Collections
+ #### <a name="db-fields"></a> DB Fields 
+
+
+
+ ## <a name="workflow"></a> ## Workflow: 
+
+Working Process:
+CRUD Operations Stage
+Integrating Frameworks - Materialize, Isotope, AOS
+Customised Front End
+Content Migration
+Final enhancements
+
+Workflow and Project Process
+Agree specification for Project with (fictitous client)
+    Site Structure
+    Header
+    Footer
+    Minimum Functions
+    Nice to have Functions
+
+
+
+
+ ## <a name="testing"></a> ## Testing: 
+
+
+- http://www.cssdrive.com/cssautoprefixer/
+
+Note: The css validator throws errors relating to use of :root, var and also some webkit prefixes. These do not affect the project's performance.
+Use dead link checker
+Mobile menu link - old link found
+
+
+ #### <a name="code-validation"></a> Code Validation 
+
+ * To validate html: https://validator.w3.org/
+* To validate css: https://jigsaw.w3.org/css-validator/
+* To check Javascript for errors: https://www.jslint.com/
+
+ #### <a name="responsiveness-and-rendering"></a> Responsiveness and Rendering
+
+ #### <a name="browser-compatibility"></a> Browser Compatibility
+
+ #### <a name="features-testing"></a> Features Testing
+
+ #### <a name="unit-tests"></a> Unit Tests 
+
+
+
+
+ ## <a name="deployment"></a> ## Deployment: 
+
+ #### <a name="deployment-to-heroku"></a> Deployment to Heroku
+
+ #### <a name="local-deployment"></a> Local Deployment 
+
+
+
+ ## <a name="review"></a> Review:
+
+
+
+ ## <a name="acknowledgements"></a> Acknowledgements:
+
+ #### <a name="copy"></a> Copy 
+
+ #### <a name="media"></a> Media
+
+ #### <a name="code"></a> Code 
+
+
+
+
+
+## Technologies used
+
+
+### Tools used for automation
+
+
+### Features
+
+
+
+### Testing:
+
+
+
+
+
 
 
 
