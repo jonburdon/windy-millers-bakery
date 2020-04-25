@@ -169,6 +169,10 @@ Introduction paragraph.
 1. Recipes, Categories and Featured Utensils can be added, deleted and updated in the database.
 2. Recipes, Categories and Featured Utensils can be 'archived.' In this case they are marked as 'unpublished' in the database. Before final deletion, a final confirmation message is displayed to warn the user and confirm twice.
 
+##### CSS Custom Properties
+1. CSS custom properties used to provide a colour palette. Color codes are written once, at the top of the css file, and then referred to using var() throughout the rest of the code.
+
+
 ##### Back End Features
 
 
@@ -201,9 +205,8 @@ Testing - use dead link checker
 9. Submit image through form and use Cloudinary to host images. API Documentation here: https://cloudinary.com/documentation/cloudinary_references
 
 
+
  ## <a name="technologies-used"></a> ## Technologies Used:
-
-
 
  #### <a name="languages"></a> Languages
 
@@ -294,10 +297,110 @@ Mobile menu link - old link found
 
  ## <a name="deployment"></a> ## Deployment: 
 
- #### <a name="deployment-to-heroku"></a> Deployment to Heroku
+
+## Deployment: 
+
+#### <a name="deployment-to-heroku"></a> Deployment to Heroku
+##### Database Setup
+
+Create database on mongodb cloud
+
+Get data in place first, on atlas mongo website:
+* database with two collection: categories and tasks
+* Create a sample record in category collection called category_name: "Home"
+* Create sample record in the task collection with category_name, task_name, task_description, is_urgent and due_date
+
+
+##### Setup using VS Code on a Mac
+* **sudo pip3 install Flask** to install Flask
+* **python3 -m venv env** to install virtual environment in that folder
+* Open command palette, type **Python: Select Interpreter** and select the virtual environment in your project folder that starts with ./env or .\env
+* In command pallette, run **Terminal: Create New Integrated Terminal**
+* Install Flask in the virtual environment with **pip3 install Flask**
+* **pip3 install flask_pymongo**
+* Create app.py (In flask, the convention is to use run.py or app.py)
+* **from flask import Flask** to import Flask in app.py Capital F indicates a class name.
+* Create instance of flask within app.py with **app = Flask(name)**
+* In Terminal **python3 -m flask run** to run the app and serve
+
+##### Deploying to Heroku
+###### Four steps to deploying in Heroku
+1. Create Heroku app
+2. Link git repo
+3. Create requirements.txt
+4. Create Procfile
+
+
+In terminal:
+
+    heroku login
+
+Use browser to log in
+
+    heroku apps
+
+In terminal
+
+    git init
+    git add .
+    git commit -m 'Initial commit'
+    heroku git:remote -a windy-miller
+    git push heroku master (fails - needs requirements.txt)
+    sudo pip3 freeze --local > requirement.txt
+    git add .
+    git commit -m 'Added requirements'
+    git push heroku master (fails - needs procfile)
+    echo web: python app.py > Procfile
+    git push heroku master
+    heroku ps:scale web=1
+
+On Heroku web interface:
+Specify IP 0.0.0.0 and Port 5000
+
+##### Connecting to MongoDB Atlas
+
+    sudo pip3 install flask-pymongo
+    sudo pip3 install dnspython
+    
+    
+in new file env.py:
+	import os
+	os.environ["MONGO_URI"] = "mongodb+srv://databaseusernameHERE:passwordforthatuserHERE@myfirstcluster-ghyoe.mongodb.net/databasenameHERE?retryWrites=true&w=majority"
+
+*NOTE* Formatting of connection string carefully. No <> around password, there are THREE places to insert the correct into in to the connection string.
+
+
+in app.py this will read the needed variables from the env.py file, created above):
+
+	from os import path 
+	if path.exists("env.py"):
+    import env
+
+    from flask_pymongo import PyMongo
+    from bson.objectid import ObjectId
+
+	app.config["MONGO_DBNAME"] = 'windy-millers_bakery'
+	app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+
+On Mongo Website: Overview -> Connect -> Connect my app -> Choose Python3.6 or later
+
+Copy connection string
+
+Paste in connection string
+
+**Ensure an environment variable for above is used when in production**
+
+
+Create an instance of pymongo, add app with constructor method.
+
+    mongo = Pymongo(app)
+
+
 
  #### <a name="local-deployment"></a> Local Deployment 
 
+Instructions:
+1. 
 
 
  ## <a name="review"></a> Review:
@@ -337,101 +440,7 @@ Mobile menu link - old link found
 
 ## Wireframes
 
-## Deployment: Process followed to set up database connection and deploy project to heroku
 
-### Database Setup
-
-Create database on mongodb cloud
-
-Get data in place first, on atlas mongo website:
-* database with two collection: categories and tasks
-* Create a sample record in category collection called category_name: "Home"
-* Create sample record in the task collection with category_name, task_name, task_description, is_urgent and due_date
-
-
-### Setup using VS Code on a Mac
-* **sudo pip3 install Flask** to install Flask
-* **python3 -m venv env** to install virtual environment in that folder
-* Open command palette, type **Python: Select Interpreter** and select the virtual environment in your project folder that starts with ./env or .\env
-* In command pallette, run **Terminal: Create New Integrated Terminal**
-* Install Flask in the virtual environment with **pip3 install Flask**
-* **pip3 install flask_pymongo**
-* Create app.py (In flask, the convention is to use run.py or app.py)
-* **from flask import Flask** to import Flask in app.py Capital F indicates a class name.
-* Create instance of flask within app.py with **app = Flask(name)**
-* In Terminal **python3 -m flask run** to run the app and serve
-
-### Deploying to Heroku
-#### Four steps to deploying in Heroku
-1. Create Heroku app
-2. Link git repo
-3. Create requirements.txt
-4. Create Procfile
-
-
-In terminal:
-
-    heroku login
-
-Use browser to log in
-
-    heroku apps
-
-In terminal
-
-    git init
-    git add .
-    git commit -m 'Initial commit'
-    heroku git:remote -a windy-miller
-    git push heroku master (fails - needs requirements.txt)
-    sudo pip3 freeze --local > requirement.txt
-    git add .
-    git commit -m 'Added requirements'
-    git push heroku master (fails - needs procfile)
-    echo web: python app.py > Procfile
-    git push heroku master
-    heroku ps:scale web=1
-
-On Heroku web interface:
-Specify IP 0.0.0.0 and Port 5000
-
-### Connecting to MongoDB Atlas
-
-    sudo pip3 install flask-pymongo
-    sudo pip3 install dnspython
-    
-    
-in new file env.py:
-	import os
-	os.environ["MONGO_URI"] = "mongodb+srv://databaseusernameHERE:passwordforthatuserHERE@myfirstcluster-ghyoe.mongodb.net/databasenameHERE?retryWrites=true&w=majority"
-
-*NOTE* Formatting of connection string carefully. No <> around password, there are THREE places to insert the correct into in to the connection string.
-
-
-in app.py this will read the needed variables from the env.py file, created above):
-
-	from os import path 
-	if path.exists("env.py"):
-    import env
-
-    from flask_pymongo import PyMongo
-    from bson.objectid import ObjectId
-
-	app.config["MONGO_DBNAME"] = 'windy-millers_bakery'
-	app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-
-On Mongo Website: Overview -> Connect -> Connect my app -> Choose Python3.6 or later
-
-Copy connection string
-
-Paste in connection string
-
-**Ensure an environment variable for above is used when in production**
-**Database mini project was set up using an environment variable**
-
-Create an instance of pymongo, add app with constructor method.
-
-    mongo = Pymongo(app)
 
 
 # Features of current version:
@@ -461,7 +470,7 @@ https://caniuse.com/
 https://css-tricks.com/
 https://docs.mongodb.com/manual/reference/
 https://www.w3schools.com/
-
+Add more here eg flex
 
 ### Credits
 https://en.wikibooks.org/wiki/Cookbook:Table_of_Contents
