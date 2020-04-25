@@ -88,31 +88,37 @@ Introduction paragraph.
 
  ## <a name="technologies-used"></a> ## Technologies Used:
 
-* [HTML 5.0](https://www.w3.org/Style/CSS/)
-* [CSS](https://www.w3.org/Style/CSS/) 
-* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-* [Python](https://www.python.org/) - Used to run the back end create, read, update, delete functions and to serve files
-* Flask 
-* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
+
 
  #### <a name="languages"></a> Languages
 
+* [HTML 5.0](https://www.w3.org/Style/CSS/)
+* [CSS](https://www.w3.org/Style/CSS/) - style the html and add interactivity
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - used for manipulating the DOM
+* [Python 3](https://www.python.org/) - Used for back end application
+* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
+
  #### <a name="libraries"></a> Libraries & Frameworks
- * Materialize 0.100.2
- * [jQuery](https://jquery.com/)
- * [Flex](http://flexboxgrid.com/) 
- * [Isotope](https://isotope.metafizzy.co/)
- * [Animate on Scroll Library](https://michalsnik.github.io/aos/)
+* [Flask 1.0.2](https://flask.palletsprojects.com/en/1.1.x/) - A micro web server framework
+* [Pymongo 2.3.0](https://flask-pymongo.readthedocs.io/en/latest/) - Used to perform C.R.U.D. operations in Mongo DB using python
+* [Materialize 0.100.2](http://archives.materializecss.com/0.100.2/) - CSS framework for front end
+* [jQuery](https://jquery.com/) - used for enhanced interactive features
+* [Flex](http://flexboxgrid.com/) - used to achieve responsive layout on About page
+* [Isotope](https://isotope.metafizzy.co/) - used to add sorting and filtering of grid items on the home page
+* [Animate on Scroll Library](https://michalsnik.github.io/aos/) - add animations on scroll
+* [Lottie Files](https://lottiefiles.com/) - Used as source for json based animation files and embedded player
 
  #### <a name="tools"></a> Tools
-* [Git](https://git-scm.com/)
-* Mongodb
-* [VSCode](https://code.visualstudio.com/) Files were created locally using Visual Studio. GIT was used to push files to Github
+* [Git](https://git-scm.com/) - for version control
+* [Github](https://github.com/) - provide hosting for development using Git
+* [Mongodb](https://www.mongodb.com/cloud/atlas) - the database server used
+* [VSCode](https://code.visualstudio.com/) - Local IDE
+* [uPic](https://apps.apple.com/us/app/upic-image-compression/id1341586328?mt=12) - used for Image compression
 
 
  #### <a name="hosting"></a> Hosting
 
-
+* [Heroku](https://www.heroku.com/) - for hosting
 
  ## <a name="data-stucture"></a> ## Data Structure:
 
