@@ -390,6 +390,8 @@ Note: The css validator throws errors relating to use of :root, var and also som
 
  #### <a name="responsiveness-and-rendering"></a> Responsiveness and Rendering
 
+During responsive testing it was noticed that some overflow appears to occur in Chrome developer tools when emulating small screen sizes (due to large font size of h1). When actually tested on a range of android and ios devices, this was not found to occur.
+
  #### <a name="browser-compatibility"></a> Browser Compatibility
 
 * http://www.cssdrive.com/cssautoprefixer/
