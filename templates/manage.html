@@ -68,8 +68,7 @@
                 {% for r in manage_recipes %} {% if r.published == 'on' %}
                 <li class="collection-item">
                     <div>
-                        <a href="{{url_for('edit_recipe', recipe_id =r._id)}}" class="waves-effect waves-light  btn-manage">Edit</a>
-                        <a href="{{url_for('archive_recipe', recipe_id =r._id)}}" class="waves-effect waves-light ">Archive</a>
+                        <a href="{{url_for('edit_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn-manage">Edit</a> | <a href="{{url_for('archive_recipe', recipe_id =r._id)}}" class="waves-effect waves-light ">Archive</a>
                         <div class=" task_header col s6 m8">
                             <a href="{{url_for('view_recipe', recipe_id =r._id)}}">{{r.recipe_name}}</a>
                         </div>
@@ -95,8 +94,7 @@
                 {% for category in manage_categories %} {% if category.published == 'on' %}
                 <li class="collection-item">
                     <div>
-                        <a href="{{url_for('edit_category', category_id =category._id)}}" class="waves-effect waves-light btn btn_small">Edit</a>
-                        <a href="{{url_for('archive_category', category_id =category._id)}}" class="waves-effect waves-light btn btn_small ">Archive</a>
+                        <a href="{{url_for('edit_category', category_id =category._id)}}" class="waves-effect waves-light ">Edit</a> | <a href="{{url_for('archive_category', category_id =category._id)}}" class="waves-effect waves-light  ">Archive</a>
                         <div class=" task_header col s8">
                             <strong>{{category.category_name}}</strong>
                         </div>
@@ -121,8 +119,8 @@
                 {% for utensil in manage_utensils %} {% if utensil.published == 'on' %}
                 <li class="collection-item">
                     <div>
-                        <a href="{{url_for('edit_utensil', utensil_id =utensil._id)}}" class="waves-effect waves-light btn btn_small">Edit</a>
-                        <a href="{{url_for('archive_utensil', utensil_id =utensil._id)}}" class="waves-effect waves-light btn btn_small ">Archive</a>
+                        <a href="{{url_for('edit_utensil', utensil_id =utensil._id)}}" class="waves-effect waves-light ">Edit</a> |
+                        <a href="{{url_for('archive_utensil', utensil_id =utensil._id)}}" class="waves-effect waves-light  ">Archive</a>
                         <div class=" task_header col s8">
                             <strong>{{utensil.utensil_name}}</strong>
                         </div>
