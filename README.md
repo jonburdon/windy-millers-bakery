@@ -13,10 +13,10 @@ Introduction paragraph.
 [Developer Aims](#developer-aims), [Project Spec](#project-spec)
 
 ### [ Overview:](#overview)
-[UX](#ux), [User Stories](#user-stories), [Surface design](#surface-design), [Wireframes](#wireframes)
+[UX](#ux), [User Stories](#user-stories), [Wireframes](#wireframes)
 
 ### [ Features of the Project:](#features)
-[Current Features](#current-features), [Planned Features](#planned-features)
+[Surface design](#surface-design), [Current Features](#current-features), [Planned Features](#planned-features)
 
 ### [ Technologies Used:](#technologies-used)
 [Languages](#languages), [Libraries](#libraries), [Tools](#tools), [Hosting](#hosting)
@@ -143,6 +143,11 @@ Introduction paragraph.
 A wireframe for the project can be viewed here: ![](static/wireframes/wireframe.jpg)
 This wireframe is very early inspiration and represents only a first stage of design and planning.
 
+
+ ## <a name="features"></a> Features of the Project:
+
+ ### <a name="current-features"></a> Current Features
+
 #### <a name="surface-design"></a> Surface design
 
 The surface design of the project varied from the wireframes to some degree - a sidebar was used on the recipe page but not for searching or filtering. 
@@ -154,10 +159,6 @@ Simplicity of design holds user attention more according to research read by the
 Icons were used to give visual reference right from the front page - the same icons are used throughout for Recipes, Utensils and Categories.
 
 A Hero header with parallax effect was added to the top of each page to give reassurance to the user and make the site appearance easily predictable.
-
- ## <a name="features"></a> Features of the Project:
-
- #### <a name="current-features"></a> Current Features
 
 
 ##### Front End Features
@@ -175,15 +176,21 @@ A Hero header with parallax effect was added to the top of each page to give rea
 10. About page - left / right two column view switches the order of the content responsively to a stacked one column alternating view of images and body copy on mobile view.
 11. Lottie files animation uses json data only to add an animation resulting in faster load times.
 12. Footer - standard on all pages, includes external links to socal pages and a simple one item footer link (internal).
+13. Recipe pages template - containing sidebar with featured recipes
+14. Category single page template - containing section with other recipes from this category
+15. Categories page - containing grid view with links to single category pages
+16. Utensil pages template - containing badge for 'delux' utensils, external link to shop url, section with other recipes with this featured utensil, section linking to all utensils
+17. Utensils page - containing grid of all utensils with links to single utensil pages view or external links to 'buy' utensils
+
 ##### Front end database management features
 1. Recipes, Categories and Featured Utensils can be added, deleted and updated in the database.
-2. Recipes, Categories and Featured Utensils can be 'archived.' In this case they are marked as 'unpublished' in the database. Before final deletion, a final confirmation message is displayed to warn the user and confirm twice.
+2. Recipes, Categories and Featured Utensils can be 'archived.' In this case they are marked as *'unpublished'* in the database. Before final deletion, a *final confirmation* message is displayed to warn the user and confirm twice.
 
 ##### CSS Custom Properties
 1. CSS custom properties used to provide a colour palette. Color codes are written once, at the top of the css file, and then referred to using var() throughout the rest of the code.
 
 
-##### Back End Features
+#### Back End Features
 
 
 1. [x] Build upon the required tools field to promote your brand of kitchen tools (e.g. oven, pressure cooker, etc…). Display detail on the utensil itself on a single page view for this utensil
@@ -194,14 +201,9 @@ A Hero header with parallax effect was added to the top of each page to give rea
 6. [x] Confirmation messages when data has been added / updated / deleted. Delete confirm message.
 7. [x] Featured Recipe option
 8. [x] Add animation to the sorting, filtering and displaying of data 
-9. [x] Delete function will only mark recipe as 'archived.' To permanently delete, user must enter archive manager and then permanently delete the item.
+9. [x] Delete function will only mark recipe as 'archived' by changing 'published' field in the db from on to off. To permanently delete, user must enter archive manager and then permanently delete the item.
 
-Make it clear which features OF CODE have been used.
-Make Defensive design clear
-Form confirm page
-Testing - use dead link checker
-
- #### <a name="planned-features"></a> Planned Features
+ ### <a name="planned-features"></a> Planned Features
 
 
 1. Pagination for more than 20 recipes.
@@ -275,62 +277,140 @@ The Utensils collection contains documents for individual 'featured utensils' wh
 
 ##### Recipes Collection
 
+* recipe_name
+* recipe _description
+* recipe_serves
+* category_name
+* utensil_list
+* featured_utensil
+* ingredients_list
+* method
+* preparation_time
+* cooking_time
+* tips
+* photo_url
+* published
+* featured
+
 ##### Categories Collection
+
+* category_name
+* catrgory_image
+* published
 
 ##### Utensils Collection
 
+* utensil_name
+* utensil_description
+* image_url
+* delux_range
+* shop_url
+* published
 
 
 
+## <a name="workflow"></a> Workflow: 
+
+A process of progressive enhancement was followed, using the following working process.
+
+### Working Process:
+1. CRUD Operations Stage
+
+Sample data was added to the database. Create, Read, Update and Delete functions were written. These functions were manually tested.
+
+No attention was paid to front end design. Only minimal grids and boxes were visible.
+
+2. Integrating Frameworks - Materialize, Isotope
+
+The isotope js framework was the main framework selected for improved UX. The functionality for this was added and tested first. Once this was installed, materialize components and grid were added.
+
+3. Customised Front End
+
+The Materialize grid was added to the Home Page first, followed by other features - navbar, floating action buttons etc. Custom css was used for the hero area. CSS was developed for different content sections with appropriate colours and margins / padding. Each feature added was tested on different devices. Once features were fully working on the home page, other pages were built.
+
+4. Content Migration
 
 
+5. Final enhancements
 
-
- ## <a name="workflow"></a> Workflow: 
-
-Working Process:
-CRUD Operations Stage
-Integrating Frameworks - Materialize, Isotope, AOS
-Customised Front End
-Content Migration
-Final enhancements
-
-Workflow and Project Process
-Agree specification for Project with (fictitous client)
-    Site Structure
-    Header
-    Footer
-    Minimum Functions
-    Nice to have Functions
-
+Time was taken to add optional, more advanced features beyond the basic requirements:
+* Images for featured utensils at top of home page change when buttons are hovered
+* Data dashboard
+* Useseable components
+* Animate on Scroll
+* Buttons grow on hover
 
 
 
  ## <a name="testing"></a> Testing: 
 
 
-- http://www.cssdrive.com/cssautoprefixer/
+### Testing protocol for each page
 
-Note: The css validator throws errors relating to use of :root, var and also some webkit prefixes. These do not affect the project's performance.
-Use dead link checker
-Mobile menu link - old link found
+The following manual testing protocols were followed for each page on desktop, mobile, tablet and smart TV devices.
 
+* *All links navigate to correct destination*
+* desktop and mobile menus.
+* All utensils page
+* All categories page
+* About page
+* Manage page
+* Archive page
+* Add recipe, add category, add utensil
+* Single recipe pages
+* Single category pages
+* Single utensil pages
+
+* *Page content*
+1. Resize the width of the browser and verify that the content resizes for different screen sizes as expected.
+2. Verify that any content that should be hidden on smaller screens is hidden.
+4. Verify there is no overflow.
+
+* *Navigation Buttons*
+1. Verify that each button correctly displays the content when clicked.
+2. Verify that each button displays a box shadow and changes position when clicked.
+3. Change the width of the browser to ensure the navbar collapses when expected.
+4. Hover over buttons and verify that cursor: pointer is active.
+5. Verify that text is readable on different screen sizes.
+
+A dead link checker was used to check for dead links. http://www.brokenlinkcheck.com/
+
+During testing, an old link was found on the mobile popup menu.
+During testing, the edit form page was found to be using an out of date styling.
 
  #### <a name="code-validation"></a> Code Validation 
 
- * To validate html: https://validator.w3.org/
+* To validate html: https://validator.w3.org/
 * To validate css: https://jigsaw.w3.org/css-validator/
 * To check Javascript for errors: https://www.jslint.com/
+
+Note: The css validator throws errors relating to use of :root, var and also some webkit prefixes. These do not affect the project's performance.
+
+
 
  #### <a name="responsiveness-and-rendering"></a> Responsiveness and Rendering
 
  #### <a name="browser-compatibility"></a> Browser Compatibility
 
+* http://www.cssdrive.com/cssautoprefixer/
+
+
  #### <a name="features-testing"></a> Features Testing
+
+ The following features were tested:
+* When a recipe is added using the Add Recipe form, this recipe is displayed in the front end.
+* When a utensil is added using the Add Utensil form, this utensil is displayed in the front and is available as a select field when adding new recipes.
+* When a category is added using the Add Category form, this category is displayed in the front end, is available as a select field when adding new recipes and is available as a filter option on the front page.
+* Archiving: When a recipe, category or utensil is selected for archiving, the item is hidden on the home page but is visible in the Archive Manager page.
+* Restoring from archive: When a recipe, category or utensil is selected for restore, the item is hidden from the archive but is again visible on the home page.
+* Deleting: When a recipe, category or utensil is deleted permanently, this is removed from mongodb.
+
 
  #### <a name="unit-tests"></a> Unit Tests 
 
-
+Unit testing was not carried out. The developer familiarised himself with the following technical documentation and tutorials but did not implement this process:
+* https://pythonhosted.org/Flask-Testing/
+* https://scotch.io/tutorials/build-a-crud-web-app-with-python-and-flask-part-three#toc-tests
 
 
  ## <a name="deployment"></a> Deployment: 
@@ -475,21 +555,20 @@ An essential aim for the developer was to deliver the project to a high standard
 
  #### <a name="media"></a> Media
 
- #### <a name="code"></a> Code 
+### Credits
+https://en.wikibooks.org/wiki/Cookbook:Table_of_Contents
+https://pixabay.com/
 
+#### Colour Palette:
+The following image was used for colour palette inspiration:
+https://www.pinterest.co.uk/pin/524880531556508076/
+The website https://imagecolorpicker.com/en/ was used to autogenerate a wider range of colour codes from the original reference image.
 
+#### <a name="code"></a> Code 
 
+* Materialize snippets were used extensively from the site documentation and then altered using progressive enhancement.
+* Other small snippets are attributed in the code comments
 
-### Tools used for automation
-
-
-### Testing:
-
-
-
-### Defensive design
-* Required form fields
-* Delete confirmation
 
 ### Technical Reference 
 https://caniuse.com/
@@ -501,27 +580,7 @@ Stack Overflow
 Convert hex to rgb, rgba:
 https://www.hexcolortool.com/
 
-### Credits
-https://en.wikibooks.org/wiki/Cookbook:Table_of_Contents
-https://pixabay.com/
 
-
-## Colour Palette:
-The following image was used for colour palette inspiration:
-https://www.pinterest.co.uk/pin/524880531556508076/
-The website https://imagecolorpicker.com/en/ was used to autogenerate a wider range of colour codes from the original reference image.
-
-
-
-## Design
-Reference was taken from Doves Farm for inspiration
-
-## Testing
-
-During testing cross browser issues were discovered with the following libraries. They were therefore not used:
-Css variables
-https://jonsuh.com/hamburgers/
-https://michalsnik.github.io/aos/
 
 ## Known issues:
 
