@@ -405,6 +405,7 @@ Note: The css validator throws errors relating to use of :root, var and also som
 * Restoring from archive: When a recipe, category or utensil is selected for restore, the item is hidden from the archive but is again visible on the home page.
 * Deleting: When a recipe, category or utensil is deleted permanently, this is removed from mongodb.
 
+During Testing it was found that the Add Category function was not working, as it did not use an archived option.
 
  #### <a name="unit-tests"></a> Unit Tests 
 
@@ -584,5 +585,5 @@ https://www.hexcolortool.com/
 
 ## Known issues:
 
-Sort by cooking time not working.
-
+* Sort by cooking time not working.
+* Edit recipe page - does not make existing category and existing utensil the default selected option.

@@ -150,7 +150,7 @@ def update_recipe(recipe_id):
         'published': request.form.get('published'),
         'recipe_featured': request.form.get('recipe_featured')
     })
-    return redirect(url_for('manage_recipes'))
+    return redirect(url_for('thankyou'))
 
 @app.route('/view_categories/')
 def view_categories():
@@ -241,7 +241,7 @@ def update_category(category_id):
         'category_name': request.form.get('category_name'),
         'category_image': request.form.get('category_image')
     })
-    return redirect(url_for('view_categories'))
+    return redirect(url_for('thankyou'))
 
 
 @app.route('/delete_category/<category_id>')
@@ -341,7 +341,7 @@ def update_utensil(utensil_id):
         'delux_range': request.form.get('delux_range'),
         'shop_url': request.form.get('shop_url')
     })
-    return redirect(url_for('manage_utensils'))
+    return redirect(url_for('thankyou'))
 
 @app.route('/manage_archive/')
 def manage_archive():
