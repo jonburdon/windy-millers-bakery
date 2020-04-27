@@ -13,7 +13,7 @@ Introduction paragraph.
 [Developer Aims](#developer-aims), [Project Spec](#project-spec)
 
 ### [ Overview:](#overview)
-[UX](#ux), [User Stories](#user-stories), [Data Structure](#data-structure), [Surface design](#surface-design), [Wireframes](#wireframes)
+[UX](#ux), [User Stories](#user-stories), [Surface design](#surface-design), [Wireframes](#wireframes)
 
 ### [ Features of the Project:](#features)
 [Current Features](#current-features), [Planned Features](#planned-features)
@@ -49,8 +49,7 @@ Introduction paragraph.
 1. Apply understanding of how to use CRUD calls to mongodb using Python with Flask application
 2. Build HTML based user interface to demonstrate CRUD calls in action
 3. Style the above using the Materialize framework for improved UX
-4. Document the project for future reference
-5. Build the project in a time efficient and effective manner to meet initial spec precisely, enhancing this with 'nice to have' features only if time allows.
+4. Build the project in a time efficient and effective manner to meet initial spec precisely, enhancing this with 'nice to have' features only if time allows.
 
 #### <a name="project-spec"></a> Project Aims
 
@@ -138,11 +137,23 @@ Introduction paragraph.
 3. Add my own recipes to the database
 4. Get reassuring feedback when I update the database (edit, add, delete)
 
- #### <a name="data-structure"></a> Data Structure
 
- #### <a name="surface-design"></a> Surface design
+#### <a name="wireframes"></a> Wireframes
 
- #### <a name="wireframes"></a> Wireframes
+Wireframe for the project can be viewed here: ![](static/wireframes/wireframe.jpg)
+This wireframe is very early inspiration and represents only a first stage of design and planning.
+
+#### <a name="surface-design"></a> Surface design
+
+The surface design of the project varied from the wireframes to some degree - a sidebar was used on the recipe page but not for searching or filtering. 
+
+The recipes section of the [Doves Farm](https://www.dovesfarm.co.uk/recipes?view=all) website was used for reference and some design inspiration. A soft, calm colour palette was selected with eggshell blue and brown tones. A brighter highlight colour was selected for the primary CTA area - to browse utensils from the home page.
+
+Simplicity of design holds user attention more according to research read by the developer, so plenty of negative space was added throughout - consistent sizing  of fonts and padding creates a hierarchy of content types.
+
+Icons were used to give visual reference right from the front page - the same icons are used throughout for Recipes, Utensils and Categories.
+
+A Hero header with parallax effect was added to the top of each page to give reassurance to the user and make the site appearance easily predictable.
 
 
 
@@ -434,9 +445,30 @@ With the above setup, to deploy locally on a mac:
 
 
 
- ## <a name="review"></a> Project Review:
+ ## <a name="review"></a> Project Review, April 27th 2020:
 
-The overriding aim for the developer was to deliver the project in a minimal amount of time. The project was started on 11th March at submitted for review before the end of April. The number of hours was equal to approx 8 working days.
+A brief review follows, based on the developer's own aims.
+1. Apply understanding of how to use CRUD calls to mongodb using Python with Flask application
+This made a good opportunity to revise basic CRUD calls from python. Comments were added during the process to ensure that the code is easy to understand, maintain, and use for future reference. The form_to_dict method was used to take form data and add this to the database. The method does not handle data from multi select check boxes, which meant a small change to design was needed - only one 'Featured Utensil' could be chosen. In the future, it would be beneficial to use a different method to add form data to mongo.
+
+2. Build HTML based user interface to demonstrate CRUD calls in action
+Jinja tags were added to the html-attributes to facilitate use of the isotope js library for filtering and sorting. Adding the About page was an opportunity to use a slightly different visual layout and use flex CSS. The left and right alternating columns used on desktop view cause a visual problem when stacked on mobile (two images columns appear consecutively when stacked) unless flex-display: col-reverse is used. The meant adding cross vendor prefixes.
+
+3. Style the above using the Materialize framework for improved UX
+1.0.2 was used. This meant jquery version required did not cause problems with that required for isotope js. The following components of the Materialise framework were utilised:
+* Grid
+* Helpers - vertical-align, hover, responsive-img
+* CSS Components - Cards, Collections, Footer, Forms, Navbar
+* JS - Feature discovery, modal
+The developer found the framework well documented, powerful, and easy to install. Using 0.100.2 meant it was easy to install alongside other js libraries - isotope and animated on scroll.
+
+4. Build the project in a time efficient and effective manner to meet initial spec precisely, enhancing this with 'nice to have' features only if time allows.
+An essential aim for the developer was to deliver the project to a high standard in a minimal amount of time. This aspects of the project went well. It was started on the 11th of March and completed by the end of April. 1-2 days per week only were allocated. Planning the workflow in the stages outlined above helped. It was easy to get distracted by advanced features that were not necessary for the minimum requirements. Some advanced features such as search and pagination were not included due to time restraints. The most time consuming elemenets were:
+* Data dashboard - displaying only those recipes with less than 15 minutes cooking time.
+* Selecting only recipes with the same utensil, or only recipes from this category - to display on specific pages.
+* Adding isotope js filtering and sorting.
+
+
 
 
  ## <a name="acknowledgements"></a> Acknowledgements:
