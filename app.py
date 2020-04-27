@@ -21,6 +21,8 @@ from flask import Flask, render_template, redirect, request, url_for
 
 @app.route('/')
 @app.route('/recipes')
+# Display all recipes from the database
+# Identify which have cooking time under 15 mins for data component
 def recipes():
     # Count number of recipes with under 15 mins cooking time and assign to variable
     i= 0
@@ -53,6 +55,8 @@ def recipes():
     )
 
 @app.route('/view_recipe/<recipe_id>')
+# Display single recipe from db
+# Identify which have cooking time under 15 mins for data component
 def view_recipe(recipe_id):
     # Count number of recipes with under 15 mins cooking time and assign to variable
     i= 0
@@ -86,33 +90,36 @@ def view_recipe(recipe_id):
     
 
 @app.route('/add_recipe')
+# Display add_recipe.html which contains the recipe add form
 def add_recipe():
     return render_template('add_recipe.html',
                            categories=mongo.db.categories.find(), utensils=mongo.db.utensils.find())
 
 @app.route('/insert_recipe', methods=["POST"])
+# Receive form data from add_recipe and add this to the database
 def insert_recipe():
     recipes = mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
     
     return redirect(url_for('thankyou'))
 
-@app.route('/manage_recipes/')
-def manage_recipes():
-    return render_template('manage_recipes.html', manage_recipes=mongo.db.recipes.find())
+
 
 @app.route('/delete_recipe/<recipe_id>')
+# Delete recipe permanently
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('manage_archive'))
 
 @app.route('/edit_recipe/<recipe_id>')
+# Display edit_recipe.html which contains the recipe edit form
 def edit_recipe(recipe_id):
     return render_template('edit_recipe.html',
     recipe=mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)}),
                            categories=mongo.db.categories.find(), utensils=mongo.db.utensils.find())
 
 @app.route('/archive_recipe/<recipe_id>')
+# Make published field off, meaning recipe is archived
 def archive_recipe(recipe_id):
     recipe = mongo.db.recipes
     recipe.update_one(
@@ -122,6 +129,7 @@ def archive_recipe(recipe_id):
     return redirect(url_for('manage_archive'))
 
 @app.route('/restore_recipe/<recipe_id>')
+# Restore recipe from archive
 def restore_recipe(recipe_id):
     recipe = mongo.db.recipes
     recipe.update_one(
@@ -131,6 +139,7 @@ def restore_recipe(recipe_id):
     return redirect(url_for('thankyou'))
 
 @app.route('/update_recipe/<recipe_id>', methods=['POST'])
+# Recieve form data from Recipe edit form and submit edited version
 def update_recipe(recipe_id):
     recipe = mongo.db.recipes
     recipe.update( {'_id': ObjectId(recipe_id)},
@@ -153,21 +162,15 @@ def update_recipe(recipe_id):
     return redirect(url_for('thankyou'))
 
 @app.route('/view_categories/')
+# Display view_categories.html
 def view_categories():
     return render_template('view_categories.html', view_categories=mongo.db.categories.find())
 
 
 
-#@app.route('/utensil/<utensil_id>.<utensil_name>', methods=['GET', 'POST'])
-#def utensil(utensil_id, utensil_name):
- #   selected_recipes = mongo.db.recipes.find({"featured_utensil": utensil_name })
- #   return render_template('view_utensil.html',
-  #  utensil_name=utensil_name,
-   # recipes = selected_recipes,
-    #utensil=mongo.db.utensils.find_one({'_id': ObjectId(utensil_id)}))
-
-
 @app.route('/view_category/<category_id>.<category_name>', methods=['GET', 'POST'])
+# View single category page
+# Include quick recipe count for data component
 def view_category(category_id, category_name):
     # Count number of recipes with under 15 mins cooking time and assign to variable
     i= 0
@@ -183,17 +186,6 @@ def view_category(category_id, category_name):
     selected_recipes = mongo.db.recipes.find({"category_name": category_name })
 
     all_categories = mongo.db.categories.find()
-    # for category in all_categories:
-      #  for c in category:
-            # print ("******** THIS IS THE CATEGORY ID I'M LOOKING FOR")
-            # print(category_id)
-            # print ("******** HERE IS SOME DATA FROM THE CATEGORY DOCUMENT")
-       #     print (category[c])
-        #    if (category[c]) == (category_id):
-         #       print ("========== WE HAVE A MATCH!! ================")
-                #Somehow get the name from this document and assign it to a string
-
-            
 
     quickrecipes=i
     recipes = list(mongo.db.recipes.find())
@@ -218,21 +210,25 @@ def view_category(category_id, category_name):
 
 
 @app.route('/insert_category', methods=["POST"])
+# Recieve form data and add one category to the database
 def insert_category():
     categories = mongo.db.categories
     categories.insert_one(request.form.to_dict())
     return redirect(url_for('thankyou'))
 
 @app.route('/add_category/')
+# Dislay add_category.html
 def add_category():
     return render_template('add_category.html')
 
 @app.route('/edit_category/<category_id>')
+# Displat edit_category.html which contains category edit form
 def edit_category(category_id):
     return render_template('edit_category.html',
     category=mongo.db.categories.find_one({'_id': ObjectId(category_id)}))
 
 @app.route('/update_category/<category_id>', methods=['POST'])
+# Receive form data and update the category in the database
 def update_category(category_id):
     category = mongo.db.categories
     category.update( {'_id': ObjectId(category_id)},
@@ -245,11 +241,13 @@ def update_category(category_id):
 
 
 @app.route('/delete_category/<category_id>')
+# Delete category permanently
 def delete_category(category_id):
     mongo.db.categories.remove({'_id': ObjectId(category_id)})
     return redirect(url_for('manage_archive'))
 
 @app.route('/archive_category/<category_id>')
+# Change published field to off, meaning category is archived.
 def archive_category(category_id):
     category = mongo.db.categories
     category.update_one(
@@ -259,6 +257,7 @@ def archive_category(category_id):
     return redirect(url_for('manage_archive'))
 
 @app.route('/restore_category/<category_id>')
+# Make published field "on" meaning category is restored from archive
 def restore_category(category_id):
     category = mongo.db.categories
     category.update_one(
@@ -267,13 +266,12 @@ def restore_category(category_id):
 )
     return redirect(url_for('thankyou'))
 
-@app.route('/manage_categories/')
-def manage_categories():
-    return render_template('manage_categories.html', manage_categories=mongo.db.categories.find())
+
 
 
 
 @app.route('/utensil/<utensil_id>.<utensil_name>', methods=['GET', 'POST'])
+# Single utensil view page
 def utensil(utensil_id, utensil_name):
     selected_recipes = mongo.db.recipes.find({"featured_utensil": utensil_name })
     utensils=mongo.db.utensils.find()
@@ -284,24 +282,26 @@ def utensil(utensil_id, utensil_name):
     utensil=mongo.db.utensils.find_one({'_id': ObjectId(utensil_id)}))
 
 @app.route('/view_utensils/')
+# View all utensils
 def view_utensils():
     return render_template('view_utensils.html', view_utensils=mongo.db.utensils.find())
 
-@app.route('/manage_utensils/')
-def manage_utensils():
-    return render_template('manage_utensils.html', manage_utensils=mongo.db.utensils.find())
+
 
 @app.route('/edit_utensil/<utensil_id>')
+# Render edit_utensils.html which contains the edit utensil form
 def edit_utensil(utensil_id):
     return render_template('edit_utensil.html',
     utensil=mongo.db.utensils.find_one({'_id': ObjectId(utensil_id)}))
 
 @app.route('/delete_utensil/<utensil_id>')
+# Delete utensil permanently
 def delete_utensil(utensil_id):
     mongo.db.utensils.remove({'_id': ObjectId(utensil_id)})
     return redirect(url_for('manage_archive'))
 
 @app.route('/archive_utensil/<utensil_id>')
+# Make published field "off" meaning utensil is archived
 def archive_utensil(utensil_id):
     utensil = mongo.db.utensils
     utensil.update_one(
@@ -311,6 +311,7 @@ def archive_utensil(utensil_id):
     return redirect(url_for('manage_archive'))
 
 @app.route('/restore_utensil/<utensil_id>')
+# Make published field "on" meaning utensil is restored from archive
 def restore_utensil(utensil_id):
     utensil = mongo.db.utensils
     utensil.update_one(
@@ -320,16 +321,19 @@ def restore_utensil(utensil_id):
     return redirect(url_for('thankyou'))
 
 @app.route('/add_utensil/')
+# Render add_utensil.html which contains add utensil form
 def add_utensil():
     return render_template('add_utensil.html')
 
 @app.route('/insert_utensil', methods=["POST"])
+# Receve form data and add utensil to database
 def insert_utensil():
     utensils = mongo.db.utensils
     utensils.insert_one(request.form.to_dict())
     return redirect(url_for('thankyou'))
 
 @app.route('/update_utensil/<utensil_id>', methods=['POST'])
+# Receive form data and update utensil in db
 def update_utensil(utensil_id):
     utensil = mongo.db.utensils
     utensil.update( {'_id': ObjectId(utensil_id)},
@@ -345,22 +349,26 @@ def update_utensil(utensil_id):
     return redirect(url_for('thankyou'))
 
 @app.route('/manage_archive/')
+# Render manage_archive.html which contains display of all archived recipes, categories and utensils
 def manage_archive():
     return render_template('manage_archive.html', manage_categories=mongo.db.categories.find()
     , manage_utensils=mongo.db.utensils.find()
     , manage_recipes=mongo.db.recipes.find())
 
 @app.route('/manage/')
+# Render manage.html which displays all published (unarchived) recipes, categories and utensils
 def manage():
     return render_template('manage.html', manage_categories=mongo.db.categories.find()
     , manage_utensils=mongo.db.utensils.find()
     , manage_recipes=mongo.db.recipes.find())
 
 @app.route('/about/')
+# Render about.html
 def about():
     return render_template('about.html')
 
 @app.route('/thankyou/')
+# Render form confirm page
 def thankyou():
     return render_template('form_confirm.html')
 

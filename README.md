@@ -392,6 +392,8 @@ Note: The css validator throws errors relating to use of :root, var and also som
 
 During responsive testing it was noticed that some overflow appears to occur in Chrome developer tools when emulating small screen sizes (due to large font size of h1). When actually tested on a range of android and ios devices, this was not found to occur.
 
+During testing it was found that the add and edit forms were not mobile responsive - this was enhanced to take three lines of text in the name field without causing overflow.
+
  #### <a name="browser-compatibility"></a> Browser Compatibility
 
 * http://www.cssdrive.com/cssautoprefixer/
