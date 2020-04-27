@@ -1,8 +1,6 @@
 # Windy Miller's Bakery - Data Centric Design
 
-Introduction paragraph.
-
-
+This project is a data centric design project, using python with the flask micro framework as the back end application. The back end application performs Create, Read, Update and Delete (CRUD) operations to the remote database, MongoDB.
 
 ## [View Deployed Site](https://windy-miller.herokuapp.com/)
 
