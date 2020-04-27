@@ -140,7 +140,7 @@ Introduction paragraph.
 
 #### <a name="wireframes"></a> Wireframes
 
-Wireframe for the project can be viewed here: ![](static/wireframes/wireframe.jpg)
+A wireframe for the project can be viewed here: ![](static/wireframes/wireframe.jpg)
 This wireframe is very early inspiration and represents only a first stage of design and planning.
 
 #### <a name="surface-design"></a> Surface design
@@ -154,8 +154,6 @@ Simplicity of design holds user attention more according to research read by the
 Icons were used to give visual reference right from the front page - the same icons are used throughout for Recipes, Utensils and Categories.
 
 A Hero header with parallax effect was added to the top of each page to give reassurance to the user and make the site appearance easily predictable.
-
-
 
  ## <a name="features"></a> Features of the Project:
 
@@ -482,27 +480,11 @@ An essential aim for the developer was to deliver the project to a high standard
 
 
 
-
-## Technologies used
-
-
 ### Tools used for automation
-
-
-### Features
-
 
 
 ### Testing:
 
-
-
-
-
-
-
-
-## Wireframes
 
 
 ### Defensive design
