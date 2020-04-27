@@ -27,7 +27,7 @@
             < 4 %} <div class="hoverable featured-image-display featured-utensil-image-{{loop.index}} display-{{loop.index}} 
        ">
 
-                <a href="{{url_for('utensil', utensil_id=u._id, utensil_name=u.utensil_name)}}"> <img src="{{u.image_url}}" width=100%></a>
+                <a href="{{url_for('utensil', utensil_id=u._id, utensil_name=u.utensil_name)}}"> <img src="{{u.image_url}}" width=100% alt="utensil"></a>
 
         </div>
 
@@ -96,7 +96,7 @@
         <div class="col s12 m6 l4 grid-item {{r.category_name}} ">
             <div class="card ">
                 <div class="card-image">
-                    <img src="{{r.photo_url}}" />
+                    <img src="{{r.photo_url}}" alt="{{r.recipe_name}}" />
                     <h4 class="card-title background-shade">{{r.recipe_name}}</h4>
 
                 </div>
