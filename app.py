@@ -128,7 +128,7 @@ def restore_recipe(recipe_id):
    { "_id": ObjectId(recipe_id) },
    { "$set": { "published": "on" } }
 )
-    return redirect(url_for('manage_archive'))
+    return redirect(url_for('thankyou'))
 
 @app.route('/update_recipe/<recipe_id>', methods=['POST'])
 def update_recipe(recipe_id):
@@ -147,7 +147,7 @@ def update_recipe(recipe_id):
         'photo_url': request.form.get('photo_url'),
         'category_name': request.form.get('category_name'),
         'featured_utensil': request.form.get('featured_utensil'),
-        'published': request.form.get('published'),
+        'published': 'on',
         'recipe_featured': request.form.get('recipe_featured')
     })
     return redirect(url_for('thankyou'))
@@ -216,12 +216,11 @@ def view_category(category_id, category_name):
     ,categories2=categories2
     )
 
+
 @app.route('/insert_category', methods=["POST"])
 def insert_category():
-    category_doc = {'category_name': request.form.get('category_name')}
-    mongo.db.categories.insert_one(category_doc)
-    category_doc = {'category_image': request.form.get('category_image')}
-    mongo.db.categories.insert_one(category_doc)
+    categories = mongo.db.categories
+    categories.insert_one(request.form.to_dict())
     return redirect(url_for('thankyou'))
 
 @app.route('/add_category/')
@@ -239,7 +238,8 @@ def update_category(category_id):
     category.update( {'_id': ObjectId(category_id)},
     {
         'category_name': request.form.get('category_name'),
-        'category_image': request.form.get('category_image')
+        'category_image': request.form.get('category_image'),
+        'published': 'on'
     })
     return redirect(url_for('thankyou'))
 
@@ -265,7 +265,7 @@ def restore_category(category_id):
    { "_id": ObjectId(category_id) },
    { "$set": { "published": "on" } }
 )
-    return redirect(url_for('manage_archive'))
+    return redirect(url_for('thankyou'))
 
 @app.route('/manage_categories/')
 def manage_categories():
@@ -317,7 +317,7 @@ def restore_utensil(utensil_id):
    { "_id": ObjectId(utensil_id) },
    { "$set": { "published": "on" } }
 )
-    return redirect(url_for('manage_archive'))
+    return redirect(url_for('thankyou'))
 
 @app.route('/add_utensil/')
 def add_utensil():
@@ -339,7 +339,8 @@ def update_utensil(utensil_id):
         'utensil_description': request.form.get('utensil_description'),
         'image_url': request.form.get('image_url'),
         'delux_range': request.form.get('delux_range'),
-        'shop_url': request.form.get('shop_url')
+        'shop_url': request.form.get('shop_url'),
+        'published': 'on'
     })
     return redirect(url_for('thankyou'))
 
