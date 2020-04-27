@@ -1,12 +1,14 @@
 {% extends 'base.html' %} {% block content %}
 
-
+<!-- Hero Header -->
 
 <div class="hero-header valign-wrapper center-align">
     <div class="row ">
         <h1 class="col s12" id="main-site-title">Windy Miller's Bakery</h1>
     </div>
 </div>
+
+<!-- Featured Utensils Section -->
 
 <div class="full-width highlight-section center-align">
 
@@ -36,16 +38,18 @@
 
 </div>
 
+<!-- Main Recipes Section -->
 
-</div>
 <div class="container ">
 
     <div class="row center-align" id="recipesection">
+        <!-- ICON Behind Section Heading-->
         <div data-aos="zoom-in" class="content-section">
             <i class="section-icon material-icons prefix ">cake</i>
             <h2 class="heading-with-icon">Windy Miller's Recipes</h2>
         </div>
 
+        <!-- Filter control - uses data-name to provide data for isotope js filtering  -->
         <div class="col s12 m10 medium-large-only">
             <ul class="tabs  tabs-fixed-width filter">
                 <li class="tab col disabled"><a>Filter By :</a></li>
@@ -65,6 +69,7 @@
     </div>
 
     <!-- Dropdown Structure for sorting-->
+    <!-- Sorting control - uses data-name to provide data for isotope js sorting -->
     <ul id='dropdown1' class='dropdown-content sort'>
         <li><a href="#!" data-name="name">Name</a></li>
         <li><a href="#!" data-name="original-order">Original</a></li>
@@ -73,6 +78,7 @@
     </ul>
 
     <!-- Dropdown Structure for Filtering *MOBILE ONLY*-->
+    <!-- Sorting control - uses data-name to provide data for isotope js sorting -->
     <ul id='dropdown2' class=' mobile-only dropdown-content filter'>
         <li class="tab col "><a class="active filteroption" data-name="*">All</a></li>
         {% for c in categories2 %}
@@ -116,11 +122,12 @@
             </div>
 
         </div>
-        {% endif %} {% endfor %} {% include 'components/add_your_own_cta_box.html' %}
+        {% endif %} {% endfor %}
+        <!-- Add CTA button to add your own-->{% include 'components/add_your_own_cta_box.html' %}
     </div>
 
 </div>
 
 
-
+<!-- Add components above footer -->
 {% include 'components/data_dashboard.html' %} {% include 'components/quotebox.html' %} {% endblock %}

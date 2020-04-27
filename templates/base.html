@@ -14,23 +14,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
     <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}" type="text/css" />
-    <link rel="stylesheet" href="{{url_for('static', filename='css/hamburgers.css')}}" type="text/css" />
-    <link href="dist/hamburgers.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-
+    <!-- NAV SECTION -->
     <nav id="stickyheaders" class="medium-section-brown">
         <div class="nav-wrapper medium-section-brown">
             <a href="{{url_for('recipes')}}" class="brand-logo"><i class="material-icons">cake</i>Windy's Bakery</a>
 
-            <!-- <a href="#" class="right button-collapse"><i class="material-icons">menu</i></a> -->
+
             <!-- Modal Trigger -->
             <a class="waves-effect right waves-light modal-trigger mobile-popup-icon" href="#modal1"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
@@ -41,15 +36,7 @@
                 <li><a href="{{url_for('manage')}}">Manage</a></li>
                 <li><a class="tap-target-opener">Add</a></li>
             </ul>
-            <ul class="right side-nav" id="mobile-demo">
-                <li><a href="{{url_for('recipes')}}">Home</a></li>
-                <li><a href="{{url_for('view_categories')}}">Categories</a></li>
-                <li><a href="{{url_for('view_utensils')}}">Utensils</a></li>
-                <li><a href="collapsible.html">About</a></li>
-                <li><a href="{{url_for('manage')}}">Manage</a></li>
 
-
-            </ul>
         </div>
     </nav>
 
@@ -71,13 +58,7 @@
         </div>
 
     </div>
-    <!--
-    <button class="hamburger hamburger-spring" type="button">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button> 
-      -->
+
     {% block content %} {% endblock %}
 
 
@@ -104,7 +85,7 @@
 
     </div>
     <!-- End of Floating Actions Buttons -->
-    <!-- Tap Target Message -->
+
 
 
 
@@ -166,17 +147,7 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
-            /*
-            M.AutoInit();
-              var elems = document.querySelectorAll('.sidenav');
-              var instances = M.Sidenav.init(elems, options);
-              var elems = document.querySelectorAll('.fixed-action-btn');
-              var instances = M.FloatingActionButton.init(elems, options);
-              var instance = M.Tabs.getInstance(elem);
-              var elems = document.querySelectorAll('.dropdown-trigger');
-              var elems = document.querySelectorAll('.tap-target');
-              var instances = M.TapTarget.init(elems, options);
-              */
+
         });
     </script>
 

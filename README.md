@@ -218,7 +218,9 @@ A Hero header with parallax effect was added to the top of each page to give rea
 10. Add a hierarchy to the recipe database categories collection so that 'Sourdough' and 'Yeast Breads' could be organised under the main category of 'Bread.'
 11. Add array items to the recipe ingredients so that individual ingredients and their quanitities can be added or deleted as individual fields in the database. Use the same functionality for steps in the recipe method.
 
-
+#### Known issues:
+* Sort by cooking time not working.
+* Edit recipe page - does not make existing category and existing utensil the default selected option.
 
  ## <a name="technologies-used"></a> Technologies Used:
 
@@ -390,13 +392,20 @@ Note: The css validator throws errors relating to use of :root, var and also som
 
  #### <a name="responsiveness-and-rendering"></a> Responsiveness and Rendering
 
+Each page was tested on a samsung smartphone.
+
 During responsive testing it was noticed that some overflow appears to occur in Chrome developer tools when emulating small screen sizes (due to large font size of h1). When actually tested on a range of android and ios devices, this was not found to occur.
 
 During testing it was found that the add and edit forms were not mobile responsive - this was enhanced to take three lines of text in the name field without causing overflow.
 
  #### <a name="browser-compatibility"></a> Browser Compatibility
 
+ The following tool was used to add vendor prefixes to the css.
 * http://www.cssdrive.com/cssautoprefixer/
+
+http:/www.caniuse.com/ was referenced throughout to establish which code is supported by which browsers.
+
+The project was tested in Chrome, Edge, Safari, Firefox and Android Browser.
 
 
  #### <a name="features-testing"></a> Features Testing
@@ -554,14 +563,18 @@ An essential aim for the developer was to deliver the project to a high standard
 
 
 
- ## <a name="acknowledgements"></a> Acknowledgements:
+## <a name="acknowledgements"></a> Acknowledgements:
 
- #### <a name="copy"></a> Copy 
+#### <a name="copy"></a> Copy 
+
+All copy was taken from Wikipedia, under licence. https://en.wikibooks.org/wiki/Cookbook:Table_of_Contents
 
  #### <a name="media"></a> Media
 
+All images were taken from Pixabay, under licence. https://www.pixabay.com/
+
 ### Credits
-https://en.wikibooks.org/wiki/Cookbook:Table_of_Contents
+
 https://pixabay.com/
 
 #### Colour Palette:
@@ -571,6 +584,7 @@ The website https://imagecolorpicker.com/en/ was used to autogenerate a wider ra
 
 #### <a name="code"></a> Code 
 
+* Isotope js used under license
 * Materialize snippets were used extensively from the site documentation and then altered using progressive enhancement.
 * Other small snippets are attributed in the code comments
 
@@ -586,7 +600,4 @@ Convert hex to rgb, rgba:
 https://www.hexcolortool.com/
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
-## Known issues:
 
-* Sort by cooking time not working.
-* Edit recipe page - does not make existing category and existing utensil the default selected option.
