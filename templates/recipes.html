@@ -22,12 +22,12 @@
                 {% else %} {% endif %} {% endfor %}
 
         </div>
-        <div class="col s12 m6 l6">
+        <div class="col s12 m6 l6 image-box">
             {% for u in utensils2 %} {% if loop.index
             < 4 %} <div class="hoverable featured-image-display featured-utensil-image-{{loop.index}} display-{{loop.index}} 
        ">
 
-                <a href="{{url_for('utensil', utensil_id=u._id, utensil_name=u.utensil_name)}}"> <img src="{{u.image_url}}" height=100% width=100%></a>
+                <a href="{{url_for('utensil', utensil_id=u._id, utensil_name=u.utensil_name)}}"> <img src="{{u.image_url}}" width=100%></a>
 
         </div>
 
