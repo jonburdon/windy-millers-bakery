@@ -1,27 +1,11 @@
 // ** USE ISOTOPE FRAMEWORK FOR FILTERING AND SORTING **
 
 
-// $(document).ready(function() {
+// Use window load function to ensure all images are loaded before isotope loads
+// Otherwise the grid will break
 $(window).on("load", function() {
 
     // ----------- * FILTERING * -----------
-
-    // jQuery(function() {
-    //     console.log("Filtering started");
-
-    // BUG: The filtering happens before the images are loaded, so the grid breaks.
-    // Try to fix by waiting for images to load
-    // Same issue discussed here: https://github.com/metafizzy/isotope/issues/611
-
-    // var $container = jQuery('.grid-main');
-    // $container.imagesLoaded(function() {
-    //     $grid.isotope({
-    //         filter: '*',
-    //          layoutMode: 'fitRows'
-    //      });
-    // });
-    //      console.log("Filtering done");
-    // });
 
     // Filter by category 
     $('.filter li .filteroption').on("click", function() {
@@ -71,16 +55,6 @@ $(window).on("load", function() {
 
 
 
-
-/* Toggle Hamburger when close / open modal 
-var $hamburger = $(".hamburger--spring, .modal-close");
-$hamburger.on("click", function(e) {
-    $hamburger.toggleClass("is-active");
-
-});
-
-*/
-
 // ----------- * HEADER * -----------
 
 // Script below adapted from https://elementorcodes.com/elementor-header-show-scroll-up/
@@ -108,8 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Show and hide featured images in recipe.html  when associated button is hovered //
 $(document).ready(function() {
-
-
 
     $('.featured-utensil-button-2').hover(function() {
         $('.featured-utensil-image-1').addClass('display-2');

@@ -37,6 +37,7 @@
     </div>
 
 </div>
+</div>
 
 
 <!-- Main Recipes Section -->
@@ -75,7 +76,7 @@
         <li><a href="#!" data-name="name">Name</a></li>
         <li><a href="#!" data-name="original-order">Original</a></li>
         <li><a href="#!" data-name="random">Random</a></li>
-        <li><a href="#!" data-name="cookingtime" class="cookingtime"><i class="material-icons">timer</i>Time</a></li>
+        <li><a href="#!" data-name="cookingtime"><i class="material-icons">timer</i>Time</a></li>
     </ul>
 
     <!-- Dropdown Structure for Filtering *MOBILE ONLY*-->
@@ -104,7 +105,7 @@
             <div class="card ">
                 <div class="card-image">
                     <img src="{{r.photo_url}}" alt="{{r.recipe_name}}" />
-                    <h4 class="card-title background-shade">{{r.recipe_name}}</h4>
+                    <h4 class="card-title background-shade name">{{r.recipe_name}}</h4>
 
                 </div>
                 <div class="card-content">
@@ -114,8 +115,8 @@
                     <p>
                         Serves {{r.recipe_serves}}. Delicious and ready in {{r.preparation_time}} mins.
                     </p>
-                    <p class="cookingtime"><i class="small-icon material-icons prefix ">alarm_on</i> Cooking time {{r.cooking_time}}</p>
-                    <p class="name ">{{r.recipe_description}}</p>
+                    <p class="cookingtime">Cooking time {{r.cooking_time}} mins.</p>
+                    <p>{{r.recipe_description}}</p>
                 </div>
                 <div class="card-action">
                     <a href="{{url_for('view_recipe', recipe_id =r._id)}}" class="waves-effect waves-light btn">View</a>
