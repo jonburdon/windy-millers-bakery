@@ -215,10 +215,8 @@ A Hero header with parallax effect was added to the top of each page to give rea
 9. Submit image through form and use Cloudinary to host images. API Documentation here: https://cloudinary.com/documentation/cloudinary_references
 10. Add a hierarchy to the recipe database categories collection so that 'Sourdough' and 'Yeast Breads' could be organised under the main category of 'Bread.'
 11. Add array items to the recipe ingredients so that individual ingredients and their quanitities can be added or deleted as individual fields in the database. Use the same functionality for steps in the recipe method.
-
-#### Known issues:
-* Sort by cooking time not working.
-* Edit recipe page - does not make existing category and existing utensil the default selected option.
+12. Sort by cooking time not working.
+13. Edit recipe page - does not make existing category and existing utensil the default selected option.
 
  ## <a name="technologies-used"></a> Technologies Used:
 

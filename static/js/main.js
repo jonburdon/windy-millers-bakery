@@ -31,7 +31,8 @@ $(window).on("load", function() {
             name: function(element) {
                 return $(element).text();
             },
-            cookingtime: '.cookingtime parseInt',
+            // Sort by cooking time?
+            //cookingtime: '.cookingtime parseInt',
         }
     });
 
